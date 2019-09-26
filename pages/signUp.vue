@@ -5,6 +5,7 @@
     </p>
     <pageOne v-if="page == 0" :v="$v" />
     <pageTwo v-if="page == 1" :v="$v" />
+    <pageThree v-if="page == 2" :v="$v" />
     <section>
       <b-button @click="submit">
         Submit
@@ -27,11 +28,12 @@
 <script>
 import pageOne from '~/components/Signup/PageOne'
 import pageTwo from '~/components/Signup/PageTwo'
+import pageThree from '~/components/Signup/PageThree'
 import validations from '~/validators/validators.js'
 import vueDataProxy from 'vue-data-proxy'
 
 export default {
-  components: { pageOne, pageTwo },
+  components: { pageOne, pageTwo, pageThree },
   computed: {
     ...vueDataProxy({
       hacker: {
