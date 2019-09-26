@@ -10,6 +10,18 @@ export default {
     email: {
       required,
       email
+    },
+    travel: {
+      required,
+      matchesDropDown(v) {
+        return (v.toLowerCase() === 'yes' || v.toLowerCase() === 'no')
+      }
+    },
+    gender: {
+      required
+    },
+    ethnicity: {
+      required
     }
   }
 }

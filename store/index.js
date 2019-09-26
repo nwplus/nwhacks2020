@@ -25,11 +25,13 @@ const initialState = {
     school: '',
     source: '',
     travel: ''
-  }
+  },
+  signUpPage: 0
 }
 
 export const state = () => ({
-  hackerApplication: { ...initialState.hackerApplication }
+  hackerApplication: { ...initialState.hackerApplication },
+  signUpPage: initialState.signUpPage
 })
 
 export const mutations = {
@@ -41,5 +43,11 @@ export const mutations = {
   },
   clearState(state) {
     state.hackerApplication = { ...initialState.hackerApplication }
+  },
+  goToPage(state, page) {
+    if (page > 1 || page < 0) {
+      return
+    }
+    state.signUpPage = page
   }
 }
