@@ -53,14 +53,15 @@ export default {
   width: 11.26vw;
   height: 11.74vw;
   background-image: url("~@/assets/billboard.svg");
-  background-position: bottom;
+  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .billboard:hover {
   background-image: url("~@/assets/billboard-hover.svg");
 }
 .mobile-billboard {
-  max-height: 40vw;
+  max-height: 38vw;
 }
 //Desktop CSS:
 @include from($desktop) {
@@ -82,7 +83,7 @@ export default {
     min-height: 264vw; // the bg image is height compared to width
   }
   .header-content {
-    padding: 80vw 0 0 56vw;
+    padding: 90vw 0 0 59vw;
   }
   .billboard {
     display: none;
