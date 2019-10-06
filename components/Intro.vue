@@ -1,51 +1,19 @@
 <template>
   <div class="header">
-    <Snowf
-      :amount="200"
-      :size="5"
-      :speed="1.5"
-      :wind="0"
-      :opacity="1"
-      :swing="1"
-      :image="null"
-      :z-index="null"
-      :resize="true"
-      color="#fff"
-    />
     <div class="header-content">
-      <img src="~@/assets/animals.svg" class="animals">
-      <div class="text">
-        <p>nwPlus Presents</p>
-        <img src="~@/assets/lhd.svg" class="lhd">
-        <p>@ University of British Columbia</p>
-        <p v-for="item in text" :key="item" class="date">
-          {{ item }}
-        </p>
-        <Button title="Contact Us" url="mailto:lhd@nwplus.io" />
-        <Button
-          :disabled="!introButtonEnabled"
-          title="Sign Up"
-          :url="introLink"
-        />
-        <p class="signupText">
-          {{ signUpText }}
-        </p>
-        <Email />
-      </div>
+      <a href="./signup">
+        <div class="billboard" />
+        <img class="mobile-billboard" src="~@/assets/billboard.svg">
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-import Button from '~/components/Button.vue'
-import Snowf from 'vue-snowf'
-import Email from '~/components/Email.vue'
+// an attempt to preload the billboard hover image so it doesnt lag when someone hovers it
+const billboardPreload = new Image()
+billboardPreload.src = '~@/assets/billboard-hover.svg'
 export default {
-  components: {
-    Snowf,
-    Button,
-    Email
-  },
   props: {
     intro: {
       type: Object,
@@ -76,58 +44,53 @@ export default {
   margin: 0 20%;
 }
 .header {
-  min-height: 60vw; // the bg image height is 60% its width
+  min-height: 105vw; // the bg image is _almost_ a square
   background-position: left top;
   background-repeat: no-repeat;
   background-size: 100vw;
 }
-.header-content {
-  display: flex;
-  flex: 1 0 auto;
-  flex-wrap: wrap-reverse;
-  justify-content: space-evenly;
+.billboard {
+  width: 11.26vw;
+  height: 11.74vw;
+  background-image: url("~@/assets/billboard.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
-.animals {
-  margin-bottom: 3%;
-  float: left;
-  align-self: flex-start;
+.billboard:hover {
+  background-image: url("~@/assets/billboard-hover.svg");
 }
-.text {
-  text-align: center;
-  line-height: 26px;
-  align-self: flex-start;
+.mobile-billboard {
+  max-height: 40vw;
 }
 //Desktop CSS:
 @include from($desktop) {
   .header {
-    margin-bottom: -12vw;
     background-image: url("~@/assets/header.svg");
   }
   .header-content {
-    padding: 10vw 0vw 0 0vw;
+    padding: 24vw 0 0 68vw;
   }
-  .lhd {
-    max-height: 16vw;
-    margin-bottom: 12px;
-  }
-  .animals {
-    max-height: 28vw;
+  .mobile-billboard {
+    display: none;
+    opacity: 0;
   }
 }
 //Mobile CSS:
 @include until($desktop) {
   .header {
-    background-image: url("~@/assets/mobile-header.svg");
+    background-image: url("~@/assets/header-mobile.svg");
+    min-height: 264vw; // the bg image is height compared to width
   }
   .header-content {
-    padding: 15vw 0 0 0;
+    padding: 80vw 0 0 56vw;
   }
-  .lhd {
-    max-height: 50vh;
-    margin-bottom: 12px;
-  }
-  .date {
+  .billboard {
     display: none;
+    opacity: 0;
+  }
+  .mobile-billboard {
+    display: inline;
+    opacity: 100%;
   }
 }
 </style>
