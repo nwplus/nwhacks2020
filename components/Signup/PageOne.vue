@@ -13,7 +13,7 @@
       label="What is your Last Name?"
       class="required"
       :type="v.hacker.lastname.$error ? 'is-danger' : ''"
-      :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '') : ''"
+      :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : ''"
     >
       <b-input v-model.trim="v.hacker.lastname.$model" />
     </b-field>
@@ -169,7 +169,7 @@
 
     <b-field
       v-if="v.hacker.education === 'high school'"
-      label="What do you plan on studying?"
+      label="What is your major?"
       class="required"
       name="high-school-major"
       :type="v.hacker.major.$error ? 'is-danger' : ''"
