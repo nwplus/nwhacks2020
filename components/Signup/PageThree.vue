@@ -29,7 +29,7 @@
       </b-select>
     </b-field>
     <p>
-      We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
+      🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
       <a
         href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
       >MLH Code of Conduct</a>.
@@ -51,18 +51,20 @@
       </b-checkbox>
     </div>
     <div class="field">
-      <p>We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
+      <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
       <b-checkbox>I authorize nwPlus to use my anonymized data for data reporting.</b-checkbox>
     </div>
     <div class="field">
-      <p>Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
+      <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
       <b-checkbox>I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.</b-checkbox>
     </div>
     <div class="field">
       <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
-      <font-awesome-icon :icon="['fab', 'medium-m']" />
-      <font-awesome-icon :icon="['fab', 'twitter']" />
-      <font-awesome-icon :icon="['fab', 'facebook-f']" />
+      <div class="icons">
+        <font-awesome-icon :icon="['fab', 'medium-m']" />
+        <font-awesome-icon :icon="['fab', 'twitter']" />
+        <font-awesome-icon :icon="['fab', 'facebook-f']" />
+      </div>
     </div>
   </section>
 </template>
