@@ -61,9 +61,15 @@
     <div class="field">
       <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
       <div class="icons">
-        <font-awesome-icon :icon="['fab', 'medium-m']" />
-        <font-awesome-icon :icon="['fab', 'twitter']" />
-        <font-awesome-icon :icon="['fab', 'facebook-f']" />
+        <a href="https://medium.com/nwhacks">
+          <font-awesome-icon :icon="['fab', 'medium-m']" />
+        </a>
+        <a href="https://twitter.com/nwhacks">
+          <font-awesome-icon :icon="['fab', 'twitter']" />
+        </a>
+        <a href="https://www.facebook.com/nwHacks/">
+          <font-awesome-icon :icon="['fab', 'facebook-f']" />
+        </a>
       </div>
     </div>
   </section>
