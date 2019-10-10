@@ -58,6 +58,12 @@
       <p>Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
       <b-checkbox>I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.</b-checkbox>
     </div>
+    <div class="field">
+      <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
+      <font-awesome-icon :icon="['fab', 'medium-m']" />
+      <font-awesome-icon :icon="['fab', 'twitter']" />
+      <font-awesome-icon :icon="['fab', 'facebook-f']" />
+    </div>
   </section>
 </template>
 
