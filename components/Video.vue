@@ -67,7 +67,6 @@ export default {
     left: 50%;
     top: 24%;
     transform: translate(-50%,-50%);
-    background-color: blue;
 }
 .right{
     position: absolute;
@@ -92,7 +91,7 @@ export default {
     transform: translate(-50%,-50%);
 }
 .play-button:hover {
-  transform: translate(-50%,-50%) scale(1.2)
+  transform: translate(-50%,-50%) scale(1.2);
 }
 .video-div {
     position: relative;
@@ -104,8 +103,9 @@ export default {
     font-size: 36px;
     line-height: 37px;
     letter-spacing: 0.05em;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text !important;
     background-clip: text !important;
+    color: transparent;
     -webkit-text-fill-color: transparent;
     background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
     margin-bottom: 10%;
