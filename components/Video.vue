@@ -89,6 +89,7 @@ export default {
     z-index: 5;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: all .3s ease-in-out;
 }
 .play-button:hover {
   transform: translate(-50%,-50%) scale(1.2);
