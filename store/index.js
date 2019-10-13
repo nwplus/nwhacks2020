@@ -7,7 +7,7 @@ const initialState = {
     ethnicity: '',
     firstname: '',
     gender: '',
-    gradyear: Date(),
+    gradyear: 2019,
     interestfornwhacks: '',
     iscodeofconductchecked: false,
     isdatareportingchecked: false,
