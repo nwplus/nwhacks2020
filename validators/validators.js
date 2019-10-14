@@ -105,6 +105,11 @@ export default {
         ])
       }
     },
+    sourceother: {
+      required: requiredIf(function (hacker) {
+        return hacker.source === 'Other'
+      })
+    },
     isPrivacyPolicyChecked: {
       required,
       checked(v) {

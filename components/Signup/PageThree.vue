@@ -33,6 +33,15 @@
         </option>
       </b-select>
     </b-field>
+    <b-field
+      v-if="v.hacker.source.$model === 'Other'"
+      label="Please specify where you heard about nwHacks"
+      class="required"
+      :type="v.hacker.sourceother.$error ? 'is-danger' : ''"
+      :message="v.hacker.sourceother.$error ? (!v.hacker.sourceother.required ? 'Required' : '') : ''"
+    >
+      <b-input v-model.trim="v.hacker.sourceother.$model" />
+    </b-field>
     <p>
       🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
       <a
