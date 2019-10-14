@@ -1,7 +1,12 @@
 <template>
   <section>
-    <b-field label="How did you hear about nwHacks?">
-      <b-select placeholder="Select" required>
+    <b-field
+      label="How did you hear about nwHacks?"
+      class="required"
+      :type="v.hacker.source.$error ? 'is-danger' : ''"
+      :message="v.hacker.source.$error ? (!v.hacker.source.required ? 'Required' : '') : ''"
+    >
+      <b-select v-model.trim="v.hacker.source.$model" placeholder="Select" required>
         <option value="MLH">
           MLH
         </option>
@@ -35,7 +40,7 @@
       >MLH Code of Conduct</a>.
     </p>
     <div class="field">
-      <b-checkbox>
+      <b-checkbox v-model.trim="v.hacker.isPrivacyPolicyChecked.$model">
         I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
         <a
           href="https://mlh.io/privacy"
@@ -43,7 +48,7 @@
       </b-checkbox>
     </div>
     <div class="field">
-      <b-checkbox>
+      <b-checkbox v-model.trim="v.hacker.isCodeOfConductChecked.$model">
         I have read and agree to the
         <a
           href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
@@ -52,7 +57,11 @@
     </div>
     <div class="field">
       <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
-      <b-checkbox>I authorize nwPlus to use my anonymized data for data reporting.</b-checkbox>
+      <b-checkbox
+        v-model.trim="v.hacker.isDataReportingChecked.$model"
+      >
+        I authorize nwPlus to use my anonymized data for data reporting.
+      </b-checkbox>
     </div>
     <div class="field">
       <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
