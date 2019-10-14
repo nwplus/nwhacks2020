@@ -40,13 +40,13 @@ export default {
       required,
       matchesDropDown(v) {
         return isOneOf(v, [
-          'american idian',
+          'american indian',
           'alaskan native',
           'asian / pacific islander',
           'black or african american',
           'hispanic',
           'white / caucasian',
-          'multiple ethinicity',
+          'multiple ethnicity',
           'other',
           'prefer not to answer'
         ])
