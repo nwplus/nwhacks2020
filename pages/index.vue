@@ -53,9 +53,9 @@ export default {
     const listOfEvents = await fireDb.get(Events)
     const FaqQuestions = await fireDb.get(FAQ)
     // Populate sponsors with their image urls
-    const populatedSponsors = await Promise.all(
+    const populatedSponsors = (await Promise.all(
       listOfSponsors.map(sponsor => getSponsorImage(sponsor))
-    )
+    )).filter(sponsor => sponsor.imageURL !== '')
     return {
       info: data.WelcomeText,
       Sponsors: populatedSponsors,
@@ -84,7 +84,7 @@ export default {
 }
 
 body {
-  background-color: #f6edec;
+  background-color: #262662;
   font-family: "Apercu Pro";
   // background-image: url('~@/assets/bg.svg');
   // background-size: 100vw;
