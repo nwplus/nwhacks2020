@@ -1,6 +1,6 @@
 <template>
   <div class="video-div">
-    <div :style="video" class="player-container">
+    <div v-if="video" v-on-clickaway="hideVideo" class="player-container">
       <div class="player">
         <iframe
           class="youtube"
@@ -32,15 +32,20 @@
 </template>
 
 <script>
+import { mixin as clickaway } from 'vue-clickaway'
 export default {
+  mixins: [clickaway],
   data() {
     return {
-      video: 'display: none'
+      video: false
     }
   },
   methods: {
     showVideo() {
-      this.video = ''
+      this.video = true
+    },
+    hideVideo() {
+      this.video = false
     }
   }
 }
@@ -56,13 +61,12 @@ export default {
 }
 .player-container {
     width: 100%;
-    padding-bottom: 10%;
 }
 .player {
     z-index: 20;
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: 79%;
+    height: 80%;
     position: absolute;
     left: 50%;
     top: 24%;
