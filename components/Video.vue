@@ -130,9 +130,9 @@ export default {
         display: none;
     }
     .player {
-        width: 100%;
-        height: 68%;
-        top: 22%;
+        width: 90%;
+        height: 50%;
+        top: 26%;
     }
 }
 </style>
