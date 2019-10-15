@@ -93,10 +93,10 @@ export default {
     z-index: 5;
     left: 50%;
     transform: translate(-50%,-50%);
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .play-button:hover {
-  transform: translate(-50%,-50%) scale(1.2);
+  transform: translate(-50%,-50%) scale(1.1);
 }
 .video-div {
     position: relative;
