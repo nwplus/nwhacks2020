@@ -38,6 +38,7 @@ const fireDb = {
     } catch (e) {
       return ''
     }
+  }
 }
 
 export default fireDb
