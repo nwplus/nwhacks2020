@@ -65,12 +65,12 @@ export default {
 .player {
     z-index: 20;
     position: absolute;
-    width: 79%;
-    height: 80%;
+    width: 800px;
+    height: 450px;
     position: absolute;
     left: 50%;
     top: 24%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) scale(1.25, 1.25);
 }
 .right{
     position: absolute;
@@ -130,9 +130,14 @@ export default {
         display: none;
     }
     .player {
-        width: 90%;
-        height: 50%;
         top: 26%;
+        transform: translate(-50%,-50%) scale(.75, .75);
     }
+}
+//mobile only styling (excludes ipad)
+@include until (768px) {
+  .player {
+    transform: translate(-50%,-50%) scale(.4, .4);
+  }
 }
 </style>
