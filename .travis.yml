@@ -9,9 +9,10 @@ jobs:
     - stage: "Lint, Test and Build"
     - script: yarn lint && yarn test && yarn generate
     - stage: "Staging"
-    - script: yarn generate:prod
+    - script: yarn generate:prod && ls -la;
       deploy: 
         provider: firebase
+        local_dir: dist
         skip_cleanup: true
         token:
           secure: $FIREBASE_TOKEN

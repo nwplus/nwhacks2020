@@ -4,7 +4,7 @@
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
-        <Bulletin />
+        <Video />
         <WhyJoin id="about" />
         <Events id="events" :items="events" />
         <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
@@ -26,10 +26,10 @@ import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
-import Bulletin from '~/components/Bulletin.vue'
+import Video from '~/components/Video.vue'
 export default {
   components: {
-    Bulletin,
+    Video,
     NavBar,
     Intro,
     Outro,
