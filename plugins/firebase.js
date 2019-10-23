@@ -31,10 +31,13 @@ const fireDb = {
     return (await ref.get()).docs.map(doc => doc.data())
   },
   getImageUrl: async (imageref) => {
-    const image = storage.ref(`${WebDocument}/${imageref}`)
-    const url = await image.getDownloadURL()
-    return url
-  }
+    try {
+      const image = storage.ref(`${WebDocument}/${imageref}`)
+      const url = await image.getDownloadURL()
+      return url
+    } catch (e) {
+      return ''
+    }
 }
 
 export default fireDb
