@@ -57,6 +57,11 @@ export default {
     school: {
       required
     },
+    schoolother: {
+      required: requiredIf(function (hacker) {
+        return hacker.school === 'Other'
+      })
+    },
     major: {
       required
     },
