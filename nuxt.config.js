@@ -1,9 +1,9 @@
-import pkg from './package';
+import pkg from './package'
 
 // Handles production env variables when building (These can be public)
 const envVars =
   process.env.DEPLOY_ENV === 'GH_PAGES' ||
-  process.env.DEPLOY_ENV === 'PRODUCTION'
+    process.env.DEPLOY_ENV === 'PRODUCTION'
     ? {
       env: {
         FIREBASE_API_KEY: 'AIzaSyCBkQHeikIsiYZ2yOHiqH_mGJKDWMDU500',
@@ -15,13 +15,13 @@ const envVars =
         RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
         WEBSITE_NAME: 'LHD_2020',
         mailingListUrl:
-            'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
+          'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
       }
     }
     : {
       env: {
         mailingListUrl:
-            'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+          'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
       }
     }
 
