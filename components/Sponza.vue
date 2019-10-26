@@ -1,8 +1,9 @@
 <template>
   <div class="sponza">
-    <h2 style="margin-bottom: 30px;">
+    <!-- <h2 style="margin-bottom: 30px;">
       Sponsors
-    </h2>
+    </h2> -->
+    <img src="~/assets/Sponsors.svg" style="margin-top: 50px; margin-bottom: 30px;" title="Become a Sponsor" url="mailto:logistics@nwplus.io" is-wide="true">
     <br>
     <!--  -->
     <div id="sponsors-list" :class="is-flex">
@@ -79,16 +80,18 @@
       </div>
     </div>
     <!--  -->
-    <Button style="margin-top: 50px;" title="Become a Sponsor" url="mailto:logistics@nwplus.io" is-wide="true" />
+    <a href="mailto:logistics@nwplus.io">
+      <img src="~/assets/ButtonSponsor.svg" style="margin-top: 50px;" title="Become a Sponsor" url="mailto:logistics@nwplus.io" is-wide="true">
+    </a>
   </div>
 </template>
 
 <script>
-import Button from '~/components/Button.vue'
+// import Button from '~/components/Button.vue'
 export default {
-  components: {
-    Button
-  },
+  // components: {
+  //   Button
+  // },
   props: {
     items: {
       type: Array,
