@@ -1,10 +1,6 @@
 <template>
   <div class="sponza">
-    <!-- <h2 style="margin-bottom: 30px;">
-      Sponsors
-    </h2> -->
-    <img src="~/assets/Sponsors.svg" style="margin-top: 50px; margin-bottom: 30px;" title="Become a Sponsor" is-wide="true">
-    <p class="video-title">
+    <p class="sponsor-title">
       Sponsor
     </p>
     <br>
@@ -83,6 +79,8 @@
       </div>
     </div>
     <!--  -->
+    <img src="~/assets/ScienceWorldFooter.svg" style="margin-top: 50px;" title="Footer image" is-wide="true">
+    <br>
     <a href="mailto:logistics@nwplus.io">
       <img src="~/assets/ButtonSponsor.svg" style="margin-top: 50px;" title="Become a Sponsor" is-wide="true">
     </a>
@@ -146,7 +144,7 @@ h2 {
     color: transparent;
     -webkit-text-fill-color: transparent;
     background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
-    margin-bottom: 10%;
+    margin-bottom: 20px;
 }
 .sponza {
   margin-top: 5%;
