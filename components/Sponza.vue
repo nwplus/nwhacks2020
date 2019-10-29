@@ -3,7 +3,10 @@
     <!-- <h2 style="margin-bottom: 30px;">
       Sponsors
     </h2> -->
-    <img src="~/assets/Sponsors.svg" style="margin-top: 50px; margin-bottom: 30px;" title="Become a Sponsor" url="mailto:logistics@nwplus.io" is-wide="true">
+    <img src="~/assets/Sponsors.svg" style="margin-top: 50px; margin-bottom: 30px;" title="Become a Sponsor" is-wide="true">
+    <p class="video-title">
+      Sponsor
+    </p>
     <br>
     <!--  -->
     <div id="sponsors-list" :class="is-flex">
@@ -11,7 +14,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'tera'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank">
+              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
                 <img class="tera" :src="item.imageURL" :alt="item.name">
               </a>
             </div>
@@ -26,7 +29,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'giga'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank">
+              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
                 <img class="giga" :src="item.imageURL" :alt="item.name">
               </a>
             </div>
@@ -41,7 +44,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'mega'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank">
+              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
                 <img class="mega" :src="item.imageURL" :alt="item.name">
               </a>
             </div>
@@ -56,7 +59,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'kilo'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank">
+              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
                 <img class="kilo" :src="item.imageURL" :alt="item.name">
               </a>
             </div>
@@ -71,7 +74,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'in-kind'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank">
+              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
                 <img class="in-kind" :src="item.imageURL" :alt="item.name">
               </a>
             </div>
@@ -81,17 +84,13 @@
     </div>
     <!--  -->
     <a href="mailto:logistics@nwplus.io">
-      <img src="~/assets/ButtonSponsor.svg" style="margin-top: 50px;" title="Become a Sponsor" url="mailto:logistics@nwplus.io" is-wide="true">
+      <img src="~/assets/ButtonSponsor.svg" style="margin-top: 50px;" title="Become a Sponsor" is-wide="true">
     </a>
   </div>
 </template>
 
 <script>
-// import Button from '~/components/Button.vue'
 export default {
-  // components: {
-  //   Button
-  // },
   props: {
     items: {
       type: Array,
@@ -136,6 +135,18 @@ h2 {
   font-family: $heading-font;
   font-size: 48px;
   line-height: 60px;
+}
+.sponsor-title {
+    font-family: Apercu Pro;
+    font-size: 36px;
+    line-height: 37px;
+    letter-spacing: 0.05em;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
+    margin-bottom: 10%;
 }
 .sponza {
   margin-top: 5%;
