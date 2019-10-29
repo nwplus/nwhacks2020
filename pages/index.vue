@@ -8,7 +8,7 @@
         <WhyJoin id="about" />
         <Events id="events" :items="events" />
         <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
-        <Sponza id="sponza" />
+        <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
         <Outro id="contact" :text="outro" />
       </div>
     </section>
@@ -58,7 +58,7 @@ export default {
     )).filter(sponsor => sponsor.imageURL !== '')
     return {
       info: data.WelcomeText,
-      Sponsors: populatedSponsors,
+      sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
       events: listOfEvents,
