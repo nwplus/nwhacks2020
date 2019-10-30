@@ -114,7 +114,7 @@ export default {
   font-size: 20px;
 }
 //Desktop CSS:
-.accordion {
+button.accordion {
   // background-color: #fff;
   background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
   // color: #58C7BE;
@@ -136,11 +136,21 @@ export default {
   font-size: 18px;
   font-family: "Apercu Pro";
 }
-.accordion.active {
+
+button.accordion:after {
+  content: url('~@/assets/arrow.svg');
+  float: right;
+}
+
+button.accordion.active {
   border-bottom: none;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   margin-bottom: 0px;
+}
+
+button.accordion.active:after {
+  content: url('~@/assets/upside-down-arrow.svg');
 }
 .panel {
   padding: 18px;
