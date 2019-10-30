@@ -1,6 +1,6 @@
 <template>
   <div style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="FAQFlag" />
+    <NavBar id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
