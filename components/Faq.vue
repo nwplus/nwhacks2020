@@ -10,51 +10,32 @@
         <p class="label">
           🤔 General
         </p>
-        <div
-          v-for="item in items"
-          :key="item.question"
-        >
-          <div
-            v-if="item.selected && item.category == 'General'"
-          >
-            <button
-              class="accordion"
-              @click="openSesame"
-            >
+        <div v-for="item in items" :key="`General-${item.question}`">
+          <div v-if="item.selected && item.category == 'General'">
+            <button class="accordion" @click="openSesame">
               {{ item.question }}
             </button>
             <div class="panel">
-              <p>
-                {{ item.answer }}
-              </p>
+              <p>{{ item.answer }}</p>
             </div>
           </div>
         </div>
         <!--  -->
       </div>
-      <!-- Left column end -->      <!-- Right column begin -->
+      <!-- Left column end -->
+      <!-- Right column begin -->
       <div class="column is-half is-multiline">
         <!-- logistics start -->
         <p class="label">
           💻 Teams &amp; Projects
         </p>
-        <div
-          v-for="item in items"
-          :key="item.question"
-        >
-          <div
-            v-if="item.selected && item.category == 'Teams'"
-          >
-            <button
-              class="accordion"
-              @click="openSesame"
-            >
+        <div v-for="item in items" :key="`Teams-${item.question}`">
+          <div v-if="item.selected && item.category == 'Teams'">
+            <button class="accordion" @click="openSesame">
               {{ item.question }}
             </button>
             <div class="panel">
-              <p>
-                {{ item.answer }}
-              </p>
+              <p>{{ item.answer }}</p>
             </div>
           </div>
         </div>
@@ -63,23 +44,13 @@
         <p class="label">
           🎒 Logistics
         </p>
-        <div
-          v-for="item in items"
-          :key="item.question"
-        >
-          <div
-            v-if="item.selected && item.category == 'Logistics'"
-          >
-            <button
-              class="accordion"
-              @click="openSesame"
-            >
+        <div v-for="item in items" :key="`Logistics-${item.question}`">
+          <div v-if="item.selected && item.category == 'Logistics'">
+            <button class="accordion" @click="openSesame">
               {{ item.question }}
             </button>
             <div class="panel">
-              <p>
-                {{ item.answer }}
-              </p>
+              <p>{{ item.answer }}</p>
             </div>
           </div>
         </div>
@@ -118,39 +89,38 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Apercu+Pro&display=swap");
 
 .container {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 .faq {
   margin-top: 5%;
 }
 .faq-title {
-    font-family: Apercu Pro;
-    font-size: 36px;
-    line-height: 37px;
-    letter-spacing: 0.05em;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
-    margin-bottom: 3%;
-    text-align: center;
-
+  font-family: Apercu Pro;
+  font-size: 36px;
+  line-height: 37px;
+  letter-spacing: 0.05em;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
+  margin-bottom: 3%;
+  text-align: center;
 }
 .label {
-    font-family: "Apercu Pro";
-    color: #F9C2E3;
-    font-size: 20px;
+  font-family: "Apercu Pro";
+  color: #06c1c0;
+  font-size: 20px;
 }
 //Desktop CSS:
 .accordion {
   // background-color: #fff;
-  background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
+  background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
   // color: #58C7BE;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-    // -webkit-text-stroke: 1px rgb(0, 0, 0);
+  // -webkit-text-stroke: 1px rgb(0, 0, 0);
 
   cursor: pointer;
   padding: 18px;
@@ -159,31 +129,29 @@ export default {
   margin: 10px auto;
   text-align: left;
   outline: none;
-  border: 1.3px solid #425E96;
+  border: 2px solid #06c1c0;
   // border-width: 3px;
-  border: 5px solid;
   // border-image: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
   border-radius: 5px;
   font-size: 18px;
   font-family: "Apercu Pro";
 }
 .accordion.active {
-    border-bottom: none;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    margin-bottom: 0px;
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-bottom: 0px;
 }
 .panel {
   padding: 18px;
   padding-top: 0;
   // background-color: white;
-    background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
+  background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: none;
   overflow: hidden;
-  border: 5px solid #000;
-  // border: 1.3px solid #425E96;
+  border: 2px solid #06c1c0;
   border-top: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -192,6 +160,6 @@ export default {
   width: 100%;
 }
 //Mobile CSS:
-@include until ($desktop) {
-  }
+@include until($desktop) {
+}
 </style>
