@@ -145,8 +145,13 @@ export default {
 }
 //Desktop CSS:
 .accordion {
-  background-color: #fff;
-  color: #425E96;
+  // background-color: #fff;
+  background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
+  // color: #58C7BE;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+    // -webkit-text-stroke: 1px rgb(0, 0, 0);
+
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -155,6 +160,9 @@ export default {
   text-align: left;
   outline: none;
   border: 1.3px solid #425E96;
+  // border-width: 3px;
+  border: 5px solid;
+  // border-image: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
   border-radius: 5px;
   font-size: 18px;
   font-family: "Apercu Pro";
@@ -168,10 +176,14 @@ export default {
 .panel {
   padding: 18px;
   padding-top: 0;
-  background-color: white;
+  // background-color: white;
+    background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: none;
   overflow: hidden;
-  border: 1.3px solid #425E96;
+  border: 5px solid #000;
+  // border: 1.3px solid #425E96;
   border-top: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
