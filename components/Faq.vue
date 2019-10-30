@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">
+    <h1 class="faq-title">
       Frequently Asked Questions
     </h1>
     <div class="columns">
@@ -8,14 +8,14 @@
       <div class="column is-half is-multiline">
         <!--  -->
         <p class="label">
-          General
+          🤔 General
         </p>
         <div
           v-for="item in items"
           :key="item.question"
         >
           <div
-            v-if="item.selected && item.category == 'general'"
+            v-if="item.selected && item.category == 'General'"
           >
             <button
               class="accordion"
@@ -36,14 +36,14 @@
       <div class="column is-half is-multiline">
         <!-- logistics start -->
         <p class="label">
-          Logistics
+          💻 Teams &amp; Projects
         </p>
         <div
           v-for="item in items"
           :key="item.question"
         >
           <div
-            v-if="item.selected && item.category == 'logistics'"
+            v-if="item.selected && item.category == 'Teams'"
           >
             <button
               class="accordion"
@@ -61,14 +61,14 @@
         <!-- logistics end -->
         <!-- logistics 2 start -->
         <p class="label">
-          Logistics 2
+          🎒 Logistics
         </p>
         <div
           v-for="item in items"
           :key="item.question"
         >
           <div
-            v-if="item.selected && item.category == 'logistics'"
+            v-if="item.selected && item.category == 'Logistics'"
           >
             <button
               class="accordion"
@@ -92,10 +92,11 @@
 
 <script>
 export default {
-  props: { items: {
-    type: Array,
-    required: true
-  }
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
   },
   methods: {
     openSesame: (e) => {
@@ -120,15 +121,26 @@ export default {
     width: 90%;
     margin: 0 auto;
 }
-.title {
+.faq {
+  margin-top: 5%;
+}
+.faq-title {
+    font-family: Apercu Pro;
+    font-size: 36px;
+    line-height: 37px;
+    letter-spacing: 0.05em;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
+    margin-bottom: 3%;
     text-align: center;
-    font-family: "Caveat Brush";
-    font-size: 48px;
-    color: #425E96;
+
 }
 .label {
     font-family: "Apercu Pro";
-    color: #FF7676;
+    color: #F9C2E3;
     font-size: 20px;
 }
 //Desktop CSS:
