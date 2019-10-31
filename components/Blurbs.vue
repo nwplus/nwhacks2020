@@ -1,6 +1,6 @@
 <template>
   <div class="mainContainer">
-    <div v-for="item in sortedEvents" :key="item.order">
+    <div v-for="item in sortedBlurbs" :key="item.order">
       <div class="columns white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
           v-if="item.title === 'Learn Day'"
@@ -19,7 +19,7 @@
         >
         <div class="column allEvents">
           <h3 class="title">
-            {{ item.title }}
+            {{ item.heading }}
           </h3>
           <br>
           <p class="date">
@@ -28,8 +28,18 @@
           <p class="blurb">
             {{ item.blurb || item.text }}
           </p>
-          <Button :disabled="!item.signupEnabled" title="Sign up" :url="item.signupLink || '#'" class="buttonLabel" />
-          <Button :disabled="!item.signupEnabled" title="Event page" :url="item.eventLink || '#'" class="buttonLabel" />
+          <Button
+            :disabled="!item.signupEnabled"
+            title="Sign up"
+            :url="item.signupLink || '#'"
+            class="buttonLabel"
+          />
+          <Button
+            :disabled="!item.signupEnabled"
+            title="Event page"
+            :url="item.eventLink || '#'"
+            class="buttonLabel"
+          />
         </div>
       </div>
     </div>
@@ -50,7 +60,7 @@ export default {
     }
   },
   computed: {
-    sortedEvents: function () {
+    sortedBlurbs: function () {
       return orderBy(this.items, 'order')
     }
   },

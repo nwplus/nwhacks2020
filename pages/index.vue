@@ -6,7 +6,7 @@
         <Intro id="intro" :intro="intro" />
         <Video />
         <WhyJoin id="about" />
-        <Events id="events" :items="events" />
+        <Blurbs id="blurbs" :items="blurbs" />
         <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
         <Outro id="contact" :text="outro" />
@@ -24,7 +24,7 @@ import Sponza from '~/components/Sponza.vue'
 import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
-import Events from '~/components/Events.vue'
+import Blurbs from '~/components/Blurbs.vue'
 import FAQ from '~/components/Faq.vue'
 import Video from '~/components/Video.vue'
 export default {
@@ -35,12 +35,12 @@ export default {
     Outro,
     Footer,
     Sponza,
-    Events,
+    Blurbs,
     FAQ
   },
   asyncData: async () => {
     const Sponsors = 'Sponsors'
-    const Events = 'Events'
+    const Blurbs = 'Blurbs'
     const FAQ = 'Faq'
     // functions
     const getSponsorImage = async (sponsor) => {
@@ -50,7 +50,7 @@ export default {
     // data
     const data = await fireDb.get()
     const listOfSponsors = await fireDb.get(Sponsors)
-    const listOfEvents = await fireDb.get(Events)
+    const listOfBlurbs = await fireDb.get(Blurbs)
     const FaqQuestions = await fireDb.get(FAQ)
     // Populate sponsors with their image urls
     const populatedSponsors = (await Promise.all(
@@ -61,7 +61,7 @@ export default {
       sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
-      events: listOfEvents,
+      blurbs: listOfBlurbs,
       intro: {
         text: data.IntroText,
         introButtonEnabled: data.IntroButtonEnabled,
