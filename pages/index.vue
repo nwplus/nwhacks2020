@@ -1,13 +1,13 @@
 <template>
   <div style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="FAQFlag" />
+    <NavBar id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
         <Video />
         <WhyJoin id="about" />
         <Events id="events" :items="events" />
-        <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
+        <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
         <Outro id="contact" :text="outro" />
       </div>
