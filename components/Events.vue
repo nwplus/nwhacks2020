@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
     <div v-for="item in sortedEvents" :key="item.order">
-      <div class="columns white singleEvent" :class="{ flipped: isFlipped(item) }">
+      <div class="columns is-vcentered white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
           v-if="item.title === 'Connect, Collaborate, and Create'"
           id="about-graphic"
@@ -70,9 +70,19 @@ $body-font: "Apercu Pro", sans-serif;
   margin: 7%;
   // max-height: 350px;
   @include until($tablet) {
-    margin: 30px;
+    img {
+      margin: 0;
+    }
+    h2 {
+      margin-top: 15px;
+    }
   }
   @include from($tablet) {
+    margin-top: 0;
+    h2,
+    p {
+      margin: 0;
+    }
     #smiley-graphic {
       transform: translateY(130px) scale(0.8);
     }
@@ -86,7 +96,10 @@ $body-font: "Apercu Pro", sans-serif;
     h2,
     p {
       text-align: right;
+      margin: 0;
     }
+    margin-bottom: 0;
+    max-height: 500px;
     #about-graphic {
       transform: translateY(-170px);
     }
@@ -117,6 +130,6 @@ $body-font: "Apercu Pro", sans-serif;
   font-family: $body-font;
   font-size: 20px;
   line-height: 28px;
-  margin: 25px 0;
+  margin: 0;
 }
 </style>
