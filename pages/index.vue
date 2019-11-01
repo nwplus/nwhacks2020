@@ -9,6 +9,7 @@
         <Events id="events" :items="events" />
         <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
+        <TeamSection id="teamSection" />
       </div>
     </section>
     <Footer :text="footer" />
@@ -25,8 +26,10 @@ import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
 import Video from '~/components/Video.vue'
+import TeamSection from '../components/TeamSection'
 export default {
   components: {
+    TeamSection,
     Video,
     NavBar,
     Intro,
