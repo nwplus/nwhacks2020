@@ -3,6 +3,6 @@ interface FAQ {
     question: string,
     //Answer to the question
     answer: string,
-    //Catagory for this faq question (currently unused)
-    catagory: string
+    //Category for this faq question (currently unused)
+    category: string
 }
