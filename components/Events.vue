@@ -4,11 +4,13 @@
       <div class="columns white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
           v-if="item.title === 'Connect, Collaborate, and Create'"
+          id="about-graphic"
           class="column imgResize graphic"
           src="../assets/about_illustration.svg"
         >
         <img
           v-else-if="isWestCoast(item.title)"
+          id="smiley-graphic"
           class="column imgResize graphic"
           src="../assets/smiley_illustration.svg"
         >
@@ -65,16 +67,29 @@ $heading-font: "Apercu Pro", sans-serif;
 $body-font: "Apercu Pro", sans-serif;
 
 #events .singleEvent {
-  margin: 0 5% 130px 12%;
-  @include until($desktop) {
+  margin: 7%;
+  // max-height: 350px;
+  @include until($tablet) {
     margin: 30px;
+  }
+  @include from($tablet) {
+    #smiley-graphic {
+      transform: translateY(130px) scale(0.8);
+    }
   }
 }
 
 #events .singleEvent.flipped {
-  @include from($desktop) {
+  @include from($tablet) {
     display: flex;
     flex-direction: row-reverse;
+    h2,
+    p {
+      text-align: right;
+    }
+    #about-graphic {
+      transform: translateY(-170px);
+    }
   }
 }
 
@@ -83,8 +98,8 @@ $body-font: "Apercu Pro", sans-serif;
   font-family: $heading-font;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
-  line-height: 60px;
+  font-size: 36px;
+  line-height: 37px;
   margin-bottom: 0;
   letter-spacing: 0.05em;
 }
