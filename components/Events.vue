@@ -16,9 +16,9 @@
           BIG F!
         </div>
         <div class="column allEvents">
-          <h3 class="title">
+          <h2 class="title">
             {{ item.title }}
-          </h3>
+          </h2>
           <br>
           <p class="events">
             {{ item.blurb }}
@@ -46,7 +46,7 @@ export default {
   methods: {
     isFlipped(item) {
       console.log('isFlipped', item)
-      return item.title === 'Learn Day' || item.title === 'Share Day'
+      return item.title === 'Connect, Collaborate, and Create'
     },
     isWestCoast(title) {
       console.log('isWestCoast', title)
@@ -58,9 +58,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
-$dark-blue: #425e96;
+$heading-color: #f9c2e3;
+$body-color: #69dde1;
 $red: #ff7676;
-$heading-font: "Caveat Brush";
+$heading-font: "Apercu Pro", sans-serif;
 $body-font: "Apercu Pro", sans-serif;
 
 #events .singleEvent {
@@ -78,13 +79,14 @@ $body-font: "Apercu Pro", sans-serif;
 }
 
 .allEvents .title {
-  color: $dark-blue;
+  color: $heading-color;
   font-family: $heading-font;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 48px;
   line-height: 60px;
   margin-bottom: 0;
+  letter-spacing: 0.05em;
 }
 
 .date {
@@ -96,10 +98,10 @@ $body-font: "Apercu Pro", sans-serif;
 }
 
 .events {
-  color: $dark-blue;
+  color: $body-color;
   font-family: $body-font;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 20px;
+  line-height: 28px;
   margin: 25px 0;
 }
 </style>
