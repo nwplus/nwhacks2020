@@ -1,6 +1,6 @@
 <template>
   <div class="mainContainer">
-    <div v-for="item in sortedBlurbs" :key="item.order">
+    <div v-for="item in sortedEvents" :key="item.order">
       <div class="columns white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
           v-if="item.title === 'Learn Day'"
@@ -26,20 +26,8 @@
             {{ item.date }}
           </p>
           <p class="blurb">
-            {{ item.blurb || item.text }}
+            {{ item.body }}
           </p>
-          <Button
-            :disabled="!item.signupEnabled"
-            title="Sign up"
-            :url="item.signupLink || '#'"
-            class="buttonLabel"
-          />
-          <Button
-            :disabled="!item.signupEnabled"
-            title="Event page"
-            :url="item.eventLink || '#'"
-            class="buttonLabel"
-          />
         </div>
       </div>
     </div>
@@ -48,11 +36,7 @@
 
 <script>
 import orderBy from 'lodash.orderby'
-import Button from '~/components/Button.vue'
 export default {
-  components: {
-    Button
-  },
   props: {
     items: {
       type: Array,
@@ -60,7 +44,7 @@ export default {
     }
   },
   computed: {
-    sortedBlurbs: function () {
+    sortedEvents: function () {
       return orderBy(this.items, 'order')
     }
   },
