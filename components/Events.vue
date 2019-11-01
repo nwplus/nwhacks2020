@@ -19,14 +19,11 @@
         >
         <div class="column allEvents">
           <h3 class="title">
-            {{ item.heading }}
+            {{ item.title }}
           </h3>
           <br>
-          <p class="date">
-            {{ item.date }}
-          </p>
           <p class="blurb">
-            {{ item.body }}
+            {{ item.blurb }}
           </p>
         </div>
       </div>

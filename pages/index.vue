@@ -18,15 +18,15 @@
 </template>
 
 <script>
-import NavBar from "~/components/NavBar.vue";
-import Intro from "~/components/Intro.vue";
-import Sponza from "~/components/Sponza.vue";
-import Outro from "~/components/Outro.vue";
-import Footer from "~/components/Footer.vue";
-import fireDb from "~/plugins/firebase.js";
-import Events from "~/components/Events.vue";
-import FAQ from "~/components/Faq.vue";
-import Video from "~/components/Video.vue";
+import NavBar from '~/components/NavBar.vue'
+import Intro from '~/components/Intro.vue'
+import Sponza from '~/components/Sponza.vue'
+import Outro from '~/components/Outro.vue'
+import Footer from '~/components/Footer.vue'
+import fireDb from '~/plugins/firebase.js'
+import Events from '~/components/Events.vue'
+import FAQ from '~/components/Faq.vue'
+import Video from '~/components/Video.vue'
 export default {
   components: {
     Video,
@@ -39,23 +39,23 @@ export default {
     FAQ
   },
   asyncData: async () => {
-    const Sponsors = "Sponsors";
-    const Events = "Events";
-    const FAQ = "Faq";
+    const Sponsors = 'Sponsors'
+    const Events = 'Events'
+    const FAQ = 'Faq'
     // functions
-    const getSponsorImage = async sponsor => {
-      sponsor.imageURL = await fireDb.getImageUrl(sponsor.image);
-      return sponsor;
-    };
+    const getSponsorImage = async (sponsor) => {
+      sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
+      return sponsor
+    }
     // data
-    const data = await fireDb.get();
-    const listOfSponsors = await fireDb.get(Sponsors);
-    const listOfEvents = await fireDb.get(Events);
-    const FaqQuestions = await fireDb.get(FAQ);
+    const data = await fireDb.get()
+    const listOfSponsors = await fireDb.get(Sponsors)
+    const listOfEvents = await fireDb.get(Events)
+    const FaqQuestions = await fireDb.get(FAQ)
     // Populate sponsors with their image urls
     const populatedSponsors = (await Promise.all(
       listOfSponsors.map(sponsor => getSponsorImage(sponsor))
-    )).filter(sponsor => sponsor.imageURL !== "");
+    )).filter(sponsor => sponsor.imageURL !== '')
     return {
       info: data.WelcomeText,
       sponsors: populatedSponsors,
@@ -70,9 +70,9 @@ export default {
       },
       FAQs: FaqQuestions,
       ...data.featureFlags
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
