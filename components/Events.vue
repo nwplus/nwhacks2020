@@ -3,26 +3,24 @@
     <div v-for="item in sortedEvents" :key="item.order">
       <div class="columns white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
-          v-if="item.title === 'Learn Day'"
+          v-if="item.title === 'Connect, Collaborate, and Create'"
           class="column imgResize graphic"
-          src="../assets/learn-deer-graphic.svg"
+          src="../assets/about_illustration.svg"
         >
         <img
-          v-else-if="item.title === 'Build Day'"
+          v-else-if="isWestCoast(item.title)"
           class="column imgResize graphic"
-          src="../assets/build-beaver-graphic.svg"
+          src="../assets/smiley_illustration.svg"
         >
-        <img
-          v-else-if="item.title === 'Share Day'"
-          class="column imgResize graphic"
-          src="../assets/share-bear-graphic.svg"
-        >
+        <div v-else>
+          BIG F!
+        </div>
         <div class="column allEvents">
           <h3 class="title">
             {{ item.title }}
           </h3>
           <br>
-          <p class="blurb">
+          <p class="events">
             {{ item.blurb }}
           </p>
         </div>
@@ -49,6 +47,10 @@ export default {
     isFlipped(item) {
       console.log('isFlipped', item)
       return item.title === 'Learn Day' || item.title === 'Share Day'
+    },
+    isWestCoast(title) {
+      console.log('isWestCoast', title)
+      return title === '"WEST COAST" == "BEST COAST"'
     }
   }
 }
@@ -93,7 +95,7 @@ $body-font: "Apercu Pro", sans-serif;
   font-weight: bold;
 }
 
-.blurb {
+.events {
   color: $dark-blue;
   font-family: $body-font;
   font-size: 18px;
