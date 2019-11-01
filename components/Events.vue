@@ -1,5 +1,9 @@
 <template>
   <div class="mainContainer">
+    <div id="focus">
+      <h1>nwHacks 2020</h1>
+      <p>Western Canada's Largest Hackathon</p>
+    </div>
     <div v-for="item in sortedEvents" :key="item.order">
       <div class="columns is-vcentered white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
@@ -14,9 +18,6 @@
           class="column imgResize graphic"
           src="../assets/smiley_illustration.svg"
         >
-        <div v-else>
-          BIG F!
-        </div>
         <div class="column allEvents">
           <h2 class="title">
             {{ item.title }}
@@ -65,10 +66,41 @@ $body-color: #69dde1;
 $red: #ff7676;
 $heading-font: "Apercu Pro", sans-serif;
 $body-font: "Apercu Pro", sans-serif;
+#focus {
+  // position: absolute;
+  // border: 2px solid red;
+  // display: inline-flex;
+  h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  h1,
+  p {
+    font-weight: bold;
+    background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p {
+    letter-spacing: 0.05em;
+    font-size: 24px;
+  }
+  @include until($tablet) {
+    h1 {
+      font-size: 36px;
+      line-height: 37px;
+      margin: 5% 5%;
+    }
+    p {
+      line-height: 103.3%;
+      margin: 5% 5%;
+    }
+    text-align: center;
+  }
+}
 
 #events .singleEvent {
   margin: 7%;
-  // max-height: 350px;
   @include until($tablet) {
     img {
       margin: 0;
