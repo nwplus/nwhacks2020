@@ -55,10 +55,13 @@
         href="mailto:hello@nwplus.io"
       >Email Us</a>
       <a
-        href="#"
-      >Code of Conduct</a>
+        href="http://mlh.io/code-of-conduct"
+        target="_blank"
+        rel="noopener"
+      >
+        Code of Conduct</a>
       <a
-        href="#"
+        href="mailto:hello@nwplus.io?subject=Sponsorship"
       >Become a Sponsor</a>
     </p>
     <p
