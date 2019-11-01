@@ -79,10 +79,8 @@
       </div>
     </div>
     <!--  -->
-    <img src="~/assets/ScienceWorldFooter.svg" style="margin-top: 50px;" title="Footer image" is-wide="true">
-    <br>
     <a href="mailto:logistics@nwplus.io">
-      <img src="~/assets/ButtonSponsor.svg" style="margin-top: 50px;" title="Become a Sponsor" is-wide="true">
+      <img src="~/assets/ButtonSponsor.svg" style="margin-top: 15px;" title="Become a Sponsor" is-wide="true">
     </a>
   </div>
 </template>
