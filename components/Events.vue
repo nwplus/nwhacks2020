@@ -14,7 +14,7 @@
           class="column imgResize graphic"
           src="../assets/smiley_illustration.svg"
         >
-        <div class="column allEvents">
+        <div class="column allEvents" :class="{ flipped: isFlipped(item) }">
           <div v-if="item.title === 'Connect, Collaborate, and Create'" id="focus">
             <h1>nwHacks 2020</h1>
             <p>Western Canada's Largest Hackathon</p>
@@ -77,6 +77,8 @@ $button-text-color: #262662;
   justify-content: right;
 }
 #focus {
+  text-align: right;
+  margin-bottom: 20px;
   button {
     background: linear-gradient(180deg, #7dc8de 50.1%, #643198 164.06%);
     border-radius: 11px;
@@ -96,8 +98,6 @@ $button-text-color: #262662;
       margin: 34px 11px;
     }
   }
-  text-align: right;
-  margin-bottom: 20px;
   h1 {
     font-size: 48px;
     line-height: 60px;
@@ -105,7 +105,7 @@ $button-text-color: #262662;
   h1,
   p {
     font-weight: bold;
-    background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
+    background: -webkit-linear-gradient(270deg, #91e9ee 0%, #06c1c0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -124,6 +124,7 @@ $button-text-color: #262662;
       margin: 5% 5%;
     }
     text-align: center;
+    margin-bottom: 50px;
   }
 }
 
@@ -164,6 +165,18 @@ $button-text-color: #262662;
     #about-graphic {
       transform: translateY(-170px);
     }
+  }
+}
+.allEvents {
+  @include from($tablet) {
+    margin-left: 47px;
+  }
+}
+
+.allEvents.flipped {
+  @include from($tablet) {
+    margin-right: 47px;
+    margin-left: 0px;
   }
 }
 
