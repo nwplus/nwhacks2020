@@ -1,564 +1,12 @@
 <template>
   <div id="teamSection">
     <ul id="grid" class="clear">
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
-        </div>
-      </li>
-      <li>
-        <div class="hexagonOuter">
-          <div class="hexagonInner" />
+      <li v-for="index in 112" :key="index" class="container">
+        <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
+        <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
+          <a href="https://www.linkedin.com/in/austinkobayashi/" class="icon" title="LinkedIn">
+            <img class="linkedin" src="/team-section/linkedin.svg">
+          </a>
         </div>
       </li>
     </ul>
@@ -567,7 +15,58 @@
 
 <script>
 export default {
-  name: 'TeamSection'
+  name: 'TeamSection',
+  data() {
+    return {
+      imageIndexes: [6,
+        19, 20, 22, 23, 24,
+        33, 34, 35, 36, 37, 39,
+        46, 47, 49, 50, 51, 52, 53,
+        60, 61, 62, 63, 64, 65, 66, 67,
+        74, 76, 77, 78, 79, 80,
+        89, 90, 91, 92, 93, 94 ],
+      linkedins: {
+        6: '',
+        19: '',
+        20: '',
+        22: '',
+        23: '',
+        24: '',
+        33: '',
+        34: '',
+        35: '',
+        36: '',
+        37: '',
+        39: '',
+        46: '',
+        47: '',
+        49: '',
+        50: '',
+        51: '',
+        52: '',
+        53: '',
+        60: '',
+        61: '',
+        62: '',
+        63: '',
+        64: '',
+        65: '',
+        66: '',
+        67: '',
+        76: '',
+        77: '',
+        78: '',
+        79: '',
+        80: '',
+        89: '',
+        90: '',
+        91: '',
+        92: '',
+        93: '',
+        94: ''
+      }
+    }
+  }
 }
 </script>
 
@@ -578,8 +77,8 @@ export default {
 
 #grid {
   position: relative;
-  width: 60%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 5% 0 0 5%;
   padding: 0;
 }
 
@@ -593,34 +92,14 @@ export default {
   list-style-type: none;
   position: relative;
   float: left;
-  width: 6.96428571429%;
-  padding: 0 0 8.04190036292% 0;
-  -o-transform: rotate(-90deg) skewY(30deg);
-  -moz-transform: rotate(-90deg) skewY(30deg);
-  -webkit-transform: rotate(-90deg) skewY(30deg);
-  -ms-transform: rotate(-90deg) skewY(30deg);
-  transform: rotate(-90deg) skewY(30deg);
-  background: #fd005f;
-  overflow: hidden;
-  visibility: hidden;
+  width: 8.96428571429%;
+  margin-right: -2%;
+  margin-bottom: -0.45%;
 }
 
-#grid li .hexagonInner {
-  position: absolute;
-  top: 0;
-  left: 0;
+img {
   width: 100%;
   height: 100%;
-  background: #fdbf00;
-  -o-transform: skewY(-30deg) rotate(60deg);
-  -moz-transform: skewY(-30deg) rotate(60deg);
-  -webkit-transform: skewY(-30deg) rotate(60deg);
-  -ms-transform: skewY(-30deg) rotate(60deg);
-  transform: skewY(-30deg) rotate(60deg);
-}
-
-#grid li * {
-  visibility: visible;
 }
 
 #grid li:nth-child(14n+2),
@@ -630,25 +109,30 @@ export default {
 #grid li:nth-child(14n+10),
 #grid li:nth-child(14n+12),
 #grid li:nth-child(14n+14) {
-  /*margin-top: -6.9285714285%;*/
-  /*margin-bottom: -6.9285714285%;*/
-  -o-transform: translateY(50%) rotate(-90deg) skewY(30deg);
-  -moz-transform: translateY(50%) rotate(-90deg) skewY(30deg);
-  -webkit-transform: translateY(50%) rotate(-90deg) skewY(30deg);
-  -ms-transform: translateY(50%) rotate(-90deg) skewY(30deg);
-  transform: translateY(50%) rotate(-90deg) skewY(30deg);
+  -o-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(47.5%);
 }
 
-#grid li .hexagonInner:hover {
+li:hover .icon {
+  opacity: 100%;
+}
+
+/* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49.5%, -53%);
+  -ms-transform: translate(-51%, -58%);
+  text-align: center;
+  opacity: 0;
   cursor: pointer;
-}
-
-#grid li:nth-child(14n+1) .hexagonInner,
-#grid li:nth-child(14n+2) .hexagonInner,
-#grid li:nth-child(14n+3) .hexagonInner,
-#grid li:nth-child(14n) .hexagonInner,
-#grid li:nth-child(14n-1) .hexagonInner,
-#grid li:nth-child(14n-2) .hexagonInner {
-  background: linear-gradient(180deg, rgba(145, 233, 238, 0.3) 0%, rgba(6, 193, 192, 0.3) 100%);
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -9,11 +9,11 @@
         <Events id="events" :items="events" />
         <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
-        <TeamSection id="teamSection" />
       </div>
     </section>
     <Footer :text="footer" />
     <div class="backgroundBottom" />
+    <TeamSection id="teamSection" />
   </div>
 </template>
 
