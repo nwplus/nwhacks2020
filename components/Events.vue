@@ -86,11 +86,14 @@ $button-text-color: #262662;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    padding: 0 30px;
-    margin: 0 10px;
+    padding: 0 20px;
+    height: 50px;
     @include until($tablet) {
       display: block;
-      margin: 14px auto;
+      margin: 13px auto;
+    }
+    @include from($tablet) {
+      margin: 34px 11px;
     }
   }
   text-align: right;
