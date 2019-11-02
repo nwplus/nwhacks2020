@@ -10,9 +10,12 @@
         </div>
       </li>
     </ul>
-    <p id="teamSectionText">
-      Made with love by nwPlus team
-    </p>
+    <div id="teamSectionFooter">
+      <p id="teamSectionText">
+        Made with love by nwPlus team
+      </p>
+      <img id="mascot" src="/team-section/mascot.svg">
+    </div>
   </div>
 </template>
 
@@ -31,7 +34,7 @@ export default {
       linkedins: {
         6: '',
         19: '',
-        20: '',
+        20: 'https://www.linkedin.com/in/allison-chiang/\n',
         22: '',
         23: '',
         24: 'https://www.linkedin.com/in/cayenne-chen-471087171/',
@@ -76,14 +79,14 @@ export default {
 
 <style scoped>
 #teamSection {
-  margin-bottom: 10%;
+  margin-bottom: 15%;
 }
 
 #grid {
   position: relative;
   width: 90%;
   padding: 0;
-  margin: 5% 0 10% 5%;
+  margin: 5% 0 15% 5%;
 }
 
 .clear:after {
@@ -113,10 +116,10 @@ img {
 #grid li:nth-child(14n+10),
 #grid li:nth-child(14n+12),
 #grid li:nth-child(14n+14) {
-  -o-transform: translateY(50%);
-  -moz-transform: translateY(50%);
-  -webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
+  -o-transform: translateY(47.5%);
+  -moz-transform: translateY(47.5%);
+  -webkit-transform: translateY(47.5%);
+  -ms-transform: translateY(47.5%);
   transform: translateY(47.5%);
 }
 
@@ -132,7 +135,10 @@ li:hover .icon {
   top: 50%;
   left: 50%;
   transform: translate(-49.5%, -53%);
-  -ms-transform: translate(-51%, -58%);
+  -ms-transform: translate(-49.5%, -53%);
+  -o-transform: translate(-49.5%, -53%);
+  -moz-transform: translate(-49.5%, -53%);
+  -webkit-transform: translate(-49.5%, -53%);
   text-align: center;
   opacity: 0;
   cursor: pointer;
@@ -140,8 +146,25 @@ li:hover .icon {
   height: 100%;
 }
 
+#teamSectionFooter {
+  display: inline;
+  width: 100%;
+  text-align: center;
+}
+
 #teamSectionText {
   color: #F9C2E3;
   font-size: 1.5rem;
+}
+
+#mascot {
+  width: 10%;
+  float: right;
+  margin-right: 5%;
+  -o-transform: translateY(-60%);
+  -moz-transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  transform: translateY(-60%);
 }
 </style>
