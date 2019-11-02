@@ -1,6 +1,6 @@
 <template>
   <div style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="FAQFlag" />
+    <NavBar id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
@@ -9,7 +9,6 @@
         <WhyJoin id="about" />
         <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
-        <Outro id="contact" :text="outro" />
       </div>
     </section>
     <Footer :text="footer" />
@@ -21,7 +20,6 @@
 import NavBar from '~/components/NavBar.vue'
 import Intro from '~/components/Intro.vue'
 import Sponza from '~/components/Sponza.vue'
-import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
@@ -32,7 +30,6 @@ export default {
     Video,
     NavBar,
     Intro,
-    Outro,
     Footer,
     Sponza,
     Events,
