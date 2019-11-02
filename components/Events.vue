@@ -1,7 +1,10 @@
 <template>
   <div class="mainContainer">
     <div v-for="item in sortedEvents" :key="item.order">
-      <div class="columns is-vcentered white singleEvent" :class="{ flipped: isFlipped(item) }">
+      <div
+        class="columns is-desktop is-vcentered white singleEvent"
+        :class="{ flipped: isFlipped(item) }"
+      >
         <img
           v-if="item.title === 'Connect, Collaborate, and Create'"
           id="about-graphic"
@@ -88,14 +91,14 @@ $button-text-color: #262662;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 15px;
     height: 50px;
-    @include until($tablet) {
+    @include until($desktop) {
       display: block;
       margin: 13px auto;
     }
-    @include from($tablet) {
-      margin: 34px 11px;
+    @include from($desktop) {
+      margin: 5% 2%;
     }
   }
   h1 {
@@ -113,7 +116,7 @@ $button-text-color: #262662;
     letter-spacing: 0.05em;
     font-size: 24px;
   }
-  @include until($tablet) {
+  @include until($desktop) {
     h1 {
       font-size: 36px;
       line-height: 37px;
@@ -130,29 +133,32 @@ $button-text-color: #262662;
 
 #events .singleEvent {
   margin: 7%;
-  @include until($tablet) {
+  @include until($desktop) {
     img {
-      margin: 0;
+      margin: 0 auto;
     }
     h2 {
-      margin-top: 15px;
+      margin-top: 30px;
       text-align: center;
     }
+    #smiley-graphic {
+      margin-bottom: 30px;
+    }
   }
-  @include from($tablet) {
+  @include from($desktop) {
     margin-top: 0;
     h2,
     p {
       margin: 0;
     }
     #smiley-graphic {
-      transform: translateY(130px) scale(0.8);
+      transform: translateY(100px);
     }
   }
 }
 
 #events .singleEvent.flipped {
-  @include from($tablet) {
+  @include from($desktop) {
     display: flex;
     flex-direction: row-reverse;
     h2,
@@ -160,7 +166,7 @@ $button-text-color: #262662;
       text-align: right;
       margin: 0;
     }
-    margin-bottom: 0;
+    margin-bottom: 76px;
     max-height: 500px;
     #about-graphic {
       transform: translateY(-170px);
@@ -168,13 +174,13 @@ $button-text-color: #262662;
   }
 }
 .allEvents {
-  @include from($tablet) {
+  @include from($desktop) {
     margin-left: 47px;
   }
 }
 
 .allEvents.flipped {
-  @include from($tablet) {
+  @include from($desktop) {
     margin-right: 47px;
     margin-left: 0px;
   }
@@ -189,14 +195,6 @@ $button-text-color: #262662;
   line-height: 37px;
   margin-bottom: 0;
   letter-spacing: 0.05em;
-}
-
-.date {
-  color: $red;
-  font-family: $body-font;
-  font-size: 20px;
-  line-height: 18px;
-  font-weight: bold;
 }
 
 .events {
