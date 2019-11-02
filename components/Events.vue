@@ -1,9 +1,5 @@
 <template>
   <div class="mainContainer">
-    <div id="focus">
-      <h1>nwHacks 2020</h1>
-      <p>Western Canada's Largest Hackathon</p>
-    </div>
     <div v-for="item in sortedEvents" :key="item.order">
       <div class="columns is-vcentered white singleEvent" :class="{ flipped: isFlipped(item) }">
         <img
@@ -19,6 +15,16 @@
           src="../assets/smiley_illustration.svg"
         >
         <div class="column allEvents">
+          <div v-if="item.title === 'Connect, Collaborate, and Create'" id="focus">
+            <h1>nwHacks 2020</h1>
+            <p>Western Canada's Largest Hackathon</p>
+            <a href="http://google.ca">
+              <button class="button">Apply Now</button>
+            </a>
+            <a href="http://google.ca">
+              <button class="button">Become a Mentor</button>
+            </a>
+          </div>
           <h2 class="title">
             {{ item.title }}
           </h2>
@@ -66,10 +72,29 @@ $body-color: #69dde1;
 $red: #ff7676;
 $heading-font: "Apercu Pro", sans-serif;
 $body-font: "Apercu Pro", sans-serif;
+$button-text-color: #262662;
+.mainContainer {
+  justify-content: right;
+}
 #focus {
-  // position: absolute;
-  // border: 2px solid red;
-  // display: inline-flex;
+  button {
+    background: linear-gradient(180deg, #7dc8de 50.1%, #643198 164.06%);
+    border-radius: 11px;
+    border: none;
+    color: $button-text-color;
+    font-family: $body-font;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 30px;
+    margin: 0 10px;
+    @include until($tablet) {
+      display: block;
+      margin: 14px auto;
+    }
+  }
+  text-align: right;
+  margin-bottom: 20px;
   h1 {
     font-size: 48px;
     line-height: 60px;
@@ -107,6 +132,7 @@ $body-font: "Apercu Pro", sans-serif;
     }
     h2 {
       margin-top: 15px;
+      text-align: center;
     }
   }
   @include from($tablet) {
