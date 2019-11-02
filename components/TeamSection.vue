@@ -4,12 +4,15 @@
       <li v-for="index in 112" :key="index" class="container">
         <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
-          <a href="https://www.linkedin.com/in/austinkobayashi/" class="icon" title="LinkedIn">
+          <a :href="linkedins[index]" class="icon" title="LinkedIn">
             <img class="linkedin" src="/team-section/linkedin.svg">
           </a>
         </div>
       </li>
     </ul>
+    <p id="teamSectionText">
+      Made with love by nwPlus team
+    </p>
   </div>
 </template>
 
@@ -31,17 +34,17 @@ export default {
         20: '',
         22: '',
         23: '',
-        24: '',
+        24: 'https://www.linkedin.com/in/cayenne-chen-471087171/',
         33: '',
-        34: '',
+        34: 'https://www.linkedin.com/in/anita-tse/',
         35: '',
-        36: '',
+        36: 'https://www.linkedin.com/in/austinkobayashi/',
         37: '',
         39: '',
-        46: '',
+        46: 'https://www.linkedin.com/in/shu-ting-hu/',
         47: '',
         49: '',
-        50: '',
+        50: 'https://linkedin.com/in/anlin-chen',
         51: '',
         52: '',
         53: '',
@@ -50,8 +53,8 @@ export default {
         62: '',
         63: '',
         64: '',
-        65: '',
-        66: '',
+        65: 'https://www.linkedin.com/in/anita-mahinpei/',
+        66: 'https://www.linkedin.com/in/joiceyhtang/',
         67: '',
         74: '',
         76: '',
@@ -79,8 +82,8 @@ export default {
 #grid {
   position: relative;
   width: 90%;
-  margin: 5% 0 0 5%;
   padding: 0;
+  margin: 5% 0 10% 5%;
 }
 
 .clear:after {
@@ -135,5 +138,10 @@ li:hover .icon {
   cursor: pointer;
   width: 100%;
   height: 100%;
+}
+
+#teamSectionText {
+  color: #F9C2E3;
+  font-size: 1.5rem;
 }
 </style>
