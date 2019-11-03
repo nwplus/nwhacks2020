@@ -7,7 +7,7 @@
         <Events id="events" :items="events" />
         <Video />
         <WhyJoin id="about" />
-        <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
+        <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
       </div>
     </section>
