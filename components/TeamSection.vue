@@ -87,9 +87,9 @@ export default {
 
 #grid {
   position: relative;
-  width: 90%;
+  width: 70%;
   padding: 0;
-  margin: 5% 0 15% 5%;
+  margin: 5% 0 15% 15%;
 }
 
 .clear:after {
