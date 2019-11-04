@@ -95,6 +95,7 @@ $button-text-color: #262662;
     text-align: center;
     padding: 0 15px;
     height: 50px;
+    transition-duration: 0.5s;
     @include until($desktop) {
       display: block;
       margin: 13px auto;
@@ -102,6 +103,9 @@ $button-text-color: #262662;
     @include from($desktop) {
       margin: 5% 2%;
     }
+  }
+  button:hover {
+    transform: scale(1.1);
   }
   h1 {
     font-size: 48px;

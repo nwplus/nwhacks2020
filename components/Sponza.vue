@@ -80,7 +80,7 @@
     </div>
     <!--  -->
     <a href="mailto:logistics@nwplus.io">
-      <img src="~/assets/ButtonSponsor.svg" style="margin-top: 15px;" title="Become a Sponsor" is-wide="true">
+      <img class="becomeSponsor" src="~/assets/ButtonSponsor.svg" style="margin-top: 15px;" title="Become a Sponsor">
     </a>
   </div>
 </template>
@@ -107,6 +107,12 @@ export default {
 
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
+.becomeSponsor{
+  transition-duration: 0.5s;
+}
+.becomeSponsor:hover {
+  transform: scale(1.1);
+}
 $heading-font: "Caveat Brush";
 //Desktop CSS:
 .columns {
