@@ -51,6 +51,14 @@ export default {
   plugins: ['~/plugins/firebase.js', '~/plugins/vuelidate.js', { src: '~/plugins/vuex-persist', srr: false }],
 
   /*
+   ** Cache static resources for better performance.
+   */
+  render: {
+    static: {
+      maxAge: 1000 * 60 * 60 * 24 * 1
+    }
+  },
+  /*
    ** Nuxt.js modules
    */
   modules: [
