@@ -9,7 +9,7 @@
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
       >
-        <a href="./signup">
+        <nuxt-link :to="'/signup'">
           <g class="billboard" @mouseover="shadowValues = '0 0 0 0 1 0 0 0 0 0.819608 0 0 0 0 0.352941 0 0 0 1 0'" @mouseleave="shadowValues = '0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0'">
             <path d="M88.3145 136.016L101.16 143.607V151.782L88.3145 159.664L75.1768 151.782V143.607L88.3145 136.016Z" fill="#606060" />
             <path fill-rule="evenodd" clip-rule="evenodd" d="M101.16 143.607L88.3145 136.016L75.1768 143.607L88.3145 150.906V159.664L101.16 151.782V143.607Z" fill="#3B3B3B" />
@@ -50,8 +50,7 @@
               </filter>
             </defs>
           </g>
-        </a>
-      </svg>
+        </nuxt-link></svg>
     </div>
   </div>
 </template>
