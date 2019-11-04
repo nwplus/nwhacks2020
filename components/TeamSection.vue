@@ -12,7 +12,7 @@
     </ul>
     <div id="teamSectionFooter">
       <p id="teamSectionText">
-        Made with love by nwPlus team
+        Made with love by the nwPlus team
       </p>
       <div id="mascotDiv">
         <img id="mascot" src="/team-section/mascot.svg">
