@@ -21,9 +21,11 @@
           <div v-if="item.title === 'Connect, Collaborate, and Create'" id="focus">
             <h1>nwHacks 2020</h1>
             <p>Western Canada's Largest Hackathon</p>
-            <a href="http://google.ca">
-              <button class="button">Apply Now</button>
-            </a>
+            <nuxt-link to="/signup">
+              <button class="button">
+                Apply Now
+              </button>
+            </nuxt-link>
             <a href="http://google.ca">
               <button class="button">Become a Mentor</button>
             </a>
