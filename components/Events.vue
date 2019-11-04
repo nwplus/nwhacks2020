@@ -26,7 +26,7 @@
                 Apply Now
               </button>
             </nuxt-link>
-            <a href="http://google.ca">
+            <a href="https://docs.google.com/forms/d/1n9rqrEuAPMykgvLRV7CnEXqceXbjyECqLJtNpNugnbo/edit" target="blank" rel="noopener">
               <button class="button">Become a Mentor</button>
             </a>
           </div>
