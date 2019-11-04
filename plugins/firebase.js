@@ -10,7 +10,8 @@ if (!firebase.apps.length) {
     projectId: process.env.FIREBASE_PROJECT_ID,
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    measurementId: 'G-LN6WVS4SHC'
+    measurementId: 'G-LN6WVS4SHC',
+    appId: '1:98283589440:web:1090d12875e9d21c5d34a5'
   }
   firebase.initializeApp(config)
 }
