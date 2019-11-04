@@ -122,8 +122,10 @@ a.navbar-item:focus-within {
   }
   #MLH-badge {
     height: 100px;
-    top: -16%;
+    top: -20%;
     left: -5%;
+    transform: translate(0, -20%);
+
   }
   #navbar-logo {
     height: 30px;
