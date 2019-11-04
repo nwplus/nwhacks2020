@@ -112,10 +112,6 @@ export default {
 .visible {
   opacity: 1;
 }
-.spinner {
-  margin: auto;
-  padding-top: 25vh;
-}
 //Desktop CSS:
 @include from($desktop) {
   .header {
