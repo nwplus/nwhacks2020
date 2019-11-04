@@ -14,7 +14,9 @@
       <p id="teamSectionText">
         Made with love by nwPlus team
       </p>
-      <img id="mascot" src="/team-section/mascot.svg">
+      <div id="mascotDiv">
+        <img id="mascot" src="/team-section/mascot.svg">
+      </div>
     </div>
   </div>
 </template>
@@ -77,9 +79,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
 #teamSection {
-  margin-bottom: 15%;
+  margin-bottom: 0;
 }
 
 #grid {
@@ -148,7 +151,6 @@ li:hover .icon {
 
 #teamSectionFooter {
   display: inline;
-  width: 100%;
   text-align: center;
 }
 
@@ -156,7 +158,9 @@ li:hover .icon {
   color: #F9C2E3;
   font-size: 1.5rem;
 }
-
+#mascotDiv{
+  width: 100%;
+}
 #mascot {
   width: 10%;
   float: right;
@@ -166,5 +170,14 @@ li:hover .icon {
   -webkit-transform: translateY(-60%);
   -ms-transform: translateY(-60%);
   transform: translateY(-60%);
+}
+@include until($desktop) {
+  #mascot {
+    margin: auto;
+    float: none;
+    transform: none;
+    width: 10%;
+  }
+
 }
 </style>
