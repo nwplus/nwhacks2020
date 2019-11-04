@@ -13,6 +13,7 @@
     </section>
     <Footer :text="footer" />
     <div class="backgroundBottom" />
+    <TeamSection id="teamSection" />
   </div>
 </template>
 
@@ -25,8 +26,10 @@ import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
 import Video from '~/components/Video.vue'
+import TeamSection from '../components/TeamSection'
 export default {
   components: {
+    TeamSection,
     Video,
     NavBar,
     Intro,
