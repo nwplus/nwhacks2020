@@ -21,10 +21,12 @@
           <div v-if="item.title === 'Connect, Collaborate, and Create'" id="focus">
             <h1>nwHacks 2020</h1>
             <p>Western Canada's Largest Hackathon</p>
-            <a href="http://google.ca">
-              <button class="button">Apply Now</button>
-            </a>
-            <a href="http://google.ca">
+            <nuxt-link to="/signup">
+              <button class="button">
+                Apply Now
+              </button>
+            </nuxt-link>
+            <a href="https://docs.google.com/forms/d/1n9rqrEuAPMykgvLRV7CnEXqceXbjyECqLJtNpNugnbo/edit" target="blank" rel="noopener">
               <button class="button">Become a Mentor</button>
             </a>
           </div>
@@ -93,6 +95,7 @@ $button-text-color: #262662;
     text-align: center;
     padding: 0 15px;
     height: 50px;
+    transition-duration: 0.5s;
     @include until($desktop) {
       display: block;
       margin: 13px auto;
@@ -100,6 +103,9 @@ $button-text-color: #262662;
     @include from($desktop) {
       margin: 5% 2%;
     }
+  }
+  button:hover {
+    transform: scale(1.1);
   }
   h1 {
     font-size: 48px;
