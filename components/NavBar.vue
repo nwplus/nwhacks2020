@@ -20,7 +20,7 @@
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
           </div>
-          <a href="https://www.nwplus.io/" target="_blank" rel="noopener">
+          <a v-scroll-to="'#intro'" href="#" target="_blank" rel="noopener">
             <img
               id="navbar-logo"
               class="navbar-item"
