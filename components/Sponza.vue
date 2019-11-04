@@ -1,7 +1,7 @@
 <template>
   <div class="sponza">
     <p class="sponsor-title">
-      Sponsor
+      Sponsors
     </p>
     <br>
     <!--  -->

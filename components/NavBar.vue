@@ -16,7 +16,7 @@
         <div class="navbar-start" />
         <div class="navbar-end">
           <div class="buttons">
-            <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
+            <a v-scroll-to="'#events'" href="#" class="navbar-item">About</a>
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
           </div>
