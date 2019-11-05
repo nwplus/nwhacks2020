@@ -137,7 +137,7 @@ button.accordion {
 
   cursor: pointer;
   padding: 18px;
-  width: 100%;
+  width: 93%;
   // transition: 0.3s;
   margin: 10px auto;
   text-align: left;
@@ -148,6 +148,9 @@ button.accordion {
   border-radius: 5px;
   font-size: 18px;
   font-family: "Apercu Pro";
+  @include until($desktop) {
+    width: 100%;
+  }
 }
 
 button.accordion:after {
