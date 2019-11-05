@@ -4,7 +4,7 @@
       <li v-for="index in 112" :key="index" class="container">
         <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
-          <a :href="linkedins[index]" class="icon" title="LinkedIn">
+          <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
             <img class="linkedin" src="/team-section/linkedin.svg">
           </a>
         </div>
@@ -12,7 +12,7 @@
     </ul>
     <div id="teamSectionFooter">
       <p id="teamSectionText">
-        Made with love by nwPlus team
+        Made with love by the nwPlus team
       </p>
       <div id="mascotDiv">
         <img id="mascot" src="/team-section/mascot.svg">
@@ -48,7 +48,7 @@ export default {
         39: '',
         46: 'https://www.linkedin.com/in/shu-ting-hu/',
         47: '',
-        49: '',
+        49: 'https://linkedin.com/in/ianmah',
         50: 'https://linkedin.com/in/anlin-chen',
         51: '',
         52: '',
@@ -57,7 +57,7 @@ export default {
         61: '',
         62: '',
         63: '',
-        64: '',
+        64: 'https://www.linkedin.com/in/nicholaswongx/',
         65: 'https://www.linkedin.com/in/anita-mahinpei/',
         66: 'https://www.linkedin.com/in/joiceyhtang/',
         67: '',
@@ -87,9 +87,9 @@ export default {
 
 #grid {
   position: relative;
-  width: 90%;
+  width: 70%;
   padding: 0;
-  margin: 5% 0 15% 5%;
+  margin: 5% 0 15% 15%;
 }
 
 .clear:after {
