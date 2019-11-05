@@ -48,7 +48,7 @@ export default {
         39: '',
         46: 'https://www.linkedin.com/in/shu-ting-hu/',
         47: '',
-        49: '',
+        49: 'https://linkedin.com/in/ianmah',
         50: 'https://linkedin.com/in/anlin-chen',
         51: '',
         52: '',
