@@ -82,7 +82,7 @@ export default {
       const x = Math.random() * 800 - 400
       const y = Math.random() * 500 - 250
       const transformString = `transform: translate(${x}px, ${y}px);`
-      const transition = Math.random() * 3 + 1.5
+      const transition = Math.random() * 3 + 1
       element.style.cssText = `${transformString} transition-duration: 0;`
       this.resetFuncs.push(() => {
         element.style.cssText = `transition-duration: ${transition}s;`
