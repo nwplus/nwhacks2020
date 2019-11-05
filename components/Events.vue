@@ -34,10 +34,7 @@
               <button class="button">Become a Mentor</button>
             </a>
           </div>
-          <!-- <h2 class="title">
-            {{ item.title }}
-          </h2>-->
-          <div class="titleParts">
+          <div class="titleParts" :class="{centered: isWestCoast(item.title)}">
             <h2
               v-for="titlePart in item.title.split('.')"
               :key="titlePart"
@@ -46,7 +43,6 @@
               {{ titlePart }}
             </h2>
           </div>
-          <br>
           <p class="events">
             {{ item.blurb }}
           </p>
@@ -157,7 +153,6 @@ $button-text-color: #262662;
       margin: 0 auto;
     }
     h2 {
-      // margin-top: 30px;
       text-align: center;
     }
     #smiley-graphic {
@@ -219,12 +214,16 @@ $button-text-color: #262662;
 .titleParts {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
   width: 100%;
+  margin-bottom: 10px;
 }
 
-.flipped .titleParts {
-  float: right;
+.centered {
+  text-align: center;
+  // width: 100%;
+  @include from($desktop) {
+    width: 55%;
+  }
 }
 .events {
   color: $body-color;
@@ -232,5 +231,6 @@ $button-text-color: #262662;
   font-size: 20px;
   line-height: 28px;
   margin: 0;
+  width: 100%;
 }
 </style>
