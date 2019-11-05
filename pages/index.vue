@@ -1,15 +1,14 @@
 <template>
   <div style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="FAQFlag" />
+    <NavBar id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
         <Video />
         <WhyJoin id="about" />
         <Events id="events" :items="events" />
-        <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
-        <Sponza id="sponza" />
-        <Outro id="contact" :text="outro" />
+        <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
+        <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
       </div>
     </section>
     <Footer :text="footer" />
@@ -21,7 +20,6 @@
 import NavBar from '~/components/NavBar.vue'
 import Intro from '~/components/Intro.vue'
 import Sponza from '~/components/Sponza.vue'
-import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
@@ -32,7 +30,6 @@ export default {
     Video,
     NavBar,
     Intro,
-    Outro,
     Footer,
     Sponza,
     Events,
@@ -58,7 +55,7 @@ export default {
     )).filter(sponsor => sponsor.imageURL !== '')
     return {
       info: data.WelcomeText,
-      Sponsors: populatedSponsors,
+      sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
       events: listOfEvents,
