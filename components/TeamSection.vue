@@ -4,7 +4,7 @@
       <li v-for="index in 112" :key="index" class="container">
         <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
-          <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank">
+          <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
             <img class="linkedin" src="/team-section/linkedin.svg">
           </a>
         </div>
