@@ -4,6 +4,7 @@
       <a
         href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=black"
         target="_blank"
+        rel="noopener"
       >
         <img
           id="MLH-badge"
@@ -15,12 +16,11 @@
         <div class="navbar-start" />
         <div class="navbar-end">
           <div class="buttons">
-            <a v-scroll-to="'#about'" href="#" class="navbar-item">About</a>
+            <a v-scroll-to="'#events'" href="#" class="navbar-item">About</a>
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
-            <a href="http://lhd2019.nwplus.io/" class="navbar-item">2018</a>
           </div>
-          <a v-scroll-to="'#navbar'" href="#">
+          <a href="https://www.nwplus.io/" target="_blank" rel="noopener">
             <img
               id="navbar-logo"
               class="navbar-item"
@@ -122,8 +122,10 @@ a.navbar-item:focus-within {
   }
   #MLH-badge {
     height: 100px;
-    top: -16%;
+    top: -20%;
     left: -5%;
+    transform: translate(0, -20%);
+
   }
   #navbar-logo {
     height: 30px;

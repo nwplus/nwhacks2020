@@ -115,11 +115,11 @@ export default {
 }
 //Desktop CSS:
 button.accordion {
-  // background-color: #fff;
-  background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
-  // color: #58C7BE;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-color: transparent;
+  color: #06c1c0;
+  // background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
+  // background-clip: text;
+  // -webkit-text-fill-color: transparent;
   // -webkit-text-stroke: 1px rgb(0, 0, 0);
 
   cursor: pointer;
@@ -158,7 +158,10 @@ button.accordion.active:after {
   // background-color: white;
   background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #06c1c0;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // image-rendering: -webkit-optimize-contrast;
   display: none;
   overflow: hidden;
   border: 2px solid #06c1c0;

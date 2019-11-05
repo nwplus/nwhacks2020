@@ -4,15 +4,16 @@
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
+        <Events id="events" :items="events" />
         <Video />
         <WhyJoin id="about" />
-        <Events id="events" :items="events" />
         <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
         <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
       </div>
     </section>
     <Footer :text="footer" />
     <div class="backgroundBottom" />
+    <TeamSection id="teamSection" />
   </div>
 </template>
 
@@ -25,8 +26,10 @@ import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
 import Video from '~/components/Video.vue'
+import TeamSection from '../components/TeamSection'
 export default {
   components: {
+    TeamSection,
     Video,
     NavBar,
     Intro,
