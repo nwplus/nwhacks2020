@@ -201,7 +201,7 @@
       :type="v.hacker.gradyear.$error ? 'is-danger' : ''"
       :message="v.hacker.gradyear.$error ? (!v.hacker.gradyear.required ? 'Required' : (!v.hacker.gradyear.withinValidRange ? 'Not valid year' : '')) : ''"
     >
-      <b-numberinput v-model.trim="v.hacker.gradyear.$model" min="2019" max="2027" />
+      <b-numberinput v-model.trim="v.hacker.gradyear.$model" min="1900" max="2027" />
     </b-field>
 
     <b-field
