@@ -1,6 +1,6 @@
 <template>
   <div id="teamSection">
-    <ul id="grid" class="clear">
+    <ul id="grid" style="height: 600px;" class="clear">
       <li v-for="index in 112" :key="index" class="container">
         <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
@@ -26,6 +26,7 @@ export default {
   name: 'TeamSection',
   data() {
     return {
+      resetFuncs: [],
       imageIndexes: [6,
         19, 20, 22, 23, 24,
         33, 34, 35, 36, 37, 39,
@@ -75,12 +76,39 @@ export default {
         94: ''
       }
     }
+  },
+  mounted() {
+    Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
+      const x = Math.random() * 800 - 400
+      const y = Math.random() * 500 - 250
+      const transformString = `transform: translate(${x}px, ${y}px);`
+      const transition = Math.random() * 3 + 1.5
+      element.style.cssText = `${transformString} transition-duration: 0;`
+      this.resetFuncs.push(() => {
+        element.style.cssText = `transition-duration: ${transition}s;`
+      })
+    })
+    const teamSection = window.document.getElementById('teamSection')
+    const self = this
+    function scrollFunc(event) {
+      const scroll = window.pageYOffset || document.documentElement.scrollTop
+      if (scroll > teamSection.offsetTop - teamSection.offsetHeight / 2) {
+        self.resetFuncs.forEach(fn => fn())
+        window.removeEventListener('scroll', scrollFunc)
+      }
+    }
+    window.addEventListener('scroll', scrollFunc)
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
+.teamPic {
+  transform: translate(0, 0);
+  transition-duration: 3s;
+  transition-timing-function: ease-out
+}
 #teamSection {
   margin-bottom: 0;
 }
