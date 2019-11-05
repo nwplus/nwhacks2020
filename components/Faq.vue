@@ -112,6 +112,7 @@ export default {
   font-family: Apercu Pro;
   font-size: 36px;
   line-height: 37px;
+    font-weight: bold;
   letter-spacing: 0.05em;
   -webkit-background-clip: text !important;
   background-clip: text !important;
