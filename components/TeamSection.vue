@@ -57,7 +57,7 @@ export default {
         61: '',
         62: '',
         63: '',
-        64: '',
+        64: 'https://www.linkedin.com/in/nicholaswongx/',
         65: 'https://www.linkedin.com/in/anita-mahinpei/',
         66: 'https://www.linkedin.com/in/joiceyhtang/',
         67: '',
