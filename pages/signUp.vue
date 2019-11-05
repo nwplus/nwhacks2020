@@ -65,6 +65,8 @@ export default {
     if (!data.featureFlags.signup) {
       store.commit('ApplicationClosed')
       console.log('no flag')
+    } else {
+      store.commit('ApplicationOpen')
     }
     return {}
   },

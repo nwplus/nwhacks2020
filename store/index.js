@@ -44,6 +44,11 @@ export const mutations = {
   ApplicationClosed(state) {
     state.signUpPage = -1
   },
+  ApplicationOpen(state) {
+    if (state.signUpPage < 0) {
+      state.signUpPage = 0
+    }
+  },
   clearState(state) {
     state.hackerApplication = { ...initialState.hackerApplication }
   },
