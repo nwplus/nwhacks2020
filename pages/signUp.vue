@@ -64,7 +64,6 @@ export default {
     const data = await fireDb.get()
     if (!data.featureFlags.signup) {
       store.commit('ApplicationClosed')
-      console.log('no flag')
     } else {
       store.commit('ApplicationOpen')
     }
