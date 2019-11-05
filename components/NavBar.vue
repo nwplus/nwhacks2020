@@ -149,8 +149,9 @@ a.navbar-item:focus-within {
   }
   #MLH-badge {
     height: 100px;
-    top: -16%;
-    left: -5%;
+    position: absolute;
+    top: -15px;
+    left: 0%;
   }
   #navbar-logo {
     height: 30px;
