@@ -93,7 +93,7 @@ export default {
     transform:translate(-50%,-50%) scale(1.0);
   }
   0% {
-    transform:translate(-50%,-50%) scale(1.15);
+    transform:translate(-50%,-50%) scale(1.10);
   }
 }
 
@@ -107,7 +107,7 @@ export default {
     animation: pulse 1s infinite linear alternate;
 }
 .play-button:hover {
-  transform: translate(-50%,-50%) scale(1.15);
+  transform: translate(-50%,-50%) scale(1.10);
   animation: none;
 }
 .video-div {
