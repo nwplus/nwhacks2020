@@ -79,7 +79,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: 'Organized and held by nwPlus. Copyright © UBC Local Hack Day 2019'
+      default: 'Organized and held by nwPlus. Copyright © nwHacks 2019'
     }
   },
   mounted() {
