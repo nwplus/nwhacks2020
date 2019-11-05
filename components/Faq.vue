@@ -10,7 +10,7 @@
         <p class="label">
           🤔 General
         </p>
-        <div v-for="item in items" :key="`General-${item.question}`">
+        <div v-for="item in sortedItems" :key="`General-${item.question}`">
           <div v-if="item.selected && item.category == 'General'">
             <button class="accordion" @click="openSesame">
               {{ item.question }}
@@ -67,6 +67,19 @@ export default {
     items: {
       type: Array,
       required: true
+    }
+  },
+  computed: {
+    sortedItems() {
+      return [...this.items].sort((a, b) => {
+        if (a.question === 'What is a hackathon?') {
+          return -1
+        } else if (b.question === 'What is a hackathon?') {
+          return 1
+        } else {
+          return 0
+        }
+      })
     }
   },
   methods: {
