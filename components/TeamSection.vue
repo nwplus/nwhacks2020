@@ -45,7 +45,7 @@ export default {
         34: 'https://www.linkedin.com/in/anita-tse/',
         35: 'https://www.linkedin.com/in/anneguo3/',
         36: 'https://www.linkedin.com/in/austinkobayashi/',
-        37: '',
+        37: 'https://www.linkedin.com/in/venessali/',
         39: '',
         46: 'https://www.linkedin.com/in/shu-ting-hu/',
         47: '',
