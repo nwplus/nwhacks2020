@@ -82,13 +82,14 @@ export default {
     const teamSection = window.document.getElementById('teamSection')
     const self = this
     const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
+    const resetTop = top - window.innerHeight
     function scrollFunc(event) {
       const scroll = window.pageYOffset || document.documentElement.scrollTop
       if (scroll > top) {
         self.resetFuncs.forEach(fn => fn())
         self.resetFuncs = []
       }
-      if (self.resetFuncs.length === 0 && scroll < 4423) {
+      if (self.resetFuncs.length === 0 && scroll < resetTop) {
         self.setupAnimation()
       }
     }
