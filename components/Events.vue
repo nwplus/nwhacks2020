@@ -39,6 +39,7 @@
               v-for="titlePart in item.title.split('.')"
               :key="titlePart"
               class="title"
+              :class="{equalsSymbols: isEqualsSymbols(titlePart)}"
             >
               {{ titlePart }}
             </h2>
@@ -68,12 +69,13 @@ export default {
   },
   methods: {
     isFlipped(item) {
-      console.log('isFlipped', item)
       return item.title === 'Connect, .Collaborate, and Create'
     },
     isWestCoast(title) {
-      console.log('isWestCoast', title)
       return title === '"WEST COAST" .== ."BEST COAST"'
+    },
+    isEqualsSymbols(titlePart) {
+      return titlePart.trim() === '=='
     }
   }
 }
@@ -211,20 +213,41 @@ $button-text-color: #262662;
   letter-spacing: 0.05em;
 }
 
+h2.title {
+  display: table;
+  @include until($desktop) {
+    display: block;
+  }
+}
+
 .titleParts {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: inline-block;
   margin-bottom: 10px;
+  @include until($desktop) {
+    display: block;
+  }
+}
+
+.flipped .titleParts {
+  @include from($desktop) {
+    display: block;
+  }
+}
+
+.flipped .titleParts h2.title {
+  @include from($desktop) {
+    display: block;
+    text-align: right;
+  }
+}
+
+.title.equalsSymbols {
+  display: block;
+  margin: 0 auto;
 }
 
 .centered {
   text-align: center;
-  // width: 100%;
-  @include from($desktop) {
-    width: 28vw;
-    transform: translateX(-14%);
-  }
 }
 .events {
   color: $body-color;
