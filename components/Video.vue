@@ -84,7 +84,7 @@ export default {
 }
 .vr-man {
     margin: 0 auto;
-    margin-left: 7%;
+    margin-left: 90px;
     z-index: -1;
 }
 
