@@ -10,7 +10,7 @@
         <p class="label">
           🤔 General
         </p>
-        <div v-for="item in items" :key="`General-${item.question}`">
+        <div v-for="item in sortedItems" :key="`General-${item.question}`">
           <div v-if="item.selected && item.category == 'General'">
             <button class="accordion" @click="openSesame">
               {{ item.question }}
@@ -69,6 +69,19 @@ export default {
       required: true
     }
   },
+  computed: {
+    sortedItems() {
+      return [...this.items].sort((a, b) => {
+        if (a.question === 'What is a hackathon?') {
+          return -1
+        } else if (b.question === 'What is a hackathon?') {
+          return 1
+        } else {
+          return 0
+        }
+      })
+    }
+  },
   methods: {
     openSesame: (e) => {
       e.target.classList.toggle('active')
@@ -99,6 +112,7 @@ export default {
   font-family: Apercu Pro;
   font-size: 36px;
   line-height: 37px;
+    font-weight: bold;
   letter-spacing: 0.05em;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -124,7 +138,7 @@ button.accordion {
 
   cursor: pointer;
   padding: 18px;
-  width: 100%;
+  width: 93%;
   // transition: 0.3s;
   margin: 10px auto;
   text-align: left;
@@ -135,6 +149,9 @@ button.accordion {
   border-radius: 5px;
   font-size: 18px;
   font-family: "Apercu Pro";
+  @include until($desktop) {
+    width: 100%;
+  }
 }
 
 button.accordion:after {

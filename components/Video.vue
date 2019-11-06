@@ -87,6 +87,16 @@ export default {
     margin-left: 7%;
     z-index: -1;
 }
+
+@keyframes pulse {
+  100% {
+    transform:translate(-50%,-50%) scale(1.0);
+  }
+  0% {
+    transform:translate(-50%,-50%) scale(1.10);
+  }
+}
+
 .play-button{
     position: absolute;
     margin-bottom: -3%;
@@ -94,9 +104,11 @@ export default {
     left: 50%;
     transform: translate(-50%,-50%);
     transition: all .2s ease-in-out;
+    animation: pulse 1s infinite linear alternate;
 }
 .play-button:hover {
-  transform: translate(-50%,-50%) scale(1.1);
+  transform: translate(-50%,-50%) scale(1.10);
+  animation: none;
 }
 .video-div {
     position: relative;
@@ -107,6 +119,7 @@ export default {
     font-family: Apercu Pro;
     font-size: 36px;
     line-height: 37px;
+    font-weight: bold;
     letter-spacing: 0.05em;
     -webkit-background-clip: text !important;
     background-clip: text !important;
@@ -120,18 +133,20 @@ export default {
         margin-bottom: 20%;
     }
     .play-button {
-        left: 47%;
+        left: 50%;
+        width: 15%;
         transform: translate(-50%,-50%);
     }
     .vr-man {
-        margin-left: 10%;
+      width: 60%;
+      margin-left: 12%;
     }
     .twenty {
         display: none;
     }
     .player {
         top: 26%;
-        transform: translate(-50%,-50%) scale(.75, .75);
+        transform: translate(-50%,-50%) scale(.80, .80);
     }
 }
 //mobile only styling (excludes ipad)

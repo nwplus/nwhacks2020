@@ -2,9 +2,9 @@
   <div id="teamSection">
     <ul id="grid" class="clear">
       <li v-for="index in 112" :key="index" class="container">
-        <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
+        <img :src="'/team-section/Vector' + index + '.svg.png'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
-          <a :href="linkedins[index]" class="icon" title="LinkedIn">
+          <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
             <img class="linkedin" src="/team-section/linkedin.svg">
           </a>
         </div>
@@ -12,7 +12,7 @@
     </ul>
     <div id="teamSectionFooter">
       <p id="teamSectionText">
-        Made with love by nwPlus team
+        Made with love by the nwPlus team
       </p>
       <div id="mascotDiv">
         <img id="mascot" src="/team-section/mascot.svg">
@@ -26,6 +26,7 @@ export default {
   name: 'TeamSection',
   data() {
     return {
+      resetFuncs: [],
       imageIndexes: [6,
         19, 20, 22, 23, 24,
         33, 34, 35, 36, 37, 39,
@@ -48,7 +49,7 @@ export default {
         39: '',
         46: 'https://www.linkedin.com/in/shu-ting-hu/',
         47: '',
-        49: '',
+        49: 'https://linkedin.com/in/ianmah',
         50: 'https://linkedin.com/in/anlin-chen',
         51: '',
         52: '',
@@ -57,7 +58,7 @@ export default {
         61: '',
         62: '',
         63: '',
-        64: '',
+        64: 'https://www.linkedin.com/in/nicholaswongx/',
         65: 'https://www.linkedin.com/in/anita-mahinpei/',
         66: 'https://www.linkedin.com/in/joiceyhtang/',
         67: '',
@@ -75,21 +76,57 @@ export default {
         94: ''
       }
     }
+  },
+  mounted() {
+    this.setupAnimation()
+    const teamSection = window.document.getElementById('teamSection')
+    const self = this
+    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
+    function scrollFunc(event) {
+      const scroll = window.pageYOffset || document.documentElement.scrollTop
+      if (scroll > top) {
+        self.resetFuncs.forEach(fn => fn())
+        self.resetFuncs = []
+      }
+      if (self.resetFuncs.length === 0 && scroll < 4423) {
+        self.setupAnimation()
+      }
+    }
+    window.addEventListener('scroll', scrollFunc)
+  },
+  methods: {
+    setupAnimation() {
+      Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
+        const x = Math.random() * 800 - 400
+        const y = Math.random() * 500 - 250
+        const transformString = `transform: translate(${x}px, ${y}px);`
+        const transition = Math.random() * 2 + 0.5
+        element.style.cssText = `${transformString} transition-duration: 0s;`
+        this.resetFuncs.push(() => {
+          element.style.cssText = `transition-duration: ${transition}s;`
+        })
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
+.teamPic {
+  transform: translate(0, 0);
+  transition-duration: 3s;
+  transition-timing-function: ease-in;
+}
 #teamSection {
   margin-bottom: 0;
 }
 
 #grid {
   position: relative;
-  width: 90%;
+  width: 70%;
   padding: 0;
-  margin: 5% 0 15% 5%;
+  margin: 5% 0 15% 15%;
 }
 
 .clear:after {

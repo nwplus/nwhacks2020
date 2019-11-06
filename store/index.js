@@ -7,7 +7,7 @@ const initialState = {
     ethnicity: '',
     firstname: '',
     gender: '',
-    gradyear: Date(),
+    gradyear: 2019,
     interestfornwhacks: '',
     iscodeofconductchecked: false,
     isdatareportingchecked: false,
@@ -39,6 +39,14 @@ export const mutations = {
     state.hackerApplication = {
       ...state.hackerApplication,
       ...app
+    }
+  },
+  ApplicationClosed(state) {
+    state.signUpPage = -1
+  },
+  ApplicationOpen(state) {
+    if (state.signUpPage < 0) {
+      state.signUpPage = 0
     }
   },
   clearState(state) {
