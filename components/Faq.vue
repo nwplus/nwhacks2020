@@ -149,6 +149,7 @@ button.accordion {
   border-radius: 5px;
   font-size: 18px;
   font-family: "Apercu Pro";
+  font-weight: bold;
   @include until($desktop) {
     width: 100%;
   }
@@ -185,9 +186,12 @@ button.accordion.active:after {
   border-top: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin: 0 auto;
+  margin: 0 0;
   margin-bottom: 2%;
-  width: 100%;
+  width: 93%;
+  @include until($desktop) {
+    width: 100%;
+  }
 }
 //Mobile CSS:
 @include until($desktop) {
