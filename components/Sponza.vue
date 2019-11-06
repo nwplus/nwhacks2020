@@ -143,6 +143,7 @@ h2 {
     font-size: 36px;
     line-height: 37px;
     letter-spacing: 0.05em;
+    font-weight: bold;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     color: transparent;

@@ -2,7 +2,7 @@
   <div id="teamSection">
     <ul id="grid" class="clear">
       <li v-for="index in 112" :key="index" class="container">
-        <img :src="'/team-section/Vector' + index + '.svg'" class="teamPic">
+        <img :src="'/team-section/Vector' + index + '.svg.png'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
           <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
             <img class="linkedin" src="/team-section/linkedin.svg">
@@ -26,6 +26,7 @@ export default {
   name: 'TeamSection',
   data() {
     return {
+      resetFuncs: [],
       imageIndexes: [6,
         19, 20, 22, 23, 24,
         33, 34, 35, 36, 37, 39,
@@ -75,12 +76,48 @@ export default {
         94: ''
       }
     }
+  },
+  mounted() {
+    this.setupAnimation()
+    const teamSection = window.document.getElementById('teamSection')
+    const self = this
+    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
+    function scrollFunc(event) {
+      const scroll = window.pageYOffset || document.documentElement.scrollTop
+      if (scroll > top) {
+        self.resetFuncs.forEach(fn => fn())
+        self.resetFuncs = []
+      }
+      if (self.resetFuncs.length === 0 && scroll < 4423) {
+        self.setupAnimation()
+      }
+    }
+    window.addEventListener('scroll', scrollFunc)
+  },
+  methods: {
+    setupAnimation() {
+      Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
+        const x = Math.random() * 800 - 400
+        const y = Math.random() * 500 - 250
+        const transformString = `transform: translate(${x}px, ${y}px);`
+        const transition = Math.random() * 2 + 0.5
+        element.style.cssText = `${transformString} transition-duration: 0s;`
+        this.resetFuncs.push(() => {
+          element.style.cssText = `transition-duration: ${transition}s;`
+        })
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
+.teamPic {
+  transform: translate(0, 0);
+  transition-duration: 3s;
+  transition-timing-function: ease-in;
+}
 #teamSection {
   margin-bottom: 0;
 }
