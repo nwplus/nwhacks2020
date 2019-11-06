@@ -1,6 +1,6 @@
 <template>
   <div style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="faqFlag" />
+    <NavBar v-if="screenWidth > 768" id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
@@ -37,6 +37,11 @@ export default {
     Sponza,
     Events,
     FAQ
+  },
+  computed: {
+    screenWidth() {
+      return screen.width
+    }
   },
   asyncData: async () => {
     const Sponsors = 'Sponsors'

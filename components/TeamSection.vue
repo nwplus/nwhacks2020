@@ -1,6 +1,6 @@
 <template>
   <div id="teamSection">
-    <ul id="grid" style="height: 600px;" class="clear">
+    <ul id="grid" class="clear">
       <li v-for="index in 112" :key="index" class="container">
         <img :src="'/team-section/Vector' + index + '.svg.png'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
@@ -78,26 +78,35 @@ export default {
     }
   },
   mounted() {
-    Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
-      const x = Math.random() * 800 - 400
-      const y = Math.random() * 500 - 250
-      const transformString = `transform: translate(${x}px, ${y}px);`
-      const transition = Math.random() * 3 + 1
-      element.style.cssText = `${transformString} transition-duration: 0;`
-      this.resetFuncs.push(() => {
-        element.style.cssText = `transition-duration: ${transition}s;`
-      })
-    })
+    this.setupAnimation()
     const teamSection = window.document.getElementById('teamSection')
     const self = this
+    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
     function scrollFunc(event) {
       const scroll = window.pageYOffset || document.documentElement.scrollTop
-      if (scroll > teamSection.offsetTop - teamSection.offsetHeight / 2) {
+      if (scroll > top) {
         self.resetFuncs.forEach(fn => fn())
-        window.removeEventListener('scroll', scrollFunc)
+        self.resetFuncs = []
+      }
+      if (self.resetFuncs.length === 0 && scroll < 4423) {
+        self.setupAnimation()
       }
     }
     window.addEventListener('scroll', scrollFunc)
+  },
+  methods: {
+    setupAnimation() {
+      Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
+        const x = Math.random() * 800 - 400
+        const y = Math.random() * 500 - 250
+        const transformString = `transform: translate(${x}px, ${y}px);`
+        const transition = Math.random() * 2 + 0.5
+        element.style.cssText = `${transformString} transition-duration: 0s;`
+        this.resetFuncs.push(() => {
+          element.style.cssText = `transition-duration: ${transition}s;`
+        })
+      })
+    }
   }
 }
 </script>
@@ -107,7 +116,7 @@ export default {
 .teamPic {
   transform: translate(0, 0);
   transition-duration: 3s;
-  transition-timing-function: ease-out
+  transition-timing-function: ease-in;
 }
 #teamSection {
   margin-bottom: 0;
