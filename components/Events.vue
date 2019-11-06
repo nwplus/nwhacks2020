@@ -222,7 +222,8 @@ $button-text-color: #262662;
   text-align: center;
   // width: 100%;
   @include from($desktop) {
-    width: 55%;
+    width: 28vw;
+    transform: translateX(-14%);
   }
 }
 .events {
