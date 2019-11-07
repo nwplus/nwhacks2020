@@ -25,7 +25,7 @@
             <img
               id="navbar-logo"
               class="navbar-item"
-              src="~@/assets/NwPluslogo.svg"
+              src="~@/assets/nwHacks_Logo.svg"
               alt="nwPlus logo"
             >
           </a>
