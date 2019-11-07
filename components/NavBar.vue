@@ -19,6 +19,7 @@
             <a v-scroll-to="'#events'" href="#" class="navbar-item">About</a>
             <a v-if="faq" v-scroll-to="'#faq'" href="#" class="navbar-item">FAQ</a>
             <a v-scroll-to="'#sponza'" href="#" class="navbar-item">Sponsors</a>
+            <a href="https://2019.nwhacks.io/#/" rel="noopener" target="_blank" class="navbar-item">nwHacks 2019</a>
           </div>
           <a v-scroll-to="'#intro'" href="#" target="_blank" rel="noopener">
             <img
