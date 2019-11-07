@@ -72,7 +72,7 @@ export default {
     this.setupAnimation()
     const teamSection = window.document.getElementById('teamSection')
     const self = this
-    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
+    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop + teamSection.offsetHeight * 5
     const resetTop = top - window.innerHeight
     function scrollFunc(event) {
       const scroll = window.pageYOffset || document.documentElement.scrollTop
