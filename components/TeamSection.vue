@@ -97,8 +97,8 @@ export default {
   methods: {
     setupAnimation() {
       Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
-        const x = Math.random() * 800 - 400
-        const y = Math.random() * 500 - 250
+        const x = screen.width < 768 ? Math.random() * 400 - 200 : Math.random() * 800 - 400
+        const y = screen.width < 768 ? Math.random() * 250 - 125 : Math.random() * 500 - 250
         const transformString = `transform: translate(${x}px, ${y}px);`
         const transition = Math.random() * 2 + 0.5
         element.style.cssText = `${transformString} transition-duration: 0s;`
