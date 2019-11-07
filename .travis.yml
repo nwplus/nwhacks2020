@@ -9,16 +9,6 @@ jobs:
   include:
     - stage: "Lint, Test and Build"
     - script: yarn lint && yarn test && yarn generate
-    - stage: "Staging"
-    - script: yarn generate:prod && ls -la;
-      deploy: 
-        provider: firebase
-        skip_cleanup: true
-        token:
-          secure: $FIREBASE_TOKEN
-        project: "nwhacks-2019"
-        on:
-          branch: dev
     - stage: Deploy
       script: yarn generate:prod && echo "lhd.nwplus.io" >> dist/CNAME
       deploy:
