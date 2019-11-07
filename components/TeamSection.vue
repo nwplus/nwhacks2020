@@ -5,7 +5,7 @@
         <img :src="'/team-section/Vector' + index + '.svg.png'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
           <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
-            <img class="linkedin" src="/team-section/linkedin.svg">
+            <img class="linkedin" src="/team-section/linkedin.svg.png">
           </a>
         </div>
       </li>
