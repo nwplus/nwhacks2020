@@ -31,3 +31,9 @@ jobs:
         local_dir: dist
         on:
           branch: master
+stages:
+  - "Lint, Test and Build"
+  - name: Staging
+    if: branch = dev
+  - name: Deploy
+    if: branch = master
