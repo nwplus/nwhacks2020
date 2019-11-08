@@ -10,7 +10,7 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV 
     FIREBASE_STORAGE_BUCKET: 'nwhacks-2019',
     FIREBASE_MESSAGING_SENDER_ID: '98283589440',
     RECAPTCHA_SITE_KEY: '6Lf-PXcUAAAAAKqB-M3SNbBz5D67TtHAo94_YwyJ',
-    WEBSITE_NAME: 'LHD_2020',
+    WEBSITE_NAME: 'NwHacks_2020',
     mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
   }
 } : {
@@ -50,6 +50,14 @@ export default {
    */
   plugins: ['~/plugins/firebase.js', '~/plugins/vuelidate.js', { src: '~/plugins/vuex-persist', srr: false }],
 
+  /*
+   ** Cache static resources for better performance.
+   */
+  render: {
+    static: {
+      maxAge: 1000 * 60 * 60 * 24 * 1
+    }
+  },
   /*
    ** Nuxt.js modules
    */

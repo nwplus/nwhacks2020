@@ -14,7 +14,8 @@
     "precommit": "npm run lint",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "generate:prod": "cross-env DEPLOY_ENV=PRODUCTION nuxt generate",
-    "mobile": "cross-env NUXT_HOST=0.0.0.0 yarn dev"
+    "mobile": "cross-env NUXT_HOST=0.0.0.0 yarn dev",
+    "dev:prod": "cross-env DEPLOY_ENV=PRODUCTION nuxt"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
@@ -22,13 +23,15 @@
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/svg-sprite": "^0.2.1",
+    "@trevoreyre/autocomplete-vue": "^2.0.2",
     "cross-env": "^5.2.0",
-    "firebase": "^6.1.0",
+    "firebase": "^7.2.0",
     "jquery": "^3.4.0",
     "lodash.orderby": "^4.6.0",
     "nuxt": "latest",
     "nuxt-buefy": "^0.3.10",
     "popper.js": "1.14.7",
+    "vue-clickaway": "^2.2.2",
     "vue-data-proxy": "^1.0.4",
     "vue-scrollto": "^2.15.0",
     "vue-snowf": "^0.0.2",

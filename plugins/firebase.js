@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/storage'
+import 'firebase/analytics'
 if (!firebase.apps.length) {
   const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -8,7 +9,9 @@ if (!firebase.apps.length) {
     databaseURL: process.env.FIREBASE_DATABASE_URL,
     projectId: process.env.FIREBASE_PROJECT_ID,
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    measurementId: 'G-LN6WVS4SHC',
+    appId: '1:98283589440:web:1090d12875e9d21c5d34a5'
   }
   firebase.initializeApp(config)
 }
@@ -16,6 +19,7 @@ const db = firebase.firestore()
 const storage = firebase.storage()
 const webCollection = 'Website_content'
 const WebDocument = process.env.WEBSITE_NAME
+firebase.analytics()
 
 const fireDb = {
   get: async (collection = WebDocument) => {
@@ -31,9 +35,13 @@ const fireDb = {
     return (await ref.get()).docs.map(doc => doc.data())
   },
   getImageUrl: async (imageref) => {
-    const image = storage.ref(`${WebDocument}/${imageref}`)
-    const url = await image.getDownloadURL()
-    return url
+    try {
+      const image = storage.ref(`${WebDocument}/${imageref}`)
+      const url = await image.getDownloadURL()
+      return url
+    } catch (e) {
+      return ''
+    }
   }
 }
 
