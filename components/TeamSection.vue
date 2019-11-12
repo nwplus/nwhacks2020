@@ -5,19 +5,11 @@
         <img :src="'/team-section/Vector' + index + '.svg.png'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
           <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
-            <img class="linkedin" src="/team-section/linkedin.svg">
+            <img class="linkedin" src="/team-section/linkedin.svg.png">
           </a>
         </div>
       </li>
     </ul>
-    <div id="teamSectionFooter">
-      <p id="teamSectionText">
-        Made with love by the nwPlus team
-      </p>
-      <div id="mascotDiv">
-        <img id="mascot" src="/team-section/mascot.svg">
-      </div>
-    </div>
   </div>
 </template>
 
@@ -80,7 +72,7 @@ export default {
     this.setupAnimation()
     const teamSection = window.document.getElementById('teamSection')
     const self = this
-    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
+    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop + teamSection.offsetHeight * 5
     const resetTop = top - window.innerHeight
     function scrollFunc(event) {
       const scroll = window.pageYOffset || document.documentElement.scrollTop
@@ -97,8 +89,8 @@ export default {
   methods: {
     setupAnimation() {
       Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
-        const x = Math.random() * 800 - 400
-        const y = Math.random() * 500 - 250
+        const x = screen.width < 768 ? Math.random() * 400 - 200 : Math.random() * 800 - 400
+        const y = screen.width < 768 ? Math.random() * 250 - 125 : Math.random() * 500 - 250
         const transformString = `transform: translate(${x}px, ${y}px);`
         const transition = Math.random() * 2 + 0.5
         element.style.cssText = `${transformString} transition-duration: 0s;`
