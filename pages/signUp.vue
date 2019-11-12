@@ -35,7 +35,7 @@ import pageThree from '~/components/Signup/PageThree'
 import validations from '~/validators/validators.js'
 import vueDataProxy from 'vue-data-proxy'
 import fireDb from '~/plugins/firebase.js'
-import signUpClosed from '~/components/signupClosed'
+import signUpClosed from '~/components/Signup/signupClosed'
 
 export default {
   components: { pageOne, pageTwo, pageThree, signUpClosed },

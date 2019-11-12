@@ -9,7 +9,9 @@
         Application Form Coming Soon!
       </h1>
       <nuxt-link to="/">
-        <button>take me back!</button>
+        <button class="button is-large">
+          take me back!
+        </button>
       </nuxt-link>
     </div>
   </div>
