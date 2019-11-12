@@ -112,7 +112,7 @@ export default {
   font-family: Apercu Pro;
   font-size: 36px;
   line-height: 37px;
-    font-weight: bold;
+  font-weight: bold;
   letter-spacing: 0.05em;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -124,7 +124,7 @@ export default {
 }
 .label {
   font-family: "Apercu Pro";
-  color: #06c1c0;
+  color: #f9c2e3;
   font-size: 20px;
 }
 //Desktop CSS:
@@ -156,7 +156,7 @@ button.accordion {
 }
 
 button.accordion:after {
-  content: url('~@/assets/arrow.svg');
+  content: url("~@/assets/arrow.svg");
   float: right;
 }
 
@@ -168,7 +168,7 @@ button.accordion.active {
 }
 
 button.accordion.active:after {
-  content: url('~@/assets/upside-down-arrow.svg');
+  content: url("~@/assets/upside-down-arrow.svg");
 }
 .panel {
   padding: 18px;
