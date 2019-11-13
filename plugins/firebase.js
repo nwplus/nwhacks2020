@@ -42,6 +42,10 @@ const fireDb = {
     } catch (e) {
       return ''
     }
+  },
+  submitApplication: async (app) => {
+    const ref = db.collection('hacker_info_2020')
+    await ref.doc(app.email).set(app)
   }
 }
 

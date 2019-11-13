@@ -77,7 +77,7 @@ export default {
       if (this.$v.hacker.$pending || this.$v.hacker.$error) return
       // to form submit after this
       alert('Form submitted')
-      console.log(this.$store.state.hackerApplication)
+      fireDb.submitApplication(this.$store.state.hackerApplication)
     }
   }
 }
