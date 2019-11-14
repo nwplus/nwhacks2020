@@ -1,19 +1,20 @@
 <template>
   <div style="position: relative; width: 100%;">
-    <NavBar id="navbar" :faq="FAQFlag" />
+    <NavBar v-if="screenWidth > 768" id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
-        <Bulletin />
-        <WhyJoin id="about" />
         <Events id="events" :items="events" />
-        <FAQ v-if="!faqFlag" id="faq" :items="FAQs" />
-        <Sponza id="sponza" />
-        <Outro id="contact" :text="outro" />
+        <Video />
+        <WhyJoin id="about" />
+        <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
+        <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
       </div>
     </section>
     <Footer :text="footer" />
     <div class="backgroundBottom" />
+    <TeamSection id="teamSection" />
+    <RealFooter :text="footer" />
   </div>
 </template>
 
@@ -21,22 +22,29 @@
 import NavBar from '~/components/NavBar.vue'
 import Intro from '~/components/Intro.vue'
 import Sponza from '~/components/Sponza.vue'
-import Outro from '~/components/Outro.vue'
 import Footer from '~/components/Footer.vue'
 import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
-import Bulletin from '~/components/Bulletin.vue'
+import Video from '~/components/Video.vue'
+import TeamSection from '../components/TeamSection'
+import RealFooter from '~/components/realFooter'
 export default {
   components: {
-    Bulletin,
+    TeamSection,
+    Video,
     NavBar,
+    RealFooter,
     Intro,
-    Outro,
     Footer,
     Sponza,
     Events,
     FAQ
+  },
+  computed: {
+    screenWidth() {
+      return screen.width
+    }
   },
   asyncData: async () => {
     const Sponsors = 'Sponsors'
@@ -53,12 +61,12 @@ export default {
     const listOfEvents = await fireDb.get(Events)
     const FaqQuestions = await fireDb.get(FAQ)
     // Populate sponsors with their image urls
-    const populatedSponsors = await Promise.all(
+    const populatedSponsors = (await Promise.all(
       listOfSponsors.map(sponsor => getSponsorImage(sponsor))
-    )
+    )).filter(sponsor => sponsor.imageURL !== '')
     return {
       info: data.WelcomeText,
-      Sponsors: populatedSponsors,
+      sponsors: populatedSponsors,
       outro: data.OutroText,
       footer: data.FooterText,
       events: listOfEvents,
@@ -84,7 +92,7 @@ export default {
 }
 
 body {
-  background-color: #f6edec;
+  background-color: #262662;
   font-family: "Apercu Pro";
   // background-image: url('~@/assets/bg.svg');
   // background-size: 100vw;

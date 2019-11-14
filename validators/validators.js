@@ -72,6 +72,11 @@ export default {
     school: {
       required
     },
+    schoolother: {
+      required: requiredIf(function (hacker) {
+        return hacker.school === 'Other'
+      })
+    },
     major: {
       required
     },
@@ -134,7 +139,7 @@ export default {
 function isOneOf(v, array = []) {
   let isMatch = false
   for (const elem of array) {
-    if (v.toLowerCase() === elem) isMatch = true
+    if (v && v.toLowerCase() === elem) isMatch = true
   }
   return isMatch
 }

@@ -160,41 +160,39 @@
       :type="v.hacker.school.$error ? 'is-danger' : ''"
       :message="v.hacker.school.$error ? (!v.hacker.school.required ? 'Required' : '') : ''"
     >
-      <b-select v-model.trim="v.hacker.school.$model" placeholder="Please Select">
-        <option value="ubc">
-          UBC
-        </option>
-      </b-select>
+      <autocomplete
+        :search="searchSchool"
+        placeholder="Your school"
+        aria-label="Your school"
+        :default-value="v.hacker.school.$model"
+        @change="handleSchoolChange"
+      />
     </b-field>
 
     <b-field
-      v-if="v.hacker.education === 'high school'"
-      label="What is your major?"
+      v-if="v.hacker.school.$model === 'Other'"
+      label="Specify your school"
+      class="required"
+      :type="v.hacker.schoolother.$error ? 'is-danger' : ''"
+      :message="v.hacker.schoolother.$error ? (!v.hacker.schoolother.required ? 'Required' : '') : ''"
+    >
+      <b-input v-model.trim="v.hacker.schoolother.$model" />
+    </b-field>
+
+    <b-field
+      label="What is your current/intended major?"
       class="required"
       name="high-school-major"
       :type="v.hacker.major.$error ? 'is-danger' : ''"
       :message="v.hacker.major.$error ? (!v.hacker.major.required ? 'Required' : '') : ''"
     >
-      <b-select v-model.trim="v.hacker.major.$model" placeholder="Please Select">
-        <option value="computer science">
-          Computer Science
-        </option>
-      </b-select>
-    </b-field>
-
-    <b-field
-      v-if="v.hacker.education === 'undergraduate' || v.hacker.education === 'graduate'"
-      label="What do you plan on studying?"
-      class="required"
-      name="university-major"
-      :type="v.hacker.major.$error ? 'is-danger' : ''"
-      :message="v.hacker.major.$error ? (!v.hacker.major.required ? 'Required' : '') : ''"
-    >
-      <b-select v-model.trim="v.hacker.major.$model" placeholder="Please Select">
-        <option value="computer science">
-          Computer Science
-        </option>
-      </b-select>
+      <autocomplete
+        :search="searchMajor"
+        placeholder="Your major"
+        aria-label="Your major"
+        :default-value="v.hacker.major.$model"
+        @change="handleMajorChange"
+      />
     </b-field>
 
     <b-field
@@ -203,7 +201,7 @@
       :type="v.hacker.gradyear.$error ? 'is-danger' : ''"
       :message="v.hacker.gradyear.$error ? (!v.hacker.gradyear.required ? 'Required' : (!v.hacker.gradyear.withinValidRange ? 'Not valid year' : '')) : ''"
     >
-      <b-numberinput v-model.trim="v.hacker.gradyear.$model" min="2019" max="2027" />
+      <b-numberinput v-model.trim="v.hacker.gradyear.$model" min="1900" max="2027" />
     </b-field>
 
     <b-field
@@ -235,12 +233,41 @@
 </template>
 
 <script>
+import Autocomplete from '@trevoreyre/autocomplete-vue'
+import schools from '../../data/schools.json'
+import majors from '../../data/majors.json'
+import '@trevoreyre/autocomplete-vue/dist/style.css'
 
 export default {
+  components: {
+    Autocomplete
+  },
   props: {
     v: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    searchSchool(input) {
+      if (input.length < 1) { return [] }
+      return schools.filter((school) => {
+        return school.toLowerCase()
+          .includes(input.toLowerCase())
+      })
+    },
+    searchMajor(input) {
+      if (input.length < 1) { return [] }
+      return majors.filter((major) => {
+        return major.toLowerCase()
+          .includes(input.toLowerCase())
+      })
+    },
+    handleSchoolChange(event) {
+      this.v.hacker.school.$model = event.target.value
+    },
+    handleMajorChange(event) {
+      this.v.hacker.major.$model = event.target.value
     }
   }
 }
