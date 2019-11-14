@@ -88,6 +88,7 @@ export default {
 .footer-content {
   text-align: center;
   min-width: 90vw;
+  margin-bottom: 4%;
 }
 .footer-image {
     max-width: 90%;
@@ -158,7 +159,7 @@ svg:hover path {
     position: absolute;
     width: 10%;
     right: 5%;
-    bottom: 0.25%;
+    bottom: 0%;
 }
 @include until($desktop) {
   #mascot {
