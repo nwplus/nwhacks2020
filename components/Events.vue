@@ -6,7 +6,7 @@
         :class="{ flipped: isFlipped(item) }"
       >
         <img
-          v-if="item.title === 'Connect, Collaborate, and Create'"
+          v-if="item.title === 'Connect, .Collaborate, and Create'"
           id="about-graphic"
           class="column imgResize graphic"
           src="../assets/about_illustration.svg"
@@ -18,7 +18,7 @@
           src="../assets/smiley_illustration.svg"
         >
         <div class="column allEvents" :class="{ flipped: isFlipped(item) }">
-          <div v-if="item.title === 'Connect, Collaborate, and Create'" id="focus">
+          <div v-if="item.title === 'Connect, .Collaborate, and Create'" id="focus">
             <h1>nwHacks 2020</h1>
             <p>Western Canada's Largest Hackathon</p>
             <nuxt-link to="/signup">
@@ -26,14 +26,24 @@
                 Apply Now
               </button>
             </nuxt-link>
-            <a href="https://docs.google.com/forms/d/1n9rqrEuAPMykgvLRV7CnEXqceXbjyECqLJtNpNugnbo/edit" target="blank" rel="noopener">
+            <a
+              href="https://docs.google.com/forms/d/1n9rqrEuAPMykgvLRV7CnEXqceXbjyECqLJtNpNugnbo/edit"
+              target="blank"
+              rel="noopener"
+            >
               <button class="button">Become a Mentor</button>
             </a>
           </div>
-          <h2 class="title">
-            {{ item.title }}
-          </h2>
-          <br>
+          <div class="titleParts" :class="{centered: isWestCoast(item.title)}">
+            <h2
+              v-for="titlePart in item.title.split('.')"
+              :key="titlePart"
+              class="title"
+              :class="{equalsSymbols: isEqualsSymbols(titlePart)}"
+            >
+              {{ titlePart }}
+            </h2>
+          </div>
           <p class="events">
             {{ item.blurb }}
           </p>
@@ -59,12 +69,13 @@ export default {
   },
   methods: {
     isFlipped(item) {
-      console.log('isFlipped', item)
-      return item.title === 'Connect, Collaborate, and Create'
+      return item.title === 'Connect, .Collaborate, and Create'
     },
     isWestCoast(title) {
-      console.log('isWestCoast', title)
-      return title === '"WEST COAST" == "BEST COAST"'
+      return title === '"WEST COAST" .== ."BEST COAST"'
+    },
+    isEqualsSymbols(titlePart) {
+      return titlePart.trim() === '=='
     }
   }
 }
@@ -144,7 +155,6 @@ $button-text-color: #262662;
       margin: 0 auto;
     }
     h2 {
-      margin-top: 30px;
       text-align: center;
     }
     #smiley-graphic {
@@ -203,11 +213,48 @@ $button-text-color: #262662;
   letter-spacing: 0.05em;
 }
 
+h2.title {
+  display: table;
+  @include until($desktop) {
+    display: block;
+  }
+}
+
+.titleParts {
+  display: inline-block;
+  margin-bottom: 10px;
+  @include until($desktop) {
+    display: block;
+  }
+}
+
+.flipped .titleParts {
+  @include from($desktop) {
+    display: block;
+  }
+}
+
+.flipped .titleParts h2.title {
+  @include from($desktop) {
+    display: block;
+    text-align: right;
+  }
+}
+
+.title.equalsSymbols {
+  display: block;
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+}
 .events {
   color: $body-color;
   font-family: $body-font;
   font-size: 20px;
   line-height: 28px;
   margin: 0;
+  width: 100%;
 }
 </style>

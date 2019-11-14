@@ -5,19 +5,11 @@
         <img :src="'/team-section/Vector' + index + '.svg.png'" class="teamPic">
         <div v-if="imageIndexes.includes(index) && linkedins[index] !== ''">
           <a :href="linkedins[index]" class="icon" title="LinkedIn" target="_blank" rel="noopener">
-            <img class="linkedin" src="/team-section/linkedin.svg">
+            <img class="linkedin" src="/team-section/linkedin.svg.png">
           </a>
         </div>
       </li>
     </ul>
-    <div id="teamSectionFooter">
-      <p id="teamSectionText">
-        Made with love by the nwPlus team
-      </p>
-      <div id="mascotDiv">
-        <img id="mascot" src="/team-section/mascot.svg">
-      </div>
-    </div>
   </div>
 </template>
 
@@ -37,43 +29,42 @@ export default {
       linkedins: {
         6: '',
         19: '',
-        20: 'https://www.linkedin.com/in/allison-chiang/\n',
+        20: 'https://www.linkedin.com/in/allison-chiang/',
         22: '',
-        23: '',
+        23: 'https://www.linkedin.com/in/tiffanycyap',
         24: 'https://www.linkedin.com/in/cayenne-chen-471087171/',
         33: '',
         34: 'https://www.linkedin.com/in/anita-tse/',
-        35: '',
+        35: 'https://www.linkedin.com/in/anneguo3/',
         36: 'https://www.linkedin.com/in/austinkobayashi/',
-        37: '',
+        37: 'https://www.linkedin.com/in/venessali/',
         39: '',
         46: 'https://www.linkedin.com/in/shu-ting-hu/',
         47: '',
         49: 'https://linkedin.com/in/ianmah',
         50: 'https://linkedin.com/in/anlin-chen',
         51: '',
-        52: '',
+        52: 'https://www.linkedin.com/in/luceliu/',
         53: '',
-        60: '',
-        61: '',
-        62: '',
+        60: 'https://www.linkedin.com/in/kevin-zou/',
+        61: 'https://www.linkedin.com/in/jvssicawu',
+        62: 'https://www.linkedin.com/in/linstanford',
         63: '',
         64: 'https://www.linkedin.com/in/nicholaswongx/',
         65: 'https://www.linkedin.com/in/anita-mahinpei/',
         66: 'https://www.linkedin.com/in/joiceyhtang/',
         67: '',
-        74: '',
+        74: 'https://www.linkedin.com/in/bonnyyu00',
         76: '',
         77: '',
-        78: '',
-        79: '',
+        78: 'https://www.linkedin.com/in/r-xie/',
+        79: 'https://www.linkedin.com/in/victoriasekim/',
         80: '',
-        89: '',
+        89: 'https://www.linkedin.com/in/giulio-rossi-662152110/',
         90: '',
         91: '',
-        92: '',
-        93: '',
-        94: ''
+        92: 'https://www.linkedin.com/in/nadakourkmas/',
+        93: 'https://www.linkedin.com/in/elaineauyang/'
       }
     }
   },
@@ -81,14 +72,15 @@ export default {
     this.setupAnimation()
     const teamSection = window.document.getElementById('teamSection')
     const self = this
-    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop - teamSection.offsetHeight
+    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop + teamSection.offsetHeight * 2.5
+    const resetTop = top - window.innerHeight
     function scrollFunc(event) {
       const scroll = window.pageYOffset || document.documentElement.scrollTop
       if (scroll > top) {
         self.resetFuncs.forEach(fn => fn())
         self.resetFuncs = []
       }
-      if (self.resetFuncs.length === 0 && scroll < 4423) {
+      if (self.resetFuncs.length === 0 && scroll < resetTop) {
         self.setupAnimation()
       }
     }
@@ -97,8 +89,8 @@ export default {
   methods: {
     setupAnimation() {
       Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
-        const x = Math.random() * 800 - 400
-        const y = Math.random() * 500 - 250
+        const x = screen.width < 768 ? Math.random() * 400 - 200 : Math.random() * 800 - 400
+        const y = screen.width < 768 ? Math.random() * 250 - 125 : Math.random() * 500 - 250
         const transformString = `transform: translate(${x}px, ${y}px);`
         const transition = Math.random() * 2 + 0.5
         element.style.cssText = `${transformString} transition-duration: 0s;`

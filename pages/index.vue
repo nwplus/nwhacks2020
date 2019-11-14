@@ -14,6 +14,7 @@
     <Footer :text="footer" />
     <div class="backgroundBottom" />
     <TeamSection id="teamSection" />
+    <RealFooter :text="footer" />
   </div>
 </template>
 
@@ -27,11 +28,13 @@ import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
 import Video from '~/components/Video.vue'
 import TeamSection from '../components/TeamSection'
+import RealFooter from '~/components/realFooter'
 export default {
   components: {
     TeamSection,
     Video,
     NavBar,
+    RealFooter,
     Intro,
     Footer,
     Sponza,
