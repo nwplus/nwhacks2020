@@ -68,7 +68,7 @@ export default {
     gradyear: {
       required,
       withinValidRange(v) {
-        return (v >= 2015 && v <= 2027)
+        return (v >= 1900 && v <= 2027)
       }
     },
     city: {
