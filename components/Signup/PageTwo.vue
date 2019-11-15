@@ -131,9 +131,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Import Bulma and Buefy styles
 @import "bulma/bulma.sass";
-// @import "~bulma/sass/utilities/_all";
 
 $primary: #11ab99;
 $background-color: #f2f7fe;
@@ -157,8 +155,6 @@ section {
     margin: 100px 380px;
   }
 }
-
-@import "~bulma/sass/utilities/_all";
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 </style>

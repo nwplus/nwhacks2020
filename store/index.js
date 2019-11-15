@@ -29,8 +29,6 @@ const initialState = {
     lastname: '',
     major: '',
     phonenumber: '',
-    recentProject: '',
-    resumelink: '',
     school: '',
     source: '',
     travel: ''
