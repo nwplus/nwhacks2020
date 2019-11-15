@@ -2,14 +2,20 @@
   <section>
     <div class="columns">
       <div id="page-three" class="column">
-        <b-field
+        <!-- <b-field
           label="How did you hear about nwHacks?"
           custom-class="has-text-primary"
           class="required"
           :type="v.hacker.source.$error ? 'is-danger' : ''"
           :message="v.hacker.source.$error ? (!v.hacker.source.required ? 'Required' : '') : ''"
-        >
-          <b-select v-model.trim="v.hacker.source.$model" placeholder="Select" required>
+        >-->
+        <fieldset>
+          <legend
+            :class="v.hacker.source.$error ? 'error' : 'question'"
+          >
+            How did you hear about nwHacks?
+          </legend>
+          <select v-model.trim="v.hacker.source.$model" placeholder="Select" required>
             <option value="MLH">
               MLH
             </option>
@@ -34,8 +40,8 @@
             <option value="Other">
               Other
             </option>
-          </b-select>
-        </b-field>
+          </select>
+        </fieldset>
         <b-field
           v-if="v.hacker.source.$model === 'Other'"
           label="Please specify where you heard about nwHacks"
@@ -133,9 +139,19 @@ section {
     margin: 100px 380px;
   }
 }
+#page-three legend {
+  margin-bottom: 17px;
+}
 
-#page-three .label.question {
-  border: 2px solid blue;
+#page-three legend.question {
   color: $font-color;
+}
+
+#page-three legend.error {
+  color: red;
+}
+
+#page-three select {
+  margin-bottom: 60px;
 }
 </style>
