@@ -24,10 +24,15 @@
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
       <section class="buttons">
-        <button class="button nav-button" @click="page--">
-          Previous
+        <button v-if="page !== 0" class="button nav-button" @click="page--">
+          Back
         </button>
-        <button v-if="page !== 2" class="button nav-button" @click="page++">
+        <nuxt-link to="/">
+          <button v-if="page === 0" class="button nav-button" @click="$store.commit('clearState')">
+            Cancel
+          </button>
+        </nuxt-link>
+        <button v-if="page !== 2" class="button submit-button" @click="page++">
           Next
         </button>
         <button v-if="page === 2" class="button submit-button" @click="submit">
