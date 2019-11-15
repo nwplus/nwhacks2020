@@ -140,10 +140,6 @@ export default {
 $font-family: "Apercu Pro", sans-serif;
 $font-color: #2c0a92;
 
-.field-content {
-  display: block;
-}
-
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
