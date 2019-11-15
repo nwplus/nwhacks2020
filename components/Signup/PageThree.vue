@@ -1,5 +1,7 @@
 <template>
   <section>
+    <!-- <div class="columns"> -->
+    <!-- <div class="column pgthree"> -->
     <b-field
       label="How did you hear about nwHacks?"
       class="required"
@@ -90,6 +92,8 @@
         </a>
       </div>
     </div>
+    <!-- </div> -->
+    <!-- </div> -->
   </section>
 </template>
 
@@ -103,3 +107,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "bulma/bulma.sass";
+$background-color: #f2f7fe;
+$font-family: "Apercu Pro", sans-serif;
+$font-colour: #21258a;
+
+// .pgthree {
+//   margin: 30px 16px;
+//   @include from($tablet) {
+//     margin: 100px 380px;
+//   }
+// }
+</style>
