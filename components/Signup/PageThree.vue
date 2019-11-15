@@ -51,43 +51,85 @@
         >
           <b-input v-model.trim="v.hacker.sourceother.$model" />
         </b-field>
-        <p>
-          🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
-          <a
-            href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-          >MLH Code of Conduct</a>.
-        </p>
-        <div class="field">
+        <div class="form-field">
+          <p>
+            🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
+            <a
+              href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+            >MLH Code of Conduct</a>.
+          </p>
+          <!-- <div class="field">
           <b-checkbox v-model.trim="v.hacker.isPrivacyPolicyChecked.$model">
             I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
             <a
               href="https://mlh.io/privacy"
             >MLH Privacy Policy</a>.
           </b-checkbox>
-        </div>
-        <div class="field">
+          </div>-->
+          <div class="form-input">
+            <label class="check-box">
+              <input v-model.trim="v.hacker.isPrivacyPolicyChecked.$model" type="checkbox">
+              <span>
+                I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
+                <a
+                  href="https://mlh.io/privacy"
+                >MLH Privacy Policy</a>.
+              </span>
+            </label>
+          </div>
+          <!-- <div class="field">
           <b-checkbox v-model.trim="v.hacker.isCodeOfConductChecked.$model">
             I have read and agree to the
             <a
               href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
             >Major League Hacking Code of Conduct</a>.
           </b-checkbox>
+          </div>-->
+          <div class="form-input">
+            <label class="check-box">
+              <input v-model.trim="v.hacker.isCodeOfConductChecked.$model" type="checkbox">
+              <span>
+                I have read and agree to the
+                <a
+                  href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                >Major League Hacking Code of Conduct</a>.
+              </span>
+            </label>
+          </div>
         </div>
-        <div class="field">
+        <!-- <div class="field">
           <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
           <b-checkbox
             v-model.trim="v.hacker.isDataReportingChecked.$model"
           >
             I authorize nwPlus to use my anonymized data for data reporting.
           </b-checkbox>
+        </div>-->
+        <div class="form-field">
+          <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
+          <div class="form-input">
+            <label class="check-box">
+              <input v-model.trim="v.hacker.isDataReportingChecked.$model" type="checkbox">
+              <span>I authorize nwPlus to use my anonymized data for data reporting.</span>
+            </label>
+          </div>
         </div>
-        <div class="field">
+        <!-- <div class="field">
           <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
           <b-checkbox
             v-model.trim="v.hacker.isResumeSharingChecked.$model"
           >
             I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.
           </b-checkbox>
+        </div>-->
+        <div class="form-field">
+          <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
+          <div class="form-input">
+            <label class="check-box">
+              <input v-model.trim="v.hacker.isResumeSharingChecked.$model" type="checkbox">
+              <span>I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.</span>
+            </label>
+          </div>
         </div>
         <div class="field">
           <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
@@ -153,5 +195,11 @@ section {
 
 #page-three select {
   margin-bottom: 60px;
+}
+
+label.check-box {
+  :hover {
+    color: $font-color;
+  }
 }
 </style>
