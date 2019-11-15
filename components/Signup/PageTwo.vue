@@ -133,20 +133,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "bulma/bulma.sass";
-
-$font-family: "Apercu Pro", sans-serif;
-$font-color: #2c0a92;
-
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
-
-.header {
-  font-size: 40px;
-  font-family: $font-family;
-  color: $font-color;
-  font-weight: 700;
-}
-</style>
