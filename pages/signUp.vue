@@ -1,9 +1,20 @@
 <template>
-  <div>
+  <div class="signup">
     <div class="nav">
       <nuxt-link to="/">
         <img style="margin-top: 0.3%; margin-left: 1%;" src="~/assets/signup-logo.svg" alt="nwPlus logo">
       </nuxt-link>
+    </div>
+    <div class="bread">
+      <div :class="`circle ${page === 0 ? 'selectedCircle' : ''}`" @click="page=0">
+        <span :class="`breadNumber ${page === 0 ? 'selectedNumber' : ''}`">1</span>
+      </div>
+      <div :class="`circle ${page === 1 ? 'selectedCircle' : ''}`" @click="page=1">
+        <span :class="`breadNumber ${page === 1 ? 'selectedNumber' : ''}`">2</span>
+      </div>
+      <div :class="`circle ${page === 2 ? 'selectedCircle' : ''}`" @click="page=2">
+        <span :class="`breadNumber ${page === 2 ? 'selectedNumber' : ''}`">3</span>
+      </div>
     </div>
     <div v-if="page !== -1">
       <p class="title">
@@ -113,6 +124,47 @@ export default {
   /* Drop shadow */
   box-shadow: 0px 4px 6px rgba(0, 82, 174, 0.15);
   z-index: 5;
+}
+.bread {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+.circle {
+  position: relative;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  margin: 0.5%;
+  border: 1px solid #4483BD;
+  box-sizing: border-box;
+  cursor:pointer;
+}
+.selectedCircle {
+  border: none;
+  background: linear-gradient(180deg, #70B8CD 0%, #6572B0 76.56%, #6C62AF 99.99%, #693E94 100%);
+}
+.breadNumber {
+  position: absolute;
+  left: 40%;
+  right: 40%;
+  top: 22.5%;
+  bottom: 20%;
+  font-family: Apercu Pro;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: center;
+  color: #4483BD;
+}
+.selectedNumber{
+  /* White */
+  color: #FFFFFF;
+}
+
+.signup {
+  background: #E5E5E5;
 }
 </style>
 <style>
