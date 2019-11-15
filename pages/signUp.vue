@@ -1,5 +1,10 @@
 <template>
   <div style="height: 100vh; margin: auto;">
+    <div class="nav">
+      <nuxt-link to="/">
+        <img style="margin-top: 0.3%; margin-left: 1%;" src="~/assets/signup-logo.svg" alt="nwPlus logo">
+      </nuxt-link>
+    </div>
     <div v-if="page !== -1">
       <p class="title">
         Sign up form
@@ -99,5 +104,14 @@ export default {
 .buttons {
   margin: 5% 0;
   margin-left: 30%;
+}
+.nav {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  background: #FFFFFF;
+  /* Drop shadow */
+  box-shadow: 0px 4px 6px rgba(0, 82, 174, 0.15);
+  z-index: 5;
 }
 </style>
