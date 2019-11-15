@@ -69,6 +69,7 @@
           <div class="form-input">
             <label class="check-box">
               <input v-model.trim="v.hacker.isPrivacyPolicyChecked.$model" type="checkbox">
+              <span class="nw-checkbox" />
               <span>
                 I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
                 <a
@@ -125,13 +126,19 @@
         <div class="form-field">
           <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
           <div class="form-input">
-            <label class="check-box">
+            <!-- <label class="check-box">
               <input v-model.trim="v.hacker.isResumeSharingChecked.$model" type="checkbox">
               <span>I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.</span>
-            </label>
+            </label>-->
+            <b-checkbox
+              v-model.trim="v.hacker.isResumeSharingChecked.$model"
+              type="is-nw-primary"
+            >
+              I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.
+            </b-checkbox>
           </div>
         </div>
-        <div class="field">
+        <!-- <div class="field">
           <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
           <div class="icons">
             <a href="https://medium.com/nwhacks">
@@ -144,7 +151,7 @@
               <font-awesome-icon :icon="['fab', 'facebook-f']" />
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
@@ -164,10 +171,19 @@ export default {
 <style lang="scss" scoped>
 // @import "bulma/bulma.sass";
 $primary: #21258a;
-@import "~bulma/sass/utilities/_all";
 $background-color: #f2f7fe;
 $font-family: "Apercu Pro", sans-serif;
 $font-color: #21258a;
+
+$colors: (
+  "nw-primary": (
+    $primary,
+    $primary
+  )
+);
+@import "~bulma/sass/utilities/_all";
+@import "bulma/bulma.sass";
+@import "~buefy/src/scss/buefy";
 
 section {
   background-color: $background-color;
@@ -197,9 +213,42 @@ section {
   margin-bottom: 60px;
 }
 
-label.check-box {
-  :hover {
-    color: $font-color;
-  }
+#page-three .form-field {
+  margin: 30px 0;
+}
+
+// #page-three .check-box input {
+//   opacity: 0;
+//   position: absolute;
+//   cursor: pointer;
+//   height: 0;
+//   width: 0;
+// }
+
+#page-three label.check-box {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+#page-three label.check-box > span {
+  color: $primary;
+  padding: 0.5rem 0.25rem;
+}
+
+#page-three label.check-box > input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #41b883;
+  cursor: pointer;
 }
 </style>
