@@ -1,126 +1,125 @@
 <template>
   <section>
-    <b-field
-      label="Is this your first hackathon?"
-      :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
-      :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
-    >
-      <b-radio v-model.trim="v.hacker.firstHackathon.$model" name="firstHackathon" native-value="yes">
-        Yes
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.firstHackathon.$model" name="firstHackathon" native-value="no">
-        No
-      </b-radio>
-    </b-field>
-    <b-field
-      label="Have you attended either LHD: Learn Day or LHD: Build Day?"
-      :type="v.hacker.attendedLHD.$error ? 'is-danger' : ''"
-      :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
-    >
-      <b-radio v-model.trim="v.hacker.attendedLHD.$model" name="attendedLHD" native-value="yes">
-        Yes
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.attendedLHD.$model" name="attendedLHD" native-value="no">
-        No
-      </b-radio>
-    </b-field>
-    <b-field
-      label="How do you wish to contribute at nwHacks? Your choice will not affect your application and you can always change your mind after you submit."
-      :type="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
-        && true ? 'is-danger' : ''"
-      :message="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
-        && (v.hacker.hackerRoleDeveloper.$dirty || v.hacker.hackerRoleDesigner.$dirty || v.hacker.hackerRoleHardware.$dirty || v.hacker.hackerRoleOther.$dirty) ? 'Required' : ''"
-    >
-      <b-checkbox
-        v-model="v.hacker.hackerRoleDeveloper.$model"
+    <div id="page-two">
+      <b-field
+        label="Is this your first hackathon?"
+        :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
+        :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
       >
-        Developer
-      </b-checkbox>
-      <b-checkbox
-        v-model="v.hacker.hackerRoleDesigner.$model"
+        <div class="field-content">
+          <b-radio
+            v-model.trim="v.hacker.firstHackathon.$model"
+            name="firstHackathon"
+            native-value="yes"
+          >
+            Yes
+          </b-radio>
+          <b-radio
+            v-model.trim="v.hacker.firstHackathon.$model"
+            name="firstHackathon"
+            native-value="no"
+          >
+            No
+          </b-radio>
+        </div>
+      </b-field>
+      <b-field
+        label="Have you attended either LHD: Learn Day or LHD: Build Day?"
+        :type="v.hacker.attendedLHD.$error ? 'is-danger' : ''"
+        :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
       >
-        Designer
-      </b-checkbox>
-      <b-checkbox
-        v-model="v.hacker.hackerRoleHardware.$model"
+        <div class="field-content">
+          <b-radio
+            v-model.trim="v.hacker.attendedLHD.$model"
+            name="attendedLHD"
+            native-value="yes"
+          >
+            Yes
+          </b-radio>
+          <b-radio
+            v-model.trim="v.hacker.attendedLHD.$model"
+            name="attendedLHD"
+            native-value="no"
+          >
+            No
+          </b-radio>
+        </div>
+      </b-field>
+      <b-field
+        label="How do you wish to contribute at nwHacks? Your choice will not affect your application and you can always change your mind after you submit."
+        :type="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
+          && true ? 'is-danger' : ''"
+        :message="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
+          && (v.hacker.hackerRoleDeveloper.$dirty || v.hacker.hackerRoleDesigner.$dirty || v.hacker.hackerRoleHardware.$dirty || v.hacker.hackerRoleOther.$dirty) ? 'Required' : ''"
       >
-        Hardware/Robotics
-      </b-checkbox>
-      <b-checkbox
-        v-model="v.hacker.hackerRoleOther.$model"
+        <div class="field-content">
+          <b-checkbox v-model="v.hacker.hackerRoleDeveloper.$model">
+            Developer
+          </b-checkbox>
+          <b-checkbox v-model="v.hacker.hackerRoleDesigner.$model">
+            Designer
+          </b-checkbox>
+          <b-checkbox v-model="v.hacker.hackerRoleHardware.$model">
+            Hardware/Robotics
+          </b-checkbox>
+          <b-checkbox v-model="v.hacker.hackerRoleOther.$model">
+            Other
+          </b-checkbox>
+        </div>
+      </b-field>
+
+      <b-field label="Github Link (optional)">
+        <b-input v-model="v.hacker.linkGithub.$model" placeholder="optional" type="url" />
+      </b-field>
+
+      <b-field label="Personal Website/Portfolio Link">
+        <b-input v-model="v.hacker.linkPortfolio.$model" placeholder="optional" type="url" />
+      </b-field>
+
+      <b-field label="LinkedIn">
+        <b-input v-model="v.hacker.linkLinkedin.$model" placeholder="optional" type="url" />
+      </b-field>
+
+      <b-field
+        label="Resume Link"
+        :type="v.hacker.linkResume.$error ? 'is-danger' : ''"
+        :message="v.hacker.linkResume.$error ? (!v.hacker.linkResume.required ? 'Required' : '') : ''"
       >
-        Other
-      </b-checkbox>
-    </b-field>
+        <b-input v-model="v.hacker.linkResume.$model" placeholder="required" type="url" />
+      </b-field>
 
-    <b-field label="Github Link (optional)">
-      <b-input
-        v-model="v.hacker.linkGithub.$model"
-        placeholder="optional"
-        type="url"
-      />
-    </b-field>
+      <b-field
+        label="How would you like to utilize technology to make the world a better place?"
+        :type="v.hacker.longTechnology.$error ? 'is-danger' : ''"
+        :message="v.hacker.longTechnology.$error ? (!v.hacker.longTechnology.required ? 'Required' : '') : ''"
+      >
+        <b-input
+          v-model.trim="v.hacker.longTechnology.$model"
+          type="textarea"
+          name="longTechnology"
+          minlength="10"
+          maxlength="400"
+        />
+      </b-field>
 
-    <b-field label="Personal Website/Portfolio Link">
-      <b-input
-        v-model="v.hacker.linkPortfolio.$model"
-        placeholder="optional"
-        type="url"
-      />
-    </b-field>
-
-    <b-field label="LinkedIn">
-      <b-input
-        v-model="v.hacker.linkLinkedin.$model"
-        placeholder="optional"
-        type="url"
-      />
-    </b-field>
-
-    <b-field
-      label="Resume Link"
-      :type="v.hacker.linkResume.$error ? 'is-danger' : ''"
-      :message="v.hacker.linkResume.$error ? (!v.hacker.linkResume.required ? 'Required' : '') : ''"
-    >
-      <b-input
-        v-model="v.hacker.linkResume.$model"
-        placeholder="required"
-        type="url"
-      />
-    </b-field>
-
-    <b-field
-      label="How would you like to utilize technology to make the world a better place?"
-      :type="v.hacker.longTechnology.$error ? 'is-danger' : ''"
-      :message="v.hacker.longTechnology.$error ? (!v.hacker.longTechnology.required ? 'Required' : '') : ''"
-    >
-      <b-input
-        v-model.trim="v.hacker.longTechnology.$model"
-        type="textarea"
-        name="longTechnology"
-        minlength="10"
-        maxlength="300"
-      />
-    </b-field>
-
-    <b-field
-      label="Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
-      :type="v.hacker.longProject.$error ? 'is-danger' : ''"
-      :message="v.hacker.longProject.$error ? (!v.hacker.longProject.required ? 'Required' : '') : ''"
-    >
-      <b-input
-        v-model.trim="v.hacker.longProject.$model"
-        type="textarea"
-        name="longProject"
-        minlength="10"
-        maxlength="300"
-      />
-    </b-field>
+      <b-field
+        label="Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
+        :type="v.hacker.longProject.$error ? 'is-danger' : ''"
+        :message="v.hacker.longProject.$error ? (!v.hacker.longProject.required ? 'Required' : '') : ''"
+      >
+        <b-input
+          v-model.trim="v.hacker.longProject.$model"
+          type="textarea"
+          name="longProject"
+          minlength="10"
+          maxlength="400"
+        />
+      </b-field>
+    </div>
   </section>
 </template>
 
 <script>
-
 export default {
   props: {
     v: {
@@ -130,3 +129,55 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+// @import "bulma/bulma.sass";
+$primary: #21258a;
+@import "~bulma/sass/utilities/_all";
+$background-color: #f2f7fe;
+$font-family: "Apercu Pro", sans-serif;
+$font-color: #21258a;
+
+section {
+  background-color: $background-color;
+}
+
+.field-content {
+  display: block;
+}
+
+b-input {
+  display: block;
+}
+
+b-radio {
+  display: block;
+}
+
+#page-two {
+  color: $font-color;
+  background-color: $background-color;
+  font-family: $font-family;
+  margin: 30px 16px;
+  @include from($tablet) {
+    margin: 100px 380px;
+  }
+}
+#page-two legend {
+  margin-bottom: 17px;
+}
+#page-two legend.question {
+  color: $font-color;
+}
+#page-two legend.error {
+  color: red;
+}
+#page-two select {
+  margin-bottom: 60px;
+}
+label.check-box {
+  :hover {
+    color: $font-color;
+  }
+}
+</style>
