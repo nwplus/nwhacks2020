@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div id="page-two">
+    <div class="signup-content">
       <h2 class="header">
         Nice to meet you {{ v.hacker.firstname.$model }} 👋
       </h2>
@@ -137,25 +137,11 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 
-$background-color: #f2f7fe;
 $font-family: "Apercu Pro", sans-serif;
-$font-color: #21258a;
-section {
-  background-color: $background-color;
-}
+$font-color: #2c0a92;
 
 .field-content {
   display: block;
-}
-
-#page-two {
-  color: $font-color;
-  background-color: $background-color;
-  font-family: $font-family;
-  margin: 30px 16px;
-  @include from($tablet) {
-    margin: 100px 380px;
-  }
 }
 
 @import "~bulma";
@@ -165,5 +151,6 @@ section {
   font-size: 40px;
   font-family: $font-family;
   color: $font-color;
+  font-weight: 700;
 }
 </style>

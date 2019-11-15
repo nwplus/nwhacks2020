@@ -9,7 +9,28 @@ $background-color: #f2f7fe;
 $font-family: "Apercu Pro", sans-serif;
 $font-color: #21258a;
 
-#page-two {
-    font-family: $font-family;
+#signup-form {
+    background-color: $background-color;
+    min-height: 100vh;
+  }
+
+.signup-content {
     color: $font-color;
+    font-family: $font-family;
+    max-width: 900px;
+    @include from($tablet) {
+      margin: auto;
+      padding: 80px;
+    }
+  }
+  
+#signup-form .label {
+  font-family: $font-family;
+  color: $font-color;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+#signup-form .field {
+  margin: 25px 0;
 }
