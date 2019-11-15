@@ -8,7 +8,7 @@
     </p>
     <div class="name-section">
       <b-field
-        label="What is your full leagal name?"
+        label="What is your full legal name?"
         custom-class="field-label"
         :type="v.hacker.firstname.$error ? 'is-danger' : ''"
         :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '') : ''"
