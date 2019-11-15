@@ -79,6 +79,33 @@ export default {
       matchesRadio(v) {
         return isOneOf(v, ['no', 'travel reimbursement', 'shuttle bus'])
       }
+    },
+    links: {
+      required
+    },
+    firstHackathon: {
+      required,
+      matchesRadio(v) {
+        return isOneOf(v, ['yes', 'no'])
+      }
+    },
+    attendedLHD: {
+      required,
+      matchesRadio(v) {
+        return isOneOf(v, ['yes', 'no'])
+      }
+    },
+    hackerRoleDeveloper: {},
+    hackerRoleDesigner: {},
+    hackerRoleHardware: {},
+    hackerRoleOther: {},
+    hackerRole: {
+      oneSelected(v) {
+        return this.hackerRoleDeveloper.$model ||
+        this.hackerRoleDesigner.$model ||
+        this.hackerRoleHardware.$model ||
+        this.hackerRoleOther.$model
+      }
     }
   }
 }
