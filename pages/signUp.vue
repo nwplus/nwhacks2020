@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100vh; margin: auto;">
+  <div class="signup">
     <div v-if="page !== -1">
       <p class="title">
         Sign up form
@@ -82,3 +82,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.signup {
+  background: #f2f7fe;
+}
+</style>
