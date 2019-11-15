@@ -4,7 +4,7 @@
       <pageOne v-if="page == 0" :v="$v" />
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
-      <div class="signup-content">
+      <div class="signup-buttons">
         <section v-if="page == 2" :v="$v">
           <b-button @click="page--">
             Previous
