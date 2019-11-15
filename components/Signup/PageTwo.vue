@@ -33,38 +33,39 @@
     </b-field>
     <b-field
       label="How do you wish to contribute at nwHacks? Your choice will not affect your application and you can always change your mind after you submit."
-      :type="v.hacker.hackerRole.$error ? 'is-danger' : ''"
-      :message="v.hacker.hackerRole.required ? 'Required' : ''"
-    />
-    <b-checkbox
-      v-model="v.hacker.hackerRoleDeveloper.$model"
-      name="hackerRole"
-      native-value="developer"
+      :type="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
+        && true ? 'is-danger' : ''"
+      :message="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
+        && (v.hacker.hackerRoleDeveloper.$dirty || v.hacker.hackerRoleDesigner.$dirty || v.hacker.hackerRoleHardware.$dirty || v.hacker.hackerRoleOther.$dirty) ? 'Required' : ''"
     >
-      Developer
-    </b-checkbox>
-    <b-checkbox
-      v-model="v.hacker.hackerRoleDesigner.$model"
-      name="hackerRole"
-      native-value="designer"
-    >
-      Designer
-    </b-checkbox>
-    <b-checkbox
-      v-model="v.hacker.hackerRoleHardware.$model"
-      name="hackerRole"
-      native-value="hardware"
-    >
-      Hardware/Robotics
-    </b-checkbox>
-    <b-checkbox
-      v-model="v.hacker.hackerRoleOther.$model"
-      name="hackerRole"
-      native-value="other"
-    >
-      Other
-    </b-checkbox>
-    {{ v.hacker.hackerRoleDeveloper.$model }}
+      <b-checkbox
+        v-model="v.hacker.hackerRoleDeveloper.$model"
+        name="hackerRole"
+        native-value="developer"
+      >
+        Developer
+      </b-checkbox>
+      <b-checkbox
+        v-model="v.hacker.hackerRoleDesigner.$model"
+        name="hackerRole"
+        native-value="designer"
+      >
+        Designer
+      </b-checkbox>
+      <b-checkbox
+        v-model="v.hacker.hackerRoleHardware.$model"
+        name="hackerRole"
+        native-value="hardware"
+      >
+        Hardware/Robotics
+      </b-checkbox>
+      <b-checkbox
+        v-model="v.hacker.hackerRoleOther.$model"
+        name="hackerRole"
+        native-value="other"
+      >
+        Other
+      </b-checkbox>
     </b-field>
     <b-field
       label="ethnicity"

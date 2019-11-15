@@ -98,15 +98,7 @@ export default {
     hackerRoleDeveloper: {},
     hackerRoleDesigner: {},
     hackerRoleHardware: {},
-    hackerRoleOther: {},
-    hackerRole: {
-      oneSelected(v) {
-        return this.hackerRoleDeveloper.$model ||
-        this.hackerRoleDesigner.$model ||
-        this.hackerRoleHardware.$model ||
-        this.hackerRoleOther.$model
-      }
-    }
+    hackerRoleOther: {}
   }
 }
 
