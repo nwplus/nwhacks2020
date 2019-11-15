@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100vh; margin: auto;">
+  <div style="background: #E5E5E5;">
     <div class="nav">
       <nuxt-link to="/">
         <img style="margin-top: 0.3%; margin-left: 1%;" src="~/assets/signup-logo.svg" alt="nwPlus logo">
