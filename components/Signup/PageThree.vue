@@ -4,7 +4,7 @@
       <div id="page-three" class="column">
         <b-field
           label="How did you hear about nwHacks?"
-          custom-class="is-small"
+          custom-class="has-text-primary"
           class="required"
           :type="v.hacker.source.$error ? 'is-danger' : ''"
           :message="v.hacker.source.$error ? (!v.hacker.source.required ? 'Required' : '') : ''"
@@ -77,7 +77,11 @@
         </div>
         <div class="field">
           <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
-          <b-checkbox>I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.</b-checkbox>
+          <b-checkbox
+            v-model.trim="v.hacker.isResumeSharingChecked.$model"
+          >
+            I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.
+          </b-checkbox>
         </div>
         <div class="field">
           <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
@@ -111,11 +115,11 @@ export default {
 
 <style lang="scss" scoped>
 // @import "bulma/bulma.sass";
+$primary: #21258a;
+@import "~bulma/sass/utilities/_all";
 $background-color: #f2f7fe;
 $font-family: "Apercu Pro", sans-serif;
 $font-color: #21258a;
-$primary: $font-color;
-@import "~bulma/sass/utilities/_all";
 
 section {
   background-color: $background-color;

@@ -132,6 +132,12 @@ export default {
       checked(v) {
         return v
       }
+    },
+    isResumeSharingChecked: {
+      required,
+      checked(v) {
+        return v
+      }
     }
   }
 }
