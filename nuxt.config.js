@@ -14,10 +14,10 @@ const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV 
     mailingListUrl: 'https://us-central1-nwhacks-2019.cloudfunctions.net/subscribeToMailingList'
   }
 } : {
-  env: {
-    mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+    env: {
+      mailingListUrl: 'http://localhost:5000/nwhacks-2019-dev/us-central1/subscribeToMailingList/'
+    }
   }
-}
 
 export default {
   ...envVars,
@@ -43,7 +43,9 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    'components/Signup/assets/custom.scss'
+  ],
 
   /*
    ** Plugins to load before mounting the App

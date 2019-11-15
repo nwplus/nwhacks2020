@@ -131,9 +131,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "bulma/bulma.sass";
-$primary: #21258a;
-@import "~bulma/sass/utilities/_all";
+// Import Bulma and Buefy styles
+@import "bulma/bulma.sass";
+// @import "~bulma/sass/utilities/_all";
+
+$primary: #11ab99;
 $background-color: #f2f7fe;
 $font-family: "Apercu Pro", sans-serif;
 $font-color: #21258a;
@@ -146,14 +148,6 @@ section {
   display: block;
 }
 
-b-input {
-  display: block;
-}
-
-b-radio {
-  display: block;
-}
-
 #page-two {
   color: $font-color;
   background-color: $background-color;
@@ -163,21 +157,8 @@ b-radio {
     margin: 100px 380px;
   }
 }
-#page-two legend {
-  margin-bottom: 17px;
-}
-#page-two legend.question {
-  color: $font-color;
-}
-#page-two legend.error {
-  color: red;
-}
-#page-two select {
-  margin-bottom: 60px;
-}
-label.check-box {
-  :hover {
-    color: $font-color;
-  }
-}
+
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
