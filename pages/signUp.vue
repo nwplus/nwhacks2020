@@ -1,9 +1,6 @@
 <template>
   <div style="height: 100vh; margin: auto;">
     <div v-if="page !== -1">
-      <p class="title">
-        Sign up form
-      </p>
       <pageOne v-if="page == 0" :v="$v" />
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
@@ -82,3 +79,10 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+//Desktop CSS:
+@font-face {
+  font-family: "Apercu Pro";
+  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+}
+</style>

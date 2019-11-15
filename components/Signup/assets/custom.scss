@@ -1,4 +1,15 @@
 @import "~bulma/sass/utilities/_all";
+
 $primary: #21258A;
+
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+$background-color: #f2f7fe;
+$font-family: "Apercu Pro", sans-serif;
+$font-color: #21258a;
+
+#page-two {
+    font-family: $font-family;
+    color: $font-color;
+}

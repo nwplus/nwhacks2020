@@ -1,6 +1,10 @@
 <template>
   <section>
     <div id="page-two">
+      <h2 class="header">
+        Nice to meet you {{ v.hacker.firstname.$model }} 👋
+      </h2>
+      <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
       <b-field
         label="Is this your first hackathon?"
         :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
@@ -133,11 +137,9 @@ export default {
 <style lang="scss" scoped>
 @import "bulma/bulma.sass";
 
-$primary: #11ab99;
 $background-color: #f2f7fe;
 $font-family: "Apercu Pro", sans-serif;
 $font-color: #21258a;
-
 section {
   background-color: $background-color;
 }
@@ -155,6 +157,13 @@ section {
     margin: 100px 380px;
   }
 }
+
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+.header {
+  font-size: 40px;
+  font-family: $font-family;
+  color: $font-color;
+}
 </style>
