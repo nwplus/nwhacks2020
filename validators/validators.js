@@ -80,9 +80,6 @@ export default {
         return isOneOf(v, ['no', 'travel reimbursement', 'shuttle bus'])
       }
     },
-    links: {
-      required
-    },
     firstHackathon: {
       required,
       matchesRadio(v) {
@@ -98,7 +95,19 @@ export default {
     hackerRoleDeveloper: {},
     hackerRoleDesigner: {},
     hackerRoleHardware: {},
-    hackerRoleOther: {}
+    hackerRoleOther: {},
+    linkGithub: {},
+    linkPortfolio: {},
+    linkLinkedin: {},
+    linkResume: {
+      required
+    },
+    longTechnology: {
+      required
+    },
+    longProject: {
+      required
+    }
   }
 }
 

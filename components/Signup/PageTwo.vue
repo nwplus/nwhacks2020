@@ -1,13 +1,6 @@
 <template>
   <section>
     <b-field
-      label="Links - help us get to know you better by providing as many links as you feel will support your application"
-      :type="v.hacker.links.$error ? 'is-danger' : ''"
-      :message="!v.hacker.links.required ? 'Required' : ''"
-    >
-      <b-input v-model.trim="v.hacker.links.$model" />
-    </b-field>
-    <b-field
       label="Is this your first hackathon?"
       :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
       :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
@@ -40,40 +33,87 @@
     >
       <b-checkbox
         v-model="v.hacker.hackerRoleDeveloper.$model"
-        name="hackerRole"
-        native-value="developer"
       >
         Developer
       </b-checkbox>
       <b-checkbox
         v-model="v.hacker.hackerRoleDesigner.$model"
-        name="hackerRole"
-        native-value="designer"
       >
         Designer
       </b-checkbox>
       <b-checkbox
         v-model="v.hacker.hackerRoleHardware.$model"
-        name="hackerRole"
-        native-value="hardware"
       >
         Hardware/Robotics
       </b-checkbox>
       <b-checkbox
         v-model="v.hacker.hackerRoleOther.$model"
-        name="hackerRole"
-        native-value="other"
       >
         Other
       </b-checkbox>
     </b-field>
+
+    <b-field label="Github Link (optional)">
+      <b-input
+        v-model="v.hacker.linkGithub.$model"
+        placeholder="optional"
+        type="url"
+      />
+    </b-field>
+
+    <b-field label="Personal Website/Portfolio Link">
+      <b-input
+        v-model="v.hacker.linkPortfolio.$model"
+        placeholder="optional"
+        type="url"
+      />
+    </b-field>
+
+    <b-field label="LinkedIn">
+      <b-input
+        v-model="v.hacker.linkLinkedin.$model"
+        placeholder="optional"
+        type="url"
+      />
+    </b-field>
+
     <b-field
-      label="ethnicity"
-      :type="v.hacker.ethnicity.$error ? 'is-danger' : ''"
-      :message="!v.hacker.ethnicity.required ? 'Required' : !v.hacker.email.email ? 'Please enter a valid email' : ''"
+      label="Resume Link"
+      :type="v.hacker.linkResume.$error ? 'is-danger' : ''"
+      :message="v.hacker.linkResume.$error ? (!v.hacker.linkResume.required ? 'Required' : '') : ''"
     >
       <b-input
-        v-model.trim="v.hacker.ethnicity.$model"
+        v-model="v.hacker.linkResume.$model"
+        placeholder="required"
+        type="url"
+      />
+    </b-field>
+
+    <b-field
+      label="How would you like to utilize technology to make the world a better place?"
+      :type="v.hacker.longTechnology.$error ? 'is-danger' : ''"
+      :message="v.hacker.longTechnology.$error ? (!v.hacker.longTechnology.required ? 'Required' : '') : ''"
+    >
+      <b-input
+        v-model.trim="v.hacker.longTechnology.$model"
+        type="textarea"
+        name="longTechnology"
+        minlength="10"
+        maxlength="300"
+      />
+    </b-field>
+
+    <b-field
+      label="Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
+      :type="v.hacker.longProject.$error ? 'is-danger' : ''"
+      :message="v.hacker.longProject.$error ? (!v.hacker.longProject.required ? 'Required' : '') : ''"
+    >
+      <b-input
+        v-model.trim="v.hacker.longProject.$model"
+        type="textarea"
+        name="longProject"
+        minlength="10"
+        maxlength="300"
       />
     </b-field>
   </section>
