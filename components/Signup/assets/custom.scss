@@ -1,7 +1,7 @@
 @import "~bulma/sass/utilities/_all";
 
 $primary: #21258A;
-
+$secondary: #21D5D4;
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
@@ -13,6 +13,27 @@ $font-color: #21258a;
     background-color: $background-color;
     min-height: 100vh;
   }
+
+#signup-form a {
+  text-decoration: underline;
+  color: $primary;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+#signup-form .checkbox {
+  &:hover {
+    color: $primary;
+  }
+  margin-bottom: 20px;
+}
+
+
+#signup-form .checkbox + .checkbox {
+  margin-left: 0;
+}
 
 .signup-content {
     color: $font-color;
@@ -45,6 +66,11 @@ $font-color: #21258a;
 
 #signup-form .field-content {
     display: block;
+    margin: 30px 0;
+
+    p {
+      margin-bottom: 20px;
+    }
   }
 
 #signup-form .header {
