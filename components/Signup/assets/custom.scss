@@ -99,11 +99,18 @@ html {
     }
   }
 
-#signup-form .field-content .control .select select {
-  &:active, &:focus {
-    border: none;
+#signup-form .field-content .control .select {
+  &::after {
+     border-color: #AAAEBE;
   }
-  
+}
+
+#signup-form .field-content .control .select select {
+  border: 1px solid #9195A5;
+  &:active, &:focus {
+    border: 1px solid #262662;
+    box-shadow: none;
+  }
 }
 
 #signup-form .header {
