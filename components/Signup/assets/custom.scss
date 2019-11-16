@@ -1,0 +1,55 @@
+@import "~bulma/sass/utilities/_all";
+
+$primary: #21258A;
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+$background-color: #f2f7fe;
+$font-family: "Apercu Pro", sans-serif;
+$font-color: #21258a;
+
+#signup-form {
+    background-color: $background-color;
+    min-height: 100vh;
+  }
+
+.signup-content {
+    color: $font-color;
+    font-family: $font-family;
+    max-width: 900px;
+    @include from($tablet) {
+      margin: auto;
+      padding: 60px 60px 0 60px; //these 60s has to be the same as the other 60s
+    }
+  }
+
+.signup-buttons {
+    max-width: 900px;
+    @include from($tablet) {
+    margin: auto;
+    padding: 0 60px 60px 60px; //these 60s has to be the same as the other 60s
+    }
+}
+  
+#signup-form .label {
+  font-family: $font-family;
+  color: $font-color;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+#signup-form .field {
+  margin: 25px 0;
+}
+
+#signup-form .field-content {
+    display: block;
+  }
+
+#signup-form .header {
+    font-size: 40px;
+    font-family: $font-family;
+    color: $font-color;
+    font-weight: 700;
+}
