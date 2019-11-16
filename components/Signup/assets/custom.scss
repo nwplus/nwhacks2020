@@ -128,5 +128,15 @@ $slate-grey: #9195A5;
     font-family: $font-family;
     color: $font-color;
     font-weight: 700;
+}
+
+#signup-form .page-header {
+  margin-bottom: 40px;
+  @include from($tablet) {
     margin-bottom: 70px;
+  } 
+}
+
+#signup-form .page-header p {
+  margin-top: 14px;
 }

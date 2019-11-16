@@ -1,9 +1,11 @@
 <template>
   <section>
     <div class="signup-content">
-      <h2 class="header">
-        Almost there... 🏃‍♀️
-      </h2>
+      <div class="page-header">
+        <h2 class="header">
+          Almost there... 🏃‍♀️
+        </h2>
+      </div>
       <b-field
         label="How did you hear about nwHacks?"
         class="required"

@@ -1,10 +1,12 @@
 <template>
   <section>
     <div class="signup-content">
-      <h2 class="header">
-        Nice to meet you {{ v.hacker.firstname.$model }} 👋
-      </h2>
-      <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
+      <div class="page-header">
+        <h2 class="header">
+          Nice to meet you {{ v.hacker.firstname.$model }} 👋
+        </h2>
+        <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
+      </div>
       <b-field
         label="Is this your first hackathon?"
         :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
