@@ -53,6 +53,10 @@ html {
   cursor: default;
 }
 
+#signup-form .checkbox input[type=checkbox]:checked ~ .control-label {
+  font-weight: bold;
+}
+
 #signup-form .checkbox + .checkbox {
   margin-left: 0;
 }
