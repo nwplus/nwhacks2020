@@ -68,7 +68,7 @@
           I have read and agree to the
           <a
             href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-          >Major League Hacking Code of Conduct</a>.
+          >MLH Code of Conduct</a>.
         </b-checkbox>
       </div>
       <!-- </div> -->

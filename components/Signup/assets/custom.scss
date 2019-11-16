@@ -20,7 +20,7 @@ html {
 #signup-form a {
   text-decoration: underline;
   color: $primary;
-
+  transition: 0.1s;
   &:hover {
     color: $secondary;
   }
@@ -104,4 +104,5 @@ html {
     font-family: $font-family;
     color: $font-color;
     font-weight: 700;
+    margin-bottom: 70px;
 }
