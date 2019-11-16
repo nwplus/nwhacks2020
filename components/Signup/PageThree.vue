@@ -79,15 +79,10 @@
             >MLH Privacy Policy</a>.
           </b-checkbox>
         </b-field>
-        <p
-          v-if="!v.hacker.isCodeOfConductChecked.required"
-          class="help is-danger"
-        >
+        <p v-if="!v.hacker.isCodeOfConductChecked.required" class="help is-danger">
           Required
         </p>
-        <b-checkbox
-          required
-        >
+        <b-checkbox required>
           I have read and agree to the
           <a
             target="_blank"
@@ -95,27 +90,39 @@
             href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
           >MLH Code of Conduct</a>.
         </b-checkbox>
-        </p>
+        <!-- </p> -->
       </div>
       <div class="field">
         <div class="field-content">
           <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
-          <b-checkbox
-            v-model.trim="v.hacker.isDataReportingChecked.$model"
-            required
+          <b-field
+            class="required is-marginless"
+            :type="v.hacker.isDataReportingChecked.$error ? 'is-danger' : ''"
+            :message="v.hacker.isDataReportingChecked.$error ? (!v.hacker.isDataReportingChecked.sameAs ? 'Required' : '') : ''"
           >
-            I authorize nwPlus to use my anonymized data for data reporting.
-          </b-checkbox>
+            <b-checkbox
+              v-model.trim="v.hacker.isDataReportingChecked.$model"
+              required
+            >
+              I authorize nwPlus to use my anonymized data for data reporting.
+            </b-checkbox>
+          </b-field>
         </div>
       </div>
       <div class="field-content">
         <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
-        <b-checkbox
-          v-model.trim="v.hacker.isResumeSharingChecked.$model"
-          required
+        <b-field
+          class="required is-marginless"
+          :type="v.hacker.isResumeSharingChecked.$error ? 'is-danger' : ''"
+          :message="v.hacker.isResumeSharingChecked.$error ? (!v.hacker.isResumeSharingChecked.sameAs ? 'Required' : '') : ''"
         >
-          I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.
-        </b-checkbox>
+          <b-checkbox
+            v-model.trim="v.hacker.isResumeSharingChecked.$model"
+            required
+          >
+            I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.
+          </b-checkbox>
+        </b-field>
       </div>
     </div>
   </section>
