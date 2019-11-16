@@ -104,8 +104,8 @@
           type="textarea"
           name="longTechnology"
           minlength="10"
-          maxlength="750"
-          placeholder="Max 750 characters"
+          maxlength="650"
+          placeholder="Max 650 characters"
         />
       </b-field>
 
@@ -119,8 +119,8 @@
           type="textarea"
           name="longProject"
           minlength="10"
-          maxlength="750"
-          placeholder="Max 750 characters"
+          maxlength="650"
+          placeholder="Max 650 characters"
         />
       </b-field>
     </div>
