@@ -59,18 +59,24 @@
         <p>
           🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
           >MLH Code of Conduct</a>.
         </p>
         <b-checkbox v-model.trim="v.hacker.isPrivacyPolicyChecked.$model" required>
           I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://mlh.io/privacy"
           >MLH Privacy Policy</a>.
         </b-checkbox>
         <b-checkbox v-model.trim="v.hacker.isCodeOfConductChecked.$model" required>
           I have read and agree to the
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
           >MLH Code of Conduct</a>.
         </b-checkbox>
