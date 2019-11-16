@@ -99,6 +99,17 @@ $slate-grey: #9195A5;
     }
   }
 
+#signup-form .select {
+  @include until($tablet) {
+    width: 100%;
+  }
+}
+#signup-form select {
+  @include until($tablet) {
+    width: 100%;
+  }
+}
+
 #signup-form .name-field {
   margin-bottom: 0;
 }
