@@ -138,6 +138,34 @@ export default {
       checked(v) {
         return v
       }
+    firstHackathon: {
+        required,
+        matchesRadio(v) {
+          return isOneOf(v, ['yes', 'no'])
+        }
+      },
+      attendedLHD: {
+        required,
+        matchesRadio(v) {
+          return isOneOf(v, ['yes', 'no'])
+        }
+      },
+      hackerRoleDeveloper: {},
+      hackerRoleDesigner: {},
+      hackerRoleHardware: {},
+      hackerRoleOther: {},
+      linkGithub: {},
+      linkPortfolio: {},
+      linkLinkedin: {},
+      linkResume: {
+        required
+      },
+      longTechnology: {
+        required
+      },
+      longProject: {
+        required
+      }
     }
   }
 }

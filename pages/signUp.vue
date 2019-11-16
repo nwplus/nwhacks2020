@@ -1,28 +1,33 @@
 <template>
-  <div style="height: 100vh; margin: auto;">
+  <div id="signup-form">
     <div v-if="page !== -1">
-      <p class="title">
-        Sign up form
-      </p>
       <pageOne v-if="page == 0" :v="$v" />
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
-      <section>
-        <b-button @click="submit">
-          Submit
-        </b-button>
-        <b-button @click="$store.commit('clearState')">
-          clear
-        </b-button>
-      </section>
-      <section>
-        <b-button @click="page--">
-          Previous
-        </b-button>
-        <b-button @click="page++">
-          Next
-        </b-button>
-      </section>
+      <div class="signup-buttons">
+        <section v-if="page == 2" :v="$v">
+          <b-button @click="page--">
+            Previous
+          </b-button>
+          <b-button @click="clear">
+            Clear
+          </b-button>
+          <b-button @click="submit">
+            Submit
+          </b-button>
+        </section>
+        <section v-if="page == 0 || page == 1" :v="$v">
+          <b-button v-if="page !== 0" @click="page--">
+            Previous
+          </b-button>
+          <b-button @click="clear">
+            Clear
+          </b-button>
+          <b-button @click="page++">
+            Next
+          </b-button>
+        </section>
+      </div>
     </div>
     <signUpClosed v-if="page === -1" />
   </div>
@@ -78,7 +83,20 @@ export default {
       // to form submit after this
       alert('Form submitted')
       fireDb.submitApplication(this.$store.state.hackerApplication)
+    },
+    clear() {
+      if (confirm('Are you sure you want to clear the entire form?')) {
+        this.$store.commit('clearState')
+      }
     }
   }
 }
 </script>
+<style lang="scss">
+//Desktop CSS:
+@font-face {
+  font-family: "Apercu Pro";
+  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+}
+
+</style>
