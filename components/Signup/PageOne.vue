@@ -1,11 +1,9 @@
 <template>
   <section class="signup-content">
-    <h2 class="title">
+    <h2 class="header">
       About you 📚
     </h2>
-    <p class="description">
-      nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️
-    </p>
+    <p>nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️</p>
     <div>
       <b-field
         label="What is your full legal name?"
@@ -30,11 +28,7 @@
       :type="v.hacker.email.$error ? 'is-danger' : ''"
       :message="v.hacker.email.$error ? (!v.hacker.email.required ? 'Required' : (!v.hacker.email.email ? 'Please enter a valid email' : '')) : ''"
     >
-      <b-input
-        v-model.trim="v.hacker.email.$model"
-        placeholder="hacker@email.com"
-        type="email"
-      />
+      <b-input v-model.trim="v.hacker.email.$model" placeholder="hacker@email.com" type="email" />
     </b-field>
 
     <b-field
@@ -42,7 +36,11 @@
       :type="v.hacker.phonenumber.$error ? 'is-danger' : ''"
       :message="v.hacker.phonenumber.$error ? (!v.hacker.phonenumber.required ? 'Required' : (!v.hacker.phonenumber.isPhoneNumberFormat ? 'Incorrect format' : '')) : ''"
     >
-      <b-input v-model.trim="v.hacker.phonenumber.$model" placeholder="000-000-0000" maxlength="12" />
+      <b-input
+        v-model.trim="v.hacker.phonenumber.$model"
+        placeholder="000-000-0000"
+        maxlength="12"
+      />
     </b-field>
 
     <b-field
@@ -129,10 +127,20 @@
       :type="v.hacker.over19.$error ? 'is-danger' : ''"
       :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Required' : '')) : ''"
     >
-      <b-radio v-model.trim="v.hacker.over19.$model" class="inline-radio" name="over19" native-value="yes">
+      <b-radio
+        v-model.trim="v.hacker.over19.$model"
+        class="inline-radio"
+        name="over19"
+        native-value="yes"
+      >
         Yes
       </b-radio>
-      <b-radio v-model.trim="v.hacker.over19.$model" class="inline-radio" name="over19" native-value="no">
+      <b-radio
+        v-model.trim="v.hacker.over19.$model"
+        class="inline-radio"
+        name="over19"
+        native-value="no"
+      >
         No
       </b-radio>
     </b-field>
@@ -199,7 +207,13 @@
       :type="v.hacker.gradyear.$error ? 'is-danger' : ''"
       :message="v.hacker.gradyear.$error ? (!v.hacker.gradyear.required ? 'Required' : (!v.hacker.gradyear.withinValidRange ? 'Not valid year' : '')) : ''"
     >
-      <b-input v-model.trim="v.hacker.gradyear.$model" min="1900" max="2027" type="number" controls-position="compact" />
+      <b-input
+        v-model.trim="v.hacker.gradyear.$model"
+        min="1900"
+        max="2027"
+        type="number"
+        controls-position="compact"
+      />
     </b-field>
 
     <b-field
@@ -207,7 +221,10 @@
       :type="v.hacker.city.$error ? 'is-danger' : ''"
       :message="v.hacker.city.$error ? (!v.hacker.city.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.city.$model" placeholder="Enter your city and province/state" />
+      <b-input
+        v-model.trim="v.hacker.city.$model"
+        placeholder="Enter your city and province/state"
+      />
     </b-field>
 
     <b-field
@@ -216,13 +233,28 @@
       :type="v.hacker.travel.$error ? 'is-danger' : ''"
       :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="no" class="inline-radio full-width">
+      <b-radio
+        v-model.trim="v.hacker.travel.$model"
+        name="travel"
+        native-value="no"
+        class="inline-radio full-width"
+      >
         No
       </b-radio>
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="travel reimbursement" class="inline-radio full-width">
+      <b-radio
+        v-model.trim="v.hacker.travel.$model"
+        name="travel"
+        native-value="travel reimbursement"
+        class="inline-radio full-width"
+      >
         Yes I would like to apply for a travel reimbursement
       </b-radio>
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="shuttle bus" class="inline-radio full-width">
+      <b-radio
+        v-model.trim="v.hacker.travel.$model"
+        name="travel"
+        native-value="shuttle bus"
+        class="inline-radio full-width"
+      >
         Yes I would like a seat on the bus from the Seattle/UW area
       </b-radio>
     </b-field>
@@ -271,41 +303,41 @@ export default {
 @import "bulma/bulma.sass";
 
 #page-one {
-    background: #F2F7FE;
-    width: 40%;
-    margin: 0 auto;
+  background: #f2f7fe;
+  width: 40%;
+  margin: 0 auto;
 }
 .title {
-    font-size: 40px;
-    font-weight: bold;
-    color: #2C0A92;
+  font-size: 40px;
+  font-weight: bold;
+  color: #2c0a92;
 }
 .description {
-    color: #2C0A92;
-    margin-bottom: 60px;
+  color: #2c0a92;
+  margin-bottom: 60px;
 }
 .name-section * {
-    display: inline-block;
+  display: inline-block;
 }
 .display-block {
-    display: block !important;
+  display: block !important;
 }
 .inline-radio {
-    display: inline-flex !important;
+  display: inline-flex !important;
 }
 .full-width {
-    width: 100%;
+  width: 100%;
 }
 .radio {
-    margin: 5px 0 !important;
+  margin: 5px 0 !important;
 }
 div.field {
-    margin: 20px 0 !important;
-    font-size: 20px;
+  margin: 20px 0 !important;
+  font-size: 20px;
 }
-@include until ($tablet) {
-    #page-one {
-        width: 95%;
-    }
+@include until($tablet) {
+  #page-one {
+    width: 95%;
+  }
 }
 </style>
