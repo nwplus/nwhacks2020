@@ -82,14 +82,20 @@
         <p v-if="!v.hacker.isCodeOfConductChecked.required" class="help is-danger">
           Required
         </p>
-        <b-checkbox required>
-          I have read and agree to the
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
-          >MLH Code of Conduct</a>.
-        </b-checkbox>
+        <b-field
+          class="required is-marginless"
+          :type="v.hacker.isCodeOfConductChecked.$error ? 'is-danger' : ''"
+          :message="v.hacker.isCodeOfConductChecked.$error ? (!v.hacker.isCodeOfConductChecked.sameAs ? 'Required' : '') : ''"
+        >
+          <b-checkbox v-model.trim="v.hacker.isCodeOfConductChecked.$model" required>
+            I have read and agree to the
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+            >MLH Code of Conduct</a>.
+          </b-checkbox>
+        </b-field>
         <!-- </p> -->
       </div>
       <div class="field">
