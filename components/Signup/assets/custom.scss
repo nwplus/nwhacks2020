@@ -30,6 +30,25 @@ $font-color: #21258a;
   margin-bottom: 20px;
 }
 
+#signup-form .checkbox input[type=checkbox] + .check {
+  border: 2px solid #9195A5;
+  box-shadow: none;
+  &:hover {
+    border: 2px solid #7F83E5;
+    background-color: #E8E8FF;
+  }
+}
+
+#signup-form .checkbox input[type=checkbox]:checked + .check {
+  border: 2px solid $primary;
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+#signup-form .checkbox .control-label {
+  cursor: default;
+}
 
 #signup-form .checkbox + .checkbox {
   margin-left: 0;
