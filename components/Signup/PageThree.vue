@@ -71,12 +71,6 @@
           >MLH Code of Conduct</a>.
         </b-checkbox>
       </div>
-      <!-- </div> -->
-      <!-- <div class="field"> -->
-      <!-- <div class="field-content">
-
-      </div>-->
-      <!-- </div> -->
       <div class="field">
         <div class="field-content">
           <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
@@ -87,7 +81,6 @@
           </b-checkbox>
         </div>
       </div>
-      <!-- <div class="field"> -->
       <div class="field-content">
         <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
         <b-checkbox
@@ -96,21 +89,6 @@
           I authorize nwPlus to provide my resume and supporting documents (Github, Linkedin, etc) to event sponsors for recruitment purposes upon request.
         </b-checkbox>
       </div>
-      <!-- </div> -->
-      <!-- <div class="field">
-        <p>Connect with the community of nwHacks on Medium, Twitter, and Facebook! Share your story and excitement with us!</p>
-        <div class="icons">
-          <a href="https://medium.com/nwhacks">
-            <font-awesome-icon :icon="['fab', 'medium-m']" />
-          </a>
-          <a href="https://twitter.com/nwhacks">
-            <font-awesome-icon :icon="['fab', 'twitter']" />
-          </a>
-          <a href="https://www.facebook.com/nwHacks/">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" />
-          </a>
-        </div>
-      </div>-->
     </div>
   </section>
 </template>
