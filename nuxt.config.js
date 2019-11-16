@@ -50,7 +50,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase.js', '~/plugins/vuelidate.js', { src: '~/plugins/vuex-persist', srr: false }],
+  plugins: [
+    '~/plugins/firebase.js',
+    '~/plugins/vuelidate.js',
+    { src: '~/plugins/vuex-persist', srr: false }
+  ],
 
   /*
    ** Cache static resources for better performance.
@@ -64,6 +68,17 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    [
+      'nuxt-fontawesome',
+      {
+        imports: [
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ],
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/svg-sprite',
