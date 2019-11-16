@@ -99,11 +99,27 @@ $slate-grey: #9195A5;
     }
   }
 
-#signup-form .field-content .control input[type=text] {
+#signup-form input {
   box-shadow: none;
+  font-family: $font-family;
   &::placeholder {
     color: $slate-grey;
-    font-family: $font-family;
+  }
+}
+
+#signup-form .control .textarea {
+  box-shadow: none;
+  font-family: $font-family;
+  &::placeholder {
+    color: $slate-grey;
+  }
+}
+
+#signup-form .field-content .control input[type=text] {
+  box-shadow: none;
+  font-family: $font-family;
+  &::placeholder {
+    color: $slate-grey;
   }
 }
 

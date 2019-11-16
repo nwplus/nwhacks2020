@@ -3,7 +3,7 @@
     <div class="signup-content">
       <div class="page-header">
         <h2 class="header">
-          Nice to meet you {{ v.hacker.firstname.$model }} 👋
+          Nice to meet you, {{ v.hacker.firstname.$model }} 👋
         </h2>
         <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
       </div>
@@ -95,7 +95,7 @@
       </b-field>
 
       <b-field
-        label="How would you like to utilize technology to make the world a better place?"
+        label="🏗️ How would you like to utilize technology to make the world a better place?"
         :type="v.hacker.longTechnology.$error ? 'is-danger' : ''"
         :message="v.hacker.longTechnology.$error ? (!v.hacker.longTechnology.required ? 'Required' : '') : ''"
       >
@@ -105,11 +105,12 @@
           name="longTechnology"
           minlength="10"
           maxlength="400"
+          placeholder="Max 250 words"
         />
       </b-field>
 
       <b-field
-        label="Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
+        label="🏅 Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
         :type="v.hacker.longProject.$error ? 'is-danger' : ''"
         :message="v.hacker.longProject.$error ? (!v.hacker.longProject.required ? 'Required' : '') : ''"
       >
@@ -119,6 +120,7 @@
           name="longProject"
           minlength="10"
           maxlength="400"
+          placeholder="Max 250 words"
         />
       </b-field>
     </div>
