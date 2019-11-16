@@ -79,6 +79,34 @@ export default {
       matchesRadio(v) {
         return isOneOf(v, ['no', 'travel reimbursement', 'shuttle bus'])
       }
+    },
+    firstHackathon: {
+      required,
+      matchesRadio(v) {
+        return isOneOf(v, ['yes', 'no'])
+      }
+    },
+    attendedLHD: {
+      required,
+      matchesRadio(v) {
+        return isOneOf(v, ['yes', 'no'])
+      }
+    },
+    hackerRoleDeveloper: {},
+    hackerRoleDesigner: {},
+    hackerRoleHardware: {},
+    hackerRoleOther: {},
+    linkGithub: {},
+    linkPortfolio: {},
+    linkLinkedin: {},
+    linkResume: {
+      required
+    },
+    longTechnology: {
+      required
+    },
+    longProject: {
+      required
     }
   }
 }
