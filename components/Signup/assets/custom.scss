@@ -99,6 +99,13 @@ html {
     }
   }
 
+#signup-form .field-content .control .select select {
+  &:active, &:focus {
+    border: none;
+  }
+  
+}
+
 #signup-form .header {
     font-size: 40px;
     font-family: $font-family;
