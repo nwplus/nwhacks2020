@@ -85,7 +85,6 @@ export default {
       'nuxt-buefy',
       {
         /* buefy options */
-        css: false
       }
     ],
     [
