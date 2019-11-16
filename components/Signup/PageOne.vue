@@ -33,11 +33,7 @@
       :type="v.hacker.email.$error ? 'is-danger' : ''"
       :message="v.hacker.email.$error ? (!v.hacker.email.required ? 'Required' : (!v.hacker.email.email ? 'Please enter a valid email' : '')) : ''"
     >
-      <b-input
-        v-model.trim="v.hacker.email.$model"
-        placeholder="hacker@email.com"
-        type="email"
-      />
+      <b-input v-model.trim="v.hacker.email.$model" placeholder="hacker@email.com" type="email" />
     </b-field>
 
     <b-field
@@ -45,7 +41,11 @@
       :type="v.hacker.phonenumber.$error ? 'is-danger' : ''"
       :message="v.hacker.phonenumber.$error ? (!v.hacker.phonenumber.required ? 'Required' : (!v.hacker.phonenumber.isPhoneNumberFormat ? 'Incorrect format' : '')) : ''"
     >
-      <b-input v-model.trim="v.hacker.phonenumber.$model" placeholder="000-000-0000" maxlength="12" />
+      <b-input
+        v-model.trim="v.hacker.phonenumber.$model"
+        placeholder="000-000-0000"
+        maxlength="12"
+      />
     </b-field>
 
     <b-field
@@ -131,6 +131,7 @@
       :type="v.hacker.over19.$error ? 'is-danger' : ''"
       :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Required' : '')) : ''"
     >
+      >
       <div class="field-content">
         <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="yes">
           Yes
@@ -202,7 +203,13 @@
       :type="v.hacker.gradyear.$error ? 'is-danger' : ''"
       :message="v.hacker.gradyear.$error ? (!v.hacker.gradyear.required ? 'Required' : (!v.hacker.gradyear.withinValidRange ? 'Not valid year' : '')) : ''"
     >
-      <b-input v-model.trim="v.hacker.gradyear.$model" min="1900" max="2027" type="number" controls-position="compact" />
+      <b-input
+        v-model.trim="v.hacker.gradyear.$model"
+        min="1900"
+        max="2027"
+        type="number"
+        controls-position="compact"
+      />
     </b-field>
 
     <b-field
@@ -210,7 +217,10 @@
       :type="v.hacker.city.$error ? 'is-danger' : ''"
       :message="v.hacker.city.$error ? (!v.hacker.city.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.city.$model" placeholder="Enter your city and province/state" />
+      <b-input
+        v-model.trim="v.hacker.city.$model"
+        placeholder="Enter your city and province/state"
+      />
     </b-field>
 
     <b-field
@@ -273,20 +283,42 @@ export default {
 
 <style lang="scss" scoped>
 
-.name-field {
-  margin-bottom: 0;
+#page-one {
+    background: #F2F7FE;
+    width: 40%;
+    margin: 0 auto;
 }
-
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2C0A92;
+}
+.description {
+    color: #2C0A92;
+    margin-bottom: 60px;
+}
+.name-section * {
+    display: inline-block;
+}
 .display-block {
-    display: block !important;
+  display: block !important;
 }
 .inline-radio {
-    display: inline-flex !important;
+  display: inline-flex !important;
 }
 .full-width {
-    width: 100%;
+  width: 100%;
 }
 .radio-stack .radio {
     margin: 5px 0 !important;
+}
+div.field {
+    margin: 20px 0 !important;
+    font-size: 20px;
+}
+@include until ($tablet) {
+    #page-one {
+        width: 95%;
+    }
 }
 </style>
