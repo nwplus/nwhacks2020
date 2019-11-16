@@ -17,9 +17,6 @@
       </div>
     </div>
     <div v-if="page !== -1">
-      <p class="title">
-        Sign up form
-      </p>
       <pageOne v-if="page == 0" :v="$v" />
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
@@ -94,6 +91,11 @@ export default {
       // to form submit after this
       alert('Form submitted')
       fireDb.submitApplication(this.$store.state.hackerApplication)
+    },
+    clear() {
+      if (confirm('Are you sure you want to clear the entire form?')) {
+        this.$store.commit('clearState')
+      }
     }
   }
 }
@@ -167,13 +169,11 @@ export default {
   /* White */
   color: #FFFFFF;
 }
+<style lang="scss">
+//Desktop CSS:
+@font-face {
+  font-family: "Apercu Pro";
+  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+}
 
-.signup {
-  background: #E5E5E5;
-}
-</style>
-<style>
-body {
-  background: #E5E5E5;
-}
 </style>
