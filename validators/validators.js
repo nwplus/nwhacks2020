@@ -137,8 +137,8 @@ export default {
       required,
       checked(v) {
         return v
-      }
-    firstHackathon: {
+      },
+      firstHackathon: {
         required,
         matchesRadio(v) {
           return isOneOf(v, ['yes', 'no'])
