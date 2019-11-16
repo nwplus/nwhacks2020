@@ -79,7 +79,11 @@ export default {
     submit() {
       this.$v.hacker.$touch()
       // if its still pending or an error is returned do not submit
-      if (this.$v.hacker.$pending || this.$v.hacker.$error) return
+      if (this.$v.hacker.$pending || this.$v.hacker.$error) {
+        alert('form errors')
+        console.log(this.$v.hacker.$error)
+        return
+      }
       // to form submit after this
       alert('Form submitted')
       fireDb.submitApplication(this.$store.state.hackerApplication)

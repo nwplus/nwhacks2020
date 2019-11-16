@@ -1,4 +1,4 @@
-import { required, email, requiredIf } from 'vuelidate/lib/validators'
+import { required, email, requiredIf, sameAs } from 'vuelidate/lib/validators'
 export default {
   hacker: {
     firstname: {
@@ -116,10 +116,7 @@ export default {
       })
     },
     isPrivacyPolicyChecked: {
-      required,
-      checked(v) {
-        return v
-      }
+      sameAs: sameAs(() => true)
     },
     isCodeOfConductChecked: {
       required,

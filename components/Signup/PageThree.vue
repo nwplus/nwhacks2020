@@ -56,7 +56,6 @@
           />
         </div>
       </b-field>
-
       <div class="field-content no-margin-left">
         <p>
           🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
@@ -66,15 +65,29 @@
             href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
           >MLH Code of Conduct</a>.
         </p>
-        <b-checkbox v-model.trim="v.hacker.isPrivacyPolicyChecked.$model" required>
-          I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://mlh.io/privacy"
-          >MLH Privacy Policy</a>.
-        </b-checkbox>
-        <b-checkbox v-model.trim="v.hacker.isCodeOfConductChecked.$model" required>
+        <b-field
+          class="required is-marginless"
+          :type="v.hacker.isPrivacyPolicyChecked.$error ? 'is-danger' : ''"
+          :message="v.hacker.isPrivacyPolicyChecked.$error ? (!v.hacker.isPrivacyPolicyChecked.sameAs ? 'Required' : '') : ''"
+        >
+          <b-checkbox v-model.trim="v.hacker.isPrivacyPolicyChecked.$model" required>
+            I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://mlh.io/privacy"
+            >MLH Privacy Policy</a>.
+          </b-checkbox>
+        </b-field>
+        <p
+          v-if="!v.hacker.isCodeOfConductChecked.required"
+          class="help is-danger"
+        >
+          Required
+        </p>
+        <b-checkbox
+          required
+        >
           I have read and agree to the
           <a
             target="_blank"
@@ -82,6 +95,7 @@
             href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
           >MLH Code of Conduct</a>.
         </b-checkbox>
+        </p>
       </div>
       <div class="field">
         <div class="field-content">
