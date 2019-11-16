@@ -105,7 +105,7 @@
           name="longTechnology"
           minlength="10"
           maxlength="400"
-          placeholder="Max 250 words"
+          placeholder="Max 400 characters"
         />
       </b-field>
 
@@ -120,7 +120,7 @@
           name="longProject"
           minlength="10"
           maxlength="400"
-          placeholder="Max 250 words"
+          placeholder="Max 400 characters"
         />
       </b-field>
     </div>
