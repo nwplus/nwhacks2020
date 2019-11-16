@@ -1,4 +1,4 @@
-import { required, email, requiredIf } from 'vuelidate/lib/validators'
+import { required, email, requiredIf, sameAs } from 'vuelidate/lib/validators'
 export default {
   hacker: {
     firstname: {
@@ -22,7 +22,13 @@ export default {
     gender: {
       required,
       matchesDropDown(v) {
-        return isOneOf(v, ['female', 'male', 'non-binary', 'prefer not to specify', 'other'])
+        return isOneOf(v, [
+          'female',
+          'male',
+          'non-binary',
+          'prefer not to specify',
+          'other'
+        ])
       }
     },
     genderother: {
@@ -33,8 +39,17 @@ export default {
     ethnicity: {
       required,
       matchesDropDown(v) {
-        return isOneOf(v, ['american idian', 'alaskan native', 'asian / pacific islander', 'black or african american',
-          'hispanic', 'white / caucasian', 'multiple ethinicity', 'other', 'prefer not to answer'])
+        return isOneOf(v, [
+          'american indian',
+          'alaskan native',
+          'asian / pacific islander',
+          'black or african american',
+          'hispanic',
+          'white / caucasian',
+          'multiple ethnicity',
+          'other',
+          'prefer not to answer'
+        ])
       }
     },
     ethnicityother: {
@@ -68,7 +83,7 @@ export default {
     gradyear: {
       required,
       withinValidRange(v) {
-        return (v >= 2015 && v <= 2027)
+        return v >= 2015 && v <= 2027
       }
     },
     city: {
@@ -78,6 +93,47 @@ export default {
       required,
       matchesRadio(v) {
         return isOneOf(v, ['no', 'travel reimbursement', 'shuttle bus'])
+      }
+    },
+    source: {
+      required,
+      matchesDropDown(v) {
+        return isOneOf(v, [
+          'mlh',
+          'social media',
+          'website',
+          'word of mouth',
+          'club newsletter',
+          'faculty newsletter',
+          'prof/in class',
+          'other'
+        ])
+      }
+    },
+    sourceother: {
+      required: requiredIf(function (hacker) {
+        return hacker.source === 'Other'
+      })
+    },
+    isPrivacyPolicyChecked: {
+      sameAs: sameAs(() => true)
+    },
+    isCodeOfConductChecked: {
+      required,
+      checked(v) {
+        return v
+      }
+    },
+    isDataReportingChecked: {
+      required,
+      checked(v) {
+        return v
+      }
+    },
+    isResumeSharingChecked: {
+      required,
+      checked(v) {
+        return v
       }
     },
     firstHackathon: {
