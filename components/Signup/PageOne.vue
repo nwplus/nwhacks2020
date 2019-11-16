@@ -1,30 +1,33 @@
 <template>
   <section class="signup-content">
-    <h2 class="title">
-      About you 📚
-    </h2>
-    <p class="description">
-      nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️
-    </p>
-    <div>
+    <div class="page-header">
+      <h2 class="header">
+        About you 📚
+      </h2>
+      <p>
+        nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️
+      </p>
+    </div>
+    <div style="display: flex;">
       <b-field
         label="What is your full legal name?"
         :type="v.hacker.firstname.$error ? 'is-danger' : ''"
         :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '‎') : '.'"
         style="width: 35%;"
+        class="name-field"
       >
         <b-input v-model.trim="v.hacker.firstname.$model" placeholder="First Name" />
       </b-field>
-
       <b-field
+        :label="'‏‏‎ ‎'"
         :type="v.hacker.lastname.$error ? 'is-danger' : ''"
         :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : '.'"
-        style="width: 35%;"
+        style="margin-left: 5%; width: 35%;"
+        class="name-field"
       >
         <b-input v-model.trim="v.hacker.lastname.$model" placeholder="Last Name" />
       </b-field>
     </div>
-
     <b-field
       label="What is your Email?"
       :type="v.hacker.email.$error ? 'is-danger' : ''"
@@ -125,18 +128,18 @@
 
     <b-field
       label="Will you be 19 years of age or older by January 11th, 2020?"
-      class="display-block"
       :type="v.hacker.over19.$error ? 'is-danger' : ''"
       :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Required' : '')) : ''"
     >
-      <b-radio v-model.trim="v.hacker.over19.$model" class="inline-radio" name="over19" native-value="yes">
-        Yes
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.over19.$model" class="inline-radio" name="over19" native-value="no">
-        No
-      </b-radio>
+      <div class="field-content">
+        <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="yes">
+          Yes
+        </b-radio>
+        <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="no">
+          No
+        </b-radio>
+      </div>
     </b-field>
-
     <b-field
       label="What level of education are you currently studying at?"
       :type="v.hacker.education.$error ? 'is-danger' : ''"
@@ -212,19 +215,20 @@
 
     <b-field
       label="Would you like to apply for travel reimbursement? (if you are coming from the University of Washington, or the surrounding area, we will be providing a shuttle bus)"
-      class="display-block"
       :type="v.hacker.travel.$error ? 'is-danger' : ''"
       :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="no" class="inline-radio full-width">
-        No
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="travel reimbursement" class="inline-radio full-width">
-        Yes I would like to apply for a travel reimbursement
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="shuttle bus" class="inline-radio full-width">
-        Yes I would like a seat on the bus from the Seattle/UW area
-      </b-radio>
+      <div class="is-block field-content radio-stack">
+        <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="no" class=" full-width">
+          No
+        </b-radio>
+        <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="travel reimbursement" class=" ull-width">
+          Yes I would like to apply for a travel reimbursement
+        </b-radio>
+        <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="shuttle bus" class="full-width">
+          Yes I would like a seat on the bus from the Seattle/UW area
+        </b-radio>
+      </div>
     </b-field>
   </section>
 </template>
@@ -268,25 +272,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "bulma/bulma.sass";
 
-#page-one {
-    background: #F2F7FE;
-    width: 40%;
-    margin: 0 auto;
+.name-field {
+  margin-bottom: 0;
 }
-.title {
-    font-size: 40px;
-    font-weight: bold;
-    color: #2C0A92;
-}
-.description {
-    color: #2C0A92;
-    margin-bottom: 60px;
-}
-.name-section * {
-    display: inline-block;
-}
+
 .display-block {
     display: block !important;
 }
@@ -296,16 +286,7 @@ export default {
 .full-width {
     width: 100%;
 }
-.radio {
+.radio-stack .radio {
     margin: 5px 0 !important;
-}
-div.field {
-    margin: 20px 0 !important;
-    font-size: 20px;
-}
-@include until ($tablet) {
-    #page-one {
-        width: 95%;
-    }
 }
 </style>

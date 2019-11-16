@@ -99,6 +99,14 @@ $slate-grey: #9195A5;
     }
   }
 
+#signup-form .name-field {
+  margin-bottom: 0;
+}
+
+#signup-form .vertical-field-content {
+  display: inline;
+}
+
 #signup-form input {
   box-shadow: none;
   font-family: $font-family;
