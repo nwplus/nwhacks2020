@@ -55,7 +55,7 @@
         </div>
       </b-field>
 
-      <div class="field-content">
+      <div class="field-content no-margin-left">
         <p>
           🤖 We participate in Major League Hacking (MLH) as a MLH Member Event and are committed to providing a safe and inclusive environment for everyone attending nwHacks as required by the
           <a
