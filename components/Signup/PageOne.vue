@@ -1,25 +1,25 @@
 <template>
-  <section id="page-one">
-    <h1 class="title">
+  <section class="signup-content">
+    <h2 class="title">
       About you 📚
-    </h1>
+    </h2>
     <p class="description">
       nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️
     </p>
-    <div class="name-section">
+    <div>
       <b-field
         label="What is your full legal name?"
-        custom-class="field-label"
         :type="v.hacker.firstname.$error ? 'is-danger' : ''"
-        :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '') : ''"
+        :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '‎') : '.'"
+        style="width: 35%;"
       >
         <b-input v-model.trim="v.hacker.firstname.$model" placeholder="First Name" />
       </b-field>
 
       <b-field
-        label=""
         :type="v.hacker.lastname.$error ? 'is-danger' : ''"
-        :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : ''"
+        :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : '.'"
+        style="width: 35%;"
       >
         <b-input v-model.trim="v.hacker.lastname.$model" placeholder="Last Name" />
       </b-field>
@@ -48,7 +48,7 @@
     <b-field
       label="Which gender do you identify as?"
       :type="v.hacker.gender.$error ? 'is-danger' : ''"
-      :message="v.hacker.gender.$error ? (!v.hacker.gender.required ? 'Required' : (!v.hacker.gender.matchesDropdown ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.gender.$error ? (!v.hacker.gender.required ? 'Required' : (!v.hacker.gender.matchesDropdown ? 'Required' : '')) : ''"
     >
       <b-select v-model.trim="v.hacker.gender.$model" placeholder="Select an option">
         <option value="female">
@@ -81,7 +81,7 @@
     <b-field
       label="What is your race / ethnicity?"
       :type="v.hacker.ethnicity.$error ? 'is-danger' : ''"
-      :message="v.hacker.ethnicity.$error ? (!v.hacker.ethnicity.required ? 'Required' : (!v.hacker.ethnicity.matchesDropdown ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.ethnicity.$error ? (!v.hacker.ethnicity.required ? 'Required' : (!v.hacker.ethnicity.matchesDropdown ? 'Required' : '')) : ''"
     >
       <b-select v-model.trim="v.hacker.ethnicity.$model" placeholder="Select an option">
         <option value="american indian">
@@ -127,7 +127,7 @@
       label="Will you be 19 years of age or older by January 11th, 2020?"
       class="display-block"
       :type="v.hacker.over19.$error ? 'is-danger' : ''"
-      :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Required' : '')) : ''"
     >
       <b-radio v-model.trim="v.hacker.over19.$model" class="inline-radio" name="over19" native-value="yes">
         Yes
@@ -140,7 +140,7 @@
     <b-field
       label="What level of education are you currently studying at?"
       :type="v.hacker.education.$error ? 'is-danger' : ''"
-      :message="v.hacker.education.$error ? (!v.hacker.education.required ? 'Required' : (!v.hacker.education.matchesDropdown ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.education.$error ? (!v.hacker.education.required ? 'Required' : (!v.hacker.education.matchesDropdown ? 'Required' : '')) : ''"
     >
       <b-select v-model.trim="v.hacker.education.$model" placeholder="Select an option">
         <option value="high school">
@@ -214,7 +214,7 @@
       label="Would you like to apply for travel reimbursement? (if you are coming from the University of Washington, or the surrounding area, we will be providing a shuttle bus)"
       class="display-block"
       :type="v.hacker.travel.$error ? 'is-danger' : ''"
-      :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
       <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="no" class="inline-radio full-width">
         No
