@@ -86,6 +86,7 @@ export default {
     color: #2C0A92;
     width: 679px;
     margin: auto;
+    margin-top: 18px;
     @include until($tablet){
         width: 95%;
     }
