@@ -27,7 +27,7 @@
       </b-field>
     </div>
     <b-field
-      label="What is your Email?"
+      label="What is your email?"
       :type="v.hacker.email.$error ? 'is-danger' : ''"
       :message="v.hacker.email.$error ? (!v.hacker.email.required ? 'Required' : (!v.hacker.email.email ? 'Please enter a valid email' : '')) : ''"
     >
@@ -35,7 +35,7 @@
     </b-field>
 
     <b-field
-      label="What is your Phone Number? (format: ###-###-####)"
+      label="What is your phone number? (format: ###-###-####)"
       :type="v.hacker.phonenumber.$error ? 'is-danger' : ''"
       :message="v.hacker.phonenumber.$error ? (!v.hacker.phonenumber.required ? 'Required' : (!v.hacker.phonenumber.isPhoneNumberFormat ? 'Incorrect format' : '')) : ''"
     >
@@ -221,18 +221,19 @@
     </b-field>
 
     <b-field
-      label="Would you like to apply for travel reimbursement? (if you are coming from the University of Washington, or the surrounding area, we will be providing a shuttle bus)"
+      label="Would you like to apply for a travel reimbursement? If you are coming from the University of Washington, or the surrounding area, we will be providing shuttle buses."
       :type="v.hacker.travel.$error ? 'is-danger' : ''"
       :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
       <div class="is-block field-content radio-stack">
+        <p>Note: if selected to participate, we will be subsidizing a maximum of $200 CAD and you must submit this application by 11:59PM PST November 25, 2019.</p>
         <b-radio
           v-model.trim="v.hacker.travel.$model"
           name="travel"
           native-value="no"
           class="full-width"
         >
-          No
+          No, I will not need a travel reimbursement.
         </b-radio>
         <b-radio
           v-model.trim="v.hacker.travel.$model"
@@ -240,7 +241,7 @@
           native-value="travel reimbursement"
           class="ull-width"
         >
-          Yes I would like to apply for a travel reimbursement
+          Yes, I would like to apply for a travel reimbursement.
         </b-radio>
         <b-radio
           v-model.trim="v.hacker.travel.$model"
@@ -248,7 +249,7 @@
           native-value="shuttle bus"
           class="full-width"
         >
-          Yes I would like a seat on the bus from the Seattle/UW area
+          No, but I would like a seat on the bus from the Seattle/UW area.
         </b-radio>
       </div>
     </b-field>
