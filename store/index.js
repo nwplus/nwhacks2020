@@ -58,6 +58,7 @@ export const mutations = {
   },
   clearState(state) {
     state.hackerApplication = { ...initialState.hackerApplication }
+    state.signUpPage = 0
   },
   goToPage(state, page) {
     if (page > 3 || page < 0) {

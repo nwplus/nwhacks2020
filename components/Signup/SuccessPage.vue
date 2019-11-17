@@ -10,11 +10,9 @@
       <p id="subtitle">
         Thanks for applying to participate in nwHacks 2020! Stay tuned as your application gets assessed. Expect to hear back from us by the end of December.
       </p>
-      <nuxt-link to="/">
-        <button id="backButton">
-          <span id="buttonText">&lt;- Take me back home</span>
-        </button>
-      </nuxt-link>
+      <button id="backButton" @click="goHome">
+        <span id="buttonText">&lt;- Take me back home</span>
+      </button>
       </h1>
     </div>
     <div id="footer-div">
@@ -36,6 +34,13 @@ export default {
   computed: {
     isMobile() {
       return !(screen.width > 769)
+    }
+  },
+  methods: {
+    goHome() {
+      this.$router.push('/')
+
+      this.$store.commit('clearState')
     }
   }
 }
