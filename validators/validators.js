@@ -120,21 +120,15 @@ export default {
     },
     isCodeOfConductChecked: {
       required,
-      checked(v) {
-        return v
-      }
+      sameAs: sameAs(() => true)
     },
     isDataReportingChecked: {
       required,
-      checked(v) {
-        return v
-      }
+      sameAs: sameAs(() => true)
     },
     isResumeSharingChecked: {
       required,
-      checked(v) {
-        return v
-      }
+      sameAs: sameAs(() => true)
     },
     firstHackathon: {
       required,
