@@ -179,6 +179,20 @@ $slate-grey: #9195A5;
   } 
 }
 
+#signup-form .error-message {
+  width: 800px; 
+  margin: auto;
+  @include until($tablet){
+    text-align: center;
+    width: 90%;  
+  }
+}
+
 #signup-form .page-header p {
   margin-top: 14px;
+}
+@include until($tablet) {
+  body {
+    overflow-x: hidden;
+  }
 }

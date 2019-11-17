@@ -17,7 +17,7 @@
       </div>
     </div>
     <div v-if="page !== -1">
-      <div style="width: 800px; margin: auto;">
+      <div class="error-message">
         <p v-if="error" class="is-danger help is-size-4">
           There are some errors on this page.
         </p>
