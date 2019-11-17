@@ -66,7 +66,7 @@ export default {
     education: {
       required,
       matchesDropDown(v) {
-        return isOneOf(v, ['high school', 'undergraduate', 'graduate'])
+        return isOneOf(v, ['high school', 'undergraduate', 'graduate', 'recent grad', 'other'])
       }
     },
     school: {

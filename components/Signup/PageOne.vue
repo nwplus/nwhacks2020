@@ -151,6 +151,12 @@
         <option value="graduate">
           Graduate
         </option>
+        <option value="recent grad">
+          Recent grad
+        </option>
+        <option value="other">
+          Other
+        </option>
       </b-select>
     </b-field>
 
