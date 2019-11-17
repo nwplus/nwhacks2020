@@ -1,6 +1,6 @@
 <template>
-  <div style="height: 100%;">
-    <div id="notOpen">
+  <div>
+    <div id="notOpen" class="has-background-black">
       <img
         style="width: 10%;"
         src="~@/assets/NwPluslogo.svg"
@@ -21,12 +21,13 @@
 #notOpen {
   position: absolute;
   margin: auto;
+  padding-top: 10%;
   text-align: center;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70%;
+  height: 100vh;
 }
 $body-color: #4fd7db;
 $button-text-color: #262662;
