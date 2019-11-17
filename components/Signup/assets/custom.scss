@@ -112,6 +112,11 @@ $slate-grey: #9195A5;
 
 #signup-form .name-field {
   margin-bottom: 0;
+  width: 35%;
+  @include until($tablet){
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 
 #signup-form .autocomplete-field {
