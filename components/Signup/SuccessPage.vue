@@ -17,9 +17,15 @@
     </div>
     <div id="footer-div">
       <div id="footer-icons">
-        <img src="~/assets/facebook_small.svg" alt="facebook icon">
-        <img src="~/assets/twitter_small.svg" alt="facebook icon">
-        <img src="~/assets/medium_small.svg" alt="facebook icon">
+        <a href="https://www.facebook.com/nwhacks/" target="_blank" rel="noopener">
+          <img src="~/assets/facebook_small.svg" alt="facebook icon">
+        </a>
+        <a href="https://twitter.com/nwplusubc" target="_blank" rel="noopener">
+          <img src="~/assets/twitter_small.svg" alt="twitter icon">
+        </a>
+        <a href="https://medium.com/nwplusubc" target="_blank" rel="noopener">
+          <img src="~/assets/medium_small.svg" alt="medium icon">
+        </a>
       </div>
       <p id="footer-text">
         Connect with the community of nwHacks on Medium,
@@ -113,7 +119,7 @@ export default {
     text-align: center;
     margin-bottom: 24.1px;
 }
-#footer-icons > img {
+#footer-icons > a > img {
     margin: 0 25px;
 }
 #footer-div {
