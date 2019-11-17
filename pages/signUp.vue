@@ -160,8 +160,11 @@ export default {
         return
       }
       // to form submit after this
-      await fireDb.submitApplication(this.$store.state.hackerApplication)
-      alert('Form submitted')
+      const reply = await fireDb.submitApplication(this.$store.state.hackerApplication)
+      if (!reply) {
+        alert('This email is already signed up.\n If you\'d like to update your application\n please contact logistics@nwplus.io or contact us on facebook')
+        return
+      }
       this.page++
     },
     clear() {
