@@ -214,7 +214,8 @@ export default {
 
 }
 #navImage {
-  margin: 10px 30px;
+  margin: 5px 30px;
+  width: 20px;
 }
 .nav {
   position: fixed;
@@ -231,7 +232,7 @@ export default {
   margin: auto;
   padding: 90px 60px 0 60px; //these 60s has to be the same as the other 60s
   @include until($tablet) {
-    padding: 110px 0 0 12px;
+    padding: 90px 0 0 12px;
   }
 }
 .circle {
