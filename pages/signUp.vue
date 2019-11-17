@@ -1,22 +1,27 @@
 <template>
-  <div class="signup">
+  <div id="signup-form">
     <div class="nav">
       <nuxt-link to="/">
         <img style="margin-top: 0.3%; margin-left: 1%;" src="~/assets/signup-logo.svg" alt="nwPlus logo">
       </nuxt-link>
     </div>
     <div class="bread">
-      <div :class="`circle ${page === 0 ? 'selectedCircle' : ''}`" @click="page=0">
+      <div :class="`circle ${page === 0 ? 'selectedCircle' : ''}`">
         <span :class="`breadNumber ${page === 0 ? 'selectedNumber' : ''}`">1</span>
       </div>
-      <div :class="`circle ${page === 1 ? 'selectedCircle' : ''}`" @click="page=1">
+      <div :class="`circle ${page === 1 ? 'selectedCircle' : ''}`">
         <span :class="`breadNumber ${page === 1 ? 'selectedNumber' : ''}`">2</span>
       </div>
-      <div :class="`circle ${page === 2 ? 'selectedCircle' : ''}`" @click="page=2">
+      <div :class="`circle ${page === 2 ? 'selectedCircle' : ''}`">
         <span :class="`breadNumber ${page === 2 ? 'selectedNumber' : ''}`">3</span>
       </div>
     </div>
     <div v-if="page !== -1">
+      <div style="width: 800px; margin: auto;">
+        <p v-if="error" class="is-danger help is-size-4">
+          There are some errors on this page.
+        </p>
+      </div>
       <pageOne v-if="page == 0" :v="$v" />
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
@@ -24,12 +29,10 @@
         <button v-if="page !== 0" class="button nav-button" @click="page--">
           Back
         </button>
-        <nuxt-link to="/">
-          <button v-if="page === 0" class="button nav-button" @click="$store.commit('clearState')">
-            Cancel
-          </button>
-        </nuxt-link>
-        <button v-if="page !== 2" class="button submit-button" @click="page++">
+        <button v-if="page === 0" class="button nav-button" @click="cancel">
+          Cancel
+        </button>
+        <button v-if="page !== 2" class="button submit-button" @click="nextPage">
           Next
         </button>
         <button v-if="page === 2" class="button submit-button" @click="submit">
@@ -52,6 +55,11 @@ import signUpClosed from '~/components/Signup/signupClosed'
 
 export default {
   components: { pageOne, pageTwo, pageThree, signUpClosed },
+  data() {
+    return {
+      error: false
+    }
+  },
   computed: {
     ...vueDataProxy({
       hacker: {
@@ -84,12 +92,70 @@ export default {
   },
   validations,
   methods: {
+    cancel() {
+      this.clear()
+    },
+    touchPageOne() {
+      return (
+        this.$v.hacker.lastname.$error ||
+      this.$v.hacker.firstname.$error ||
+      this.$v.hacker.email.$error ||
+      this.$v.hacker.phonenumber.$error ||
+      this.$v.hacker.gender.$error ||
+      this.$v.hacker.genderother.$error ||
+      this.$v.hacker.ethnicity.$error ||
+      this.$v.hacker.ethnicityother.$error ||
+      this.$v.hacker.over19.$error ||
+      this.$v.hacker.education.$error ||
+      this.$v.hacker.school.$error ||
+      this.$v.hacker.schoolother.$error ||
+      this.$v.hacker.major.$error ||
+      this.$v.hacker.gradyear.$error ||
+      this.$v.hacker.city.$error ||
+      this.$v.hacker.travel.$error)
+    },
+    touchPageTwo() {
+      return this.$v.hacker.firstHackathon.$error ||
+      this.$v.hacker.attendedLHD.$error ||
+      this.$v.hacker.hackerRoleDeveloper.$error ||
+      this.$v.hacker.hackerRoleDesigner.$error ||
+      this.$v.hacker.hackerRoleHardware.$error ||
+      this.$v.hacker.hackerRoleOther.$error ||
+      this.$v.hacker.linkGithub.$error ||
+      this.$v.hacker.linkPortfolio.$error ||
+      this.$v.hacker.linkLinkedin.$error ||
+      this.$v.hacker.linkResume.$error ||
+      this.$v.hacker.longTechnology.$error ||
+      this.$v.hacker.longProject.$error
+    },
+    previousPage() {
+      this.$v.hacker.$reset()
+      this.error = false
+      this.page--
+    },
+    nextPage() {
+      this.$v.hacker.$touch()
+      window.scroll(0, 0)
+      if (this.page === 0 && this.touchPageOne()) {
+        this.error = true
+        return
+      }
+      if (this.page === 1 && this.touchPageTwo()) {
+        this.error = true
+
+        return
+      }
+      this.$v.hacker.$reset()
+      this.error = false
+      this.page++
+    },
     submit() {
       this.$v.hacker.$touch()
       // if its still pending or an error is returned do not submit
       if (this.$v.hacker.$pending || this.$v.hacker.$error) {
-        alert('form errors')
-        console.log(this.$v.hacker.$error)
+        this.error = true
+        window.scroll(0, 0)
+
         return
       }
       // to form submit after this
@@ -97,14 +163,15 @@ export default {
       fireDb.submitApplication(this.$store.state.hackerApplication)
     },
     clear() {
-      if (confirm('Are you sure you want to clear the entire form?')) {
+      if (confirm('Are you sure you want to cancel the entire form?\nif you just close this page, your progress will be saved.')) {
         this.$store.commit('clearState')
+        this.$router.push('/')
       }
     }
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .nav-button {
   background: linear-gradient(180deg, #FFFFFF 33.85%, #F1F8FB 66.15%, #E9F5F9 99.97%, #DBEFF5 99.98%, #B6E0EC 99.99%, #CEECF4 100%);
   mix-blend-mode: normal;
@@ -112,20 +179,22 @@ export default {
   border: 1px solid #4483BD;
   box-sizing: border-box;
   border-radius: 4px;
-  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
   color: #4483BD;
   width: 100px;
 }
 .submit-button{
   background: linear-gradient(180deg, #70B8CD 0%, #6572B0 76.56%, #6C62AF 99.99%, #693E94 100%);
   border-radius: 4px;
-  box-shadow: 0px 0px 0px 0.2px #888888;
   color: white;
   width: 100px;
 }
 .buttons {
   margin: 5% 0;
-  margin-left: 30%;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 0 0 60px; //these 60s has to be the same as the other 60s
+  padding-bottom: 60px;
+
 }
 .nav {
   position: fixed;
@@ -138,8 +207,10 @@ export default {
 }
 .bread {
   display: flex;
-  margin-top: 5%;
-  margin-left: 20%;
+  max-width: 900px;
+  margin: auto;
+  padding: 90px 60px 0 60px; //these 60s has to be the same as the other 60s
+
 }
 .circle {
   position: relative;
@@ -150,7 +221,6 @@ export default {
   margin: 0.5%;
   border: 1px solid #4483BD;
   box-sizing: border-box;
-  cursor:pointer;
 }
 .selectedCircle {
   border: none;
@@ -173,11 +243,11 @@ export default {
   /* White */
   color: #FFFFFF;
 }
+</style>
 <style lang="scss">
 //Desktop CSS:
 @font-face {
   font-family: "Apercu Pro";
   src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
 }
-
 </style>
