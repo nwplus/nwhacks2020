@@ -1,51 +1,55 @@
 <template>
-  <section>
+  <section class="signup-content">
+    <div class="page-header">
+      <h2 class="header">
+        About you 📚
+      </h2>
+      <p>nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience for all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️</p>
+    </div>
+    <div class="name-section">
+      <b-field
+        label="What is your full legal name?"
+        :type="v.hacker.firstname.$error ? 'is-danger' : ''"
+        :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '‎') : ''"
+        class="name-field"
+      >
+        <b-input v-model.trim="v.hacker.firstname.$model" placeholder="First Name" />
+      </b-field>
+      <b-field
+        :label="isMobile() ? '' : '‏‏‎ ‎'"
+        :type="v.hacker.lastname.$error ? 'is-danger' : ''"
+        :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : ''"
+        class="name-field"
+      >
+        <b-input v-model.trim="v.hacker.lastname.$model" placeholder="Last Name" />
+      </b-field>
+    </div>
     <b-field
-      label="What is your First Name?"
-      class="required"
-      :type="v.hacker.firstname.$error ? 'is-danger' : ''"
-      :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '') : ''"
-    >
-      <b-input v-model.trim="v.hacker.firstname.$model" />
-    </b-field>
-
-    <b-field
-      label="What is your Last Name?"
-      class="required"
-      :type="v.hacker.lastname.$error ? 'is-danger' : ''"
-      :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : ''"
-    >
-      <b-input v-model.trim="v.hacker.lastname.$model" />
-    </b-field>
-
-    <b-field
-      label="What is your Email?"
-      class="required"
+      label="What is your email?"
       :type="v.hacker.email.$error ? 'is-danger' : ''"
       :message="v.hacker.email.$error ? (!v.hacker.email.required ? 'Required' : (!v.hacker.email.email ? 'Please enter a valid email' : '')) : ''"
     >
+      <b-input v-model.trim="v.hacker.email.$model" placeholder="hacker@email.com" type="email" />
+    </b-field>
+
+    <b-field
+      label="What is your phone number? (format: ###-###-####)"
+      :type="v.hacker.phonenumber.$error ? 'is-danger' : ''"
+      :message="v.hacker.phonenumber.$error ? (!v.hacker.phonenumber.required ? 'Required' : (!v.hacker.phonenumber.isPhoneNumberFormat ? 'Incorrect format' : '')) : ''"
+    >
       <b-input
-        v-model.trim="v.hacker.email.$model"
-        type="email"
+        v-model.trim="v.hacker.phonenumber.$model"
+        placeholder="000-000-0000"
+        maxlength="12"
       />
     </b-field>
 
     <b-field
-      label="What is your Phone Number? (format: ###-###-####)"
-      class="required"
-      :type="v.hacker.phonenumber.$error ? 'is-danger' : ''"
-      :message="v.hacker.phonenumber.$error ? (!v.hacker.phonenumber.required ? 'Required' : (!v.hacker.phonenumber.isPhoneNumberFormat ? 'Incorrect format' : '')) : ''"
-    >
-      <b-input v-model.trim="v.hacker.phonenumber.$model" maxlength="12" />
-    </b-field>
-
-    <b-field
       label="Which gender do you identify as?"
-      class="required"
       :type="v.hacker.gender.$error ? 'is-danger' : ''"
-      :message="v.hacker.gender.$error ? (!v.hacker.gender.required ? 'Required' : (!v.hacker.gender.matchesDropdown ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.gender.$error ? (!v.hacker.gender.required ? 'Required' : (!v.hacker.gender.matchesDropdown ? 'Required' : '')) : ''"
     >
-      <b-select v-model.trim="v.hacker.gender.$model" placeholder="Please Select">
+      <b-select v-model.trim="v.hacker.gender.$model" placeholder="Select an option">
         <option value="female">
           Female
         </option>
@@ -67,7 +71,6 @@
     <b-field
       v-if="v.hacker.gender.$model === 'other'"
       label="Please specify your gender"
-      class="required"
       :type="v.hacker.genderother.$error ? 'is-danger' : ''"
       :message="v.hacker.genderother.$error ? (!v.hacker.genderother.required ? 'Required' : '') : ''"
     >
@@ -76,11 +79,10 @@
 
     <b-field
       label="What is your race / ethnicity?"
-      class="required"
       :type="v.hacker.ethnicity.$error ? 'is-danger' : ''"
-      :message="v.hacker.ethnicity.$error ? (!v.hacker.ethnicity.required ? 'Required' : (!v.hacker.ethnicity.matchesDropdown ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.ethnicity.$error ? (!v.hacker.ethnicity.required ? 'Required' : (!v.hacker.ethnicity.matchesDropdown ? 'Required' : '')) : ''"
     >
-      <b-select v-model.trim="v.hacker.ethnicity.$model" placeholder="Please Select">
+      <b-select v-model.trim="v.hacker.ethnicity.$model" placeholder="Select an option">
         <option value="american indian">
           American Indian
         </option>
@@ -114,7 +116,6 @@
     <b-field
       v-if="v.hacker.ethnicity.$model === 'other'"
       label="Ethnicity (Please Specify)"
-      class="required"
       :type="v.hacker.ethnicityother.$error ? 'is-danger' : ''"
       :message="v.hacker.ethnicityother.$error ? (!v.hacker.ethnicityother.required ? 'Required' : '') : ''"
     >
@@ -123,25 +124,24 @@
 
     <b-field
       label="Will you be 19 years of age or older by January 11th, 2020?"
-      class="required"
       :type="v.hacker.over19.$error ? 'is-danger' : ''"
-      :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.over19.$error ? (!v.hacker.over19.required ? 'Required' : (!v.hacker.over19.matchesRadio ? 'Required' : '')) : ''"
     >
-      <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="yes">
-        Yes
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="no">
-        No
-      </b-radio>
+      <div class="field-content">
+        <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="yes">
+          Yes
+        </b-radio>
+        <b-radio v-model.trim="v.hacker.over19.$model" name="over19" native-value="no">
+          No
+        </b-radio>
+      </div>
     </b-field>
-
     <b-field
       label="What level of education are you currently studying at?"
-      class="required"
       :type="v.hacker.education.$error ? 'is-danger' : ''"
-      :message="v.hacker.education.$error ? (!v.hacker.education.required ? 'Required' : (!v.hacker.education.matchesDropdown ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.education.$error ? (!v.hacker.education.required ? 'Required' : (!v.hacker.education.matchesDropdown ? 'Required' : '')) : ''"
     >
-      <b-select v-model.trim="v.hacker.education.$model" placeholder="Please Select">
+      <b-select v-model.trim="v.hacker.education.$model" placeholder="Select an option">
         <option value="high school">
           High School
         </option>
@@ -151,92 +151,122 @@
         <option value="graduate">
           Graduate
         </option>
+        <option value="recent grad">
+          Recent grad
+        </option>
+        <option value="other">
+          Other
+        </option>
       </b-select>
     </b-field>
 
     <b-field
-      label="What school do you currently attend?"
-      class="required"
+      label="What school do you currently attend? (Non-abbreviated, ex. The University of British Columbia)"
       :type="v.hacker.school.$error ? 'is-danger' : ''"
       :message="v.hacker.school.$error ? (!v.hacker.school.required ? 'Required' : '') : ''"
     >
       <autocomplete
-        :search="searchSchool"
-        placeholder="Your school"
-        aria-label="Your school"
-        :default-value="v.hacker.school.$model"
-        @change="handleSchoolChange"
+        :source="schools"
+        input-class="autocomplete-field"
+        placeholder="Enter your school"
+        :value="v.hacker.school.$model"
+        @selected="schoolSelected"
+        @clear="schoolClear"
       />
     </b-field>
 
     <b-field
       v-if="v.hacker.school.$model === 'Other'"
       label="Specify your school"
-      class="required"
       :type="v.hacker.schoolother.$error ? 'is-danger' : ''"
       :message="v.hacker.schoolother.$error ? (!v.hacker.schoolother.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.schoolother.$model" />
+      <b-input
+        v-model.trim="v.hacker.schoolother.$model"
+        placeholder="Enter your schools name"
+      />
     </b-field>
 
     <b-field
-      label="What is your current/intended major?"
-      class="required"
+      label="What is your current/intended major? (If not in list, choose the best answer)"
       name="high-school-major"
       :type="v.hacker.major.$error ? 'is-danger' : ''"
       :message="v.hacker.major.$error ? (!v.hacker.major.required ? 'Required' : '') : ''"
     >
       <autocomplete
-        :search="searchMajor"
-        placeholder="Your major"
-        aria-label="Your major"
-        :default-value="v.hacker.major.$model"
-        @change="handleMajorChange"
+        :source="majors"
+        input-class="autocomplete-field"
+        placeholder="Enter your area of study"
+        @clear="majorClear"
+        @selected="majorSelected"
       />
     </b-field>
 
     <b-field
       label="What is your graduation year?"
-      class="required"
       :type="v.hacker.gradyear.$error ? 'is-danger' : ''"
       :message="v.hacker.gradyear.$error ? (!v.hacker.gradyear.required ? 'Required' : (!v.hacker.gradyear.withinValidRange ? 'Not valid year' : '')) : ''"
     >
-      <b-numberinput v-model.trim="v.hacker.gradyear.$model" min="1900" max="2027" />
+      <b-input
+        v-model.trim="v.hacker.gradyear.$model"
+        min="1900"
+        max="2027"
+        type="number"
+        controls-position="compact"
+      />
     </b-field>
 
     <b-field
       label="Where are you traveling from?"
-      class="required"
       :type="v.hacker.city.$error ? 'is-danger' : ''"
       :message="v.hacker.city.$error ? (!v.hacker.city.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.city.$model" />
+      <b-input
+        v-model.trim="v.hacker.city.$model"
+        placeholder="Enter your city and province/state"
+      />
     </b-field>
 
     <b-field
-      label="Would you like to apply for travel reimbursement? (if you are coming from the University of Washington, or the surrounding area, we will be providing a shuttle bus)"
-      class="required"
+      label="Would you like to apply for a travel reimbursement? If you are coming from the University of Washington, or the surrounding area, we will be providing shuttle buses."
       :type="v.hacker.travel.$error ? 'is-danger' : ''"
-      :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+      :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="no">
-        No
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="travel reimbursement">
-        Yes I would like to apply for a travel reimbursement
-      </b-radio>
-      <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="shuttle bus">
-        Yes I would like a seat on the bus from the Seattle/UW area
-      </b-radio>
+      <div class="is-block field-content radio-stack">
+        <p>Note: if selected to participate, we will be subsidizing a maximum of $200 CAD and you must submit this application by 11:59PM PST November 25, 2019.</p>
+        <b-radio
+          v-model.trim="v.hacker.travel.$model"
+          name="travel"
+          native-value="no"
+          class="full-width"
+        >
+          No, I will not need a travel reimbursement.
+        </b-radio>
+        <b-radio
+          v-model.trim="v.hacker.travel.$model"
+          name="travel"
+          native-value="travel reimbursement"
+          class="ull-width"
+        >
+          Yes, I would like to apply for a travel reimbursement.
+        </b-radio>
+        <b-radio
+          v-model.trim="v.hacker.travel.$model"
+          name="travel"
+          native-value="shuttle bus"
+          class="full-width"
+        >
+          No, but I would like a seat on the bus from the Seattle/UW area.
+        </b-radio>
+      </div>
     </b-field>
   </section>
 </template>
 
 <script>
-import Autocomplete from '@trevoreyre/autocomplete-vue'
+import Autocomplete from 'vuejs-auto-complete'
 import schools from '../../data/schools.json'
 import majors from '../../data/majors.json'
-import '@trevoreyre/autocomplete-vue/dist/style.css'
 
 export default {
   components: {
@@ -248,44 +278,51 @@ export default {
       required: true
     }
   },
+  data: function () {
+    return {
+      schools: schools,
+      majors: majors
+    }
+  },
   methods: {
-    searchSchool(input) {
-      if (input.length < 1) { return [] }
-      return schools.filter((school) => {
-        return school.toLowerCase()
-          .includes(input.toLowerCase())
-      })
+    isMobile() {
+      return !(screen.width > 769)
     },
-    searchMajor(input) {
-      if (input.length < 1) { return [] }
-      return majors.filter((major) => {
-        return major.toLowerCase()
-          .includes(input.toLowerCase())
-      })
+    schoolClear() {
+      this.v.hacker.school.$model = ''
     },
-    handleSchoolChange(event) {
-      this.v.hacker.school.$model = event.target.value
+    schoolSelected(value) {
+      this.v.hacker.school.$model = value.display
     },
-    handleMajorChange(event) {
-      this.v.hacker.major.$model = event.target.value
+    majorClear() {
+      this.v.hacker.major.$model = ''
+    },
+    majorSelected(value) {
+      this.v.hacker.major.$model = value.display
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-div.field {
-    // This is to give it enough space to display *
-    margin: 0px 15px;
+@import "~bulma/sass/utilities/_all";
+
+.name-section {
+  display: flex;
+  @include until($tablet) {
+    display: inline;
+  }
 }
-.required {
-    position: relative;
+.display-block {
+  display: block !important;
 }
-.required::before{
-    content: "*";
-    color: red;
-    position: absolute;
-    top: 0px;
-    left: -10px;
+.inline-radio {
+  display: inline-flex !important;
+}
+.full-width {
+  width: 100%;
+}
+.radio-stack .radio {
+  margin: 5px 0 !important;
 }
 </style>

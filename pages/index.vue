@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative; width: 100%;">
+  <div id="main-page" style="position: relative; width: 100%;">
     <NavBar v-if="screenWidth > 768" id="navbar" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
@@ -90,13 +90,7 @@ export default {
   font-family: "Apercu Pro";
   src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
 }
-
-body {
+#main-page {
   background-color: #262662;
-  font-family: "Apercu Pro";
-  // background-image: url('~@/assets/bg.svg');
-  // background-size: 100vw;
-  color: #425e96;
-  overflow-x: hidden;
 }
 </style>

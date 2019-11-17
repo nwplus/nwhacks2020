@@ -1,0 +1,198 @@
+@import "~bulma/sass/utilities/_all";
+
+$primary: #21258A;
+$secondary: #21D5D4;
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+$background-color: #f2f7fe;
+$font-family: "Apercu Pro", sans-serif;
+$font-color: #21258a;
+$slate-grey: #9195A5;
+
+#signup-form {
+    background-color: $background-color;
+    min-height: 100vh;
+  }
+
+#signup-form a {
+  text-decoration: underline;
+  color: $primary;
+  transition: 0.1s;
+  &:hover {
+    color: $secondary;
+  }
+}
+
+#signup-form .checkbox {
+  &:hover {
+    color: $primary;
+  }
+  margin-bottom: 20px;
+}
+
+#signup-form .checkbox input[type=checkbox] + .check {
+  border: 2px solid $slate-grey;
+  box-shadow: none;
+  &:hover {
+    border: 2px solid #7F83E5;
+    background-color: #E8E8FF;
+  }
+}
+
+#signup-form .checkbox input[type=checkbox]:checked + .check {
+  border: 2px solid $primary;
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+#signup-form .checkbox .control-label {
+  cursor: default;
+}
+
+#signup-form .checkbox input[type=checkbox]:checked ~ .control-label {
+  font-weight: bold;
+}
+
+#signup-form .no-margin-left .checkbox + .checkbox {
+  margin-left: 0;
+}
+
+.signup-content {
+    color: $font-color;
+    font-family: $font-family;
+    max-width: 900px;
+    @include until($tablet) {
+      margin: 60px 16px;
+      // is this enough vertical room for the nw logo bar at the top on mobile?
+    }
+    @include from($tablet) {
+      margin: auto;
+      padding: 20px 60px 0 60px; //these 60s has to be the same as the other 60s
+    }
+  }
+
+.signup-buttons {
+    max-width: 900px;
+    @include from($tablet) {
+    margin: auto;
+    padding: 0 60px 60px 60px; //these 60s has to be the same as the other 60s
+    }
+}
+  
+#signup-form .label {
+  font-family: $font-family;
+  color: $font-color;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+#signup-form .field {
+  margin: 60px 0;
+}
+
+#signup-form .field-content {
+    display: block;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+#signup-form .select {
+  @include until($tablet) {
+    width: 100%;
+  }
+}
+#signup-form select {
+  @include until($tablet) {
+    width: 100%;
+  }
+}
+
+#signup-form .name-field {
+  margin-bottom: 0;
+  width: 35%;
+  @include until($tablet){
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+#signup-form .autocomplete-field {
+  margin: 10px 0;
+}
+
+#signup-form .vertical-field-content {
+  display: inline;
+}
+
+#signup-form input {
+  box-shadow: none;
+  font-family: $font-family;
+  &::placeholder {
+    color: $slate-grey;
+  }
+}
+
+#signup-form .control .textarea {
+  box-shadow: none;
+  font-family: $font-family;
+  &::placeholder {
+    color: $slate-grey;
+  }
+}
+
+#signup-form .field-content .control input[type=text] {
+  box-shadow: none;
+  font-family: $font-family;
+  &::placeholder {
+    color: $slate-grey;
+  }
+}
+
+#signup-form .field-content .control .select {
+  &::after {
+     border-color: #AAAEBE;
+  }
+}
+
+#signup-form .field-content .control .select select {
+  border: 1px solid $slate-grey;
+  &:active, &:focus {
+    border: 1px solid #262662;
+    box-shadow: none;
+  }
+}
+
+#signup-form .header {
+    font-size: 40px;
+    font-family: $font-family;
+    color: $font-color;
+    font-weight: 700;
+}
+
+#signup-form .page-header {
+  margin-bottom: 0;
+  @include from($tablet) {
+    margin-bottom: 70px;
+  } 
+}
+
+#signup-form .error-message {
+  width: 800px; 
+  margin: auto;
+  @include until($tablet){
+    text-align: center;
+    width: 90%;  
+  }
+}
+
+#signup-form .page-header p {
+  margin-top: 14px;
+}
+@include until($tablet) {
+  body {
+    overflow-x: hidden;
+  }
+}

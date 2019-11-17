@@ -9,19 +9,26 @@ const initialState = {
     gender: '',
     gradyear: 2019,
     interestfornwhacks: '',
-    iscodeofconductchecked: false,
-    isdatareportingchecked: false,
-    isdeveloper: false,
+    isCodeOfConductChecked: false,
+    isDataReportingChecked: false,
+    hackerRoleDeveloper: false,
+    hackerRoleDesigner: false,
+    hackerRoleHardware: false,
+    hackerRoleOther: false,
+    linkGithub: '',
+    linkPortfolio: '',
+    linkLinkedin: '',
+    linkResume: '',
+    longTechnology: '',
+    longProject: '',
+    firstHackathon: false,
+    attendedLHD: false,
     isdocumentchecked: false,
-    isfirsthackathon: false,
     ishardware: false,
-    isprivacypolicychcked: false,
+    isPrivacyPolicyChecked: false,
     lastname: '',
-    linkedinlink: '',
     major: '',
     phonenumber: '',
-    recentProject: '',
-    resumelink: '',
     school: '',
     source: '',
     travel: ''
@@ -51,9 +58,10 @@ export const mutations = {
   },
   clearState(state) {
     state.hackerApplication = { ...initialState.hackerApplication }
+    state.signUpPage = 0
   },
   goToPage(state, page) {
-    if (page > 2 || page < 0) {
+    if (page > 3 || page < 0) {
       return
     }
     state.signUpPage = page

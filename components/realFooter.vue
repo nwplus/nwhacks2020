@@ -74,7 +74,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: 'Organized and held by nwPlus. Copyright © nwHacks 2019'
+      default: 'Organized and held by nwPlus. Copyright © nwHacks 2020'
     }
   },
   mounted() {
@@ -88,7 +88,7 @@ export default {
 .footer-content {
   text-align: center;
   min-width: 90vw;
-  margin-bottom: 4%;
+  padding-bottom: 4%;
 }
 .footer-image {
     max-width: 90%;
@@ -159,7 +159,7 @@ svg:hover path {
     position: absolute;
     width: 10%;
     right: 5%;
-    bottom: 0%;
+    bottom: 0.5%;
 }
 @include until($desktop) {
   #mascot {
