@@ -74,7 +74,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: 'Organized and held by nwPlus. Copyright © nwHacks 2019'
+      default: 'Organized and held by nwPlus. Copyright © nwHacks 2020'
     }
   },
   mounted() {
