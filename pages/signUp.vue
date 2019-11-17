@@ -5,7 +5,7 @@
         <img id="navImage" src="~/assets/signup-logo.svg" alt="nwPlus logo">
       </nuxt-link>
     </div>
-    <div class="bread">
+    <div v-if="page !== 3" class="bread">
       <div :class="`circle ${page === 0 ? 'selectedCircle' : ''}`">
         <span :class="`breadNumber ${page === 0 ? 'selectedNumber' : ''}`">1</span>
       </div>
@@ -25,7 +25,8 @@
       <pageOne v-if="page == 0" :v="$v" />
       <pageTwo v-if="page == 1" :v="$v" />
       <pageThree v-if="page == 2" :v="$v" />
-      <section class="buttons">
+      <successPage v-if="page == 3" />
+      <section v-if="page !== 3" class="buttons">
         <button v-if="page !== 0" class="button nav-button" @click="page--">
           Back
         </button>
@@ -48,13 +49,14 @@
 import pageOne from '~/components/Signup/PageOne'
 import pageTwo from '~/components/Signup/PageTwo'
 import pageThree from '~/components/Signup/PageThree'
+import successPage from '~/components/Signup/SuccessPage'
 import validations from '~/validators/validators.js'
 import vueDataProxy from 'vue-data-proxy'
 import fireDb from '~/plugins/firebase.js'
 import signUpClosed from '~/components/Signup/signupClosed'
 
 export default {
-  components: { pageOne, pageTwo, pageThree, signUpClosed },
+  components: { successPage, pageOne, pageTwo, pageThree, signUpClosed },
   data() {
     return {
       error: false
@@ -149,7 +151,7 @@ export default {
       this.error = false
       this.page++
     },
-    submit() {
+    async submit() {
       this.$v.hacker.$touch()
       // if its still pending or an error is returned do not submit
       if (this.$v.hacker.$pending || this.$v.hacker.$error) {
@@ -158,8 +160,9 @@ export default {
         return
       }
       // to form submit after this
+      await fireDb.submitApplication(this.$store.state.hackerApplication)
       alert('Form submitted')
-      fireDb.submitApplication(this.$store.state.hackerApplication)
+      this.page++
     },
     clear() {
       if (confirm('Are you sure you want to cancel the entire form?\nif you just close this page, your progress will be saved.')) {

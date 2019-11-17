@@ -60,7 +60,7 @@ export const mutations = {
     state.hackerApplication = { ...initialState.hackerApplication }
   },
   goToPage(state, page) {
-    if (page > 2 || page < 0) {
+    if (page > 3 || page < 0) {
       return
     }
     state.signUpPage = page
