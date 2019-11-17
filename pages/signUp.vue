@@ -205,6 +205,12 @@ export default {
       // is this enough vertical room for the nw logo bar at the top on mobile?
     }
 }
+.submit-button:hover {
+  color: white;
+}
+.submit-button:focus {
+  color: white;
+}
 .buttons {
   max-width: 900px;
   margin: auto;
