@@ -163,6 +163,8 @@ export default {
       const reply = await fireDb.submitApplication(this.$store.state.hackerApplication)
       if (!reply) {
         alert('This email is already signed up.\n If you\'d like to update your application\n please contact logistics@nwplus.io or contact us on facebook')
+        this.page = 0
+        window.scroll(0, 0)
         return
       }
       this.page++
