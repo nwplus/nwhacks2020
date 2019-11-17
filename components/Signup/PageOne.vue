@@ -157,7 +157,7 @@
     </b-field>
 
     <b-field
-      label="What school do you currently attend?"
+      label="What school do you currently attend? (Non-abbreviated, ex. The University of British Columbia)"
       :type="v.hacker.school.$error ? 'is-danger' : ''"
       :message="v.hacker.school.$error ? (!v.hacker.school.required ? 'Required' : '') : ''"
     >
@@ -181,7 +181,7 @@
     </b-field>
 
     <b-field
-      label="What is your current/intended major?"
+      label="What is your current/intended major? (If not in list, choose the best answer)"
       name="high-school-major"
       :type="v.hacker.major.$error ? 'is-danger' : ''"
       :message="v.hacker.major.$error ? (!v.hacker.major.required ? 'Required' : '') : ''"
