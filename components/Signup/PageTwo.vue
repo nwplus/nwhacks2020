@@ -10,7 +10,7 @@
       <b-field
         label="Is this your first hackathon?"
         :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
-        :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+        :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Required' : '')) : ''"
       >
         <div class="field-content">
           <b-radio
@@ -32,7 +32,7 @@
       <b-field
         label="Have you attended either LHD: Learn Day or LHD: Build Day?"
         :type="v.hacker.attendedLHD.$error ? 'is-danger' : ''"
-        :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+        :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Required' : '')) : ''"
       >
         <div class="field-content">
           <b-radio

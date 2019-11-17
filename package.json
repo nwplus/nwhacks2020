@@ -25,7 +25,6 @@
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/svg-sprite": "^0.2.1",
-    "@trevoreyre/autocomplete-vue": "^2.0.2",
     "cross-env": "^5.2.0",
     "firebase": "^7.2.0",
     "jquery": "^3.4.0",
@@ -38,6 +37,7 @@
     "vue-data-proxy": "^1.0.4",
     "vue-scrollto": "^2.15.0",
     "vue-snowf": "^0.0.2",
+    "vuejs-auto-complete": "^0.9.0",
     "vuelidate": "^0.7.4",
     "vuex-persist": "^2.1.0"
   },
