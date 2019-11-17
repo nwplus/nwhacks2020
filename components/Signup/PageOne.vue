@@ -4,9 +4,7 @@
       <h2 class="header">
         About you 📚
       </h2>
-      <p>
-        nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️
-      </p>
+      <p>nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience for all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️</p>
     </div>
     <div style="display: flex;">
       <b-field
@@ -33,11 +31,7 @@
       :type="v.hacker.email.$error ? 'is-danger' : ''"
       :message="v.hacker.email.$error ? (!v.hacker.email.required ? 'Required' : (!v.hacker.email.email ? 'Please enter a valid email' : '')) : ''"
     >
-      <b-input
-        v-model.trim="v.hacker.email.$model"
-        placeholder="hacker@email.com"
-        type="email"
-      />
+      <b-input v-model.trim="v.hacker.email.$model" placeholder="hacker@email.com" type="email" />
     </b-field>
 
     <b-field
@@ -45,7 +39,11 @@
       :type="v.hacker.phonenumber.$error ? 'is-danger' : ''"
       :message="v.hacker.phonenumber.$error ? (!v.hacker.phonenumber.required ? 'Required' : (!v.hacker.phonenumber.isPhoneNumberFormat ? 'Incorrect format' : '')) : ''"
     >
-      <b-input v-model.trim="v.hacker.phonenumber.$model" placeholder="000-000-0000" maxlength="12" />
+      <b-input
+        v-model.trim="v.hacker.phonenumber.$model"
+        placeholder="000-000-0000"
+        maxlength="12"
+      />
     </b-field>
 
     <b-field
@@ -202,7 +200,13 @@
       :type="v.hacker.gradyear.$error ? 'is-danger' : ''"
       :message="v.hacker.gradyear.$error ? (!v.hacker.gradyear.required ? 'Required' : (!v.hacker.gradyear.withinValidRange ? 'Not valid year' : '')) : ''"
     >
-      <b-input v-model.trim="v.hacker.gradyear.$model" min="1900" max="2027" type="number" controls-position="compact" />
+      <b-input
+        v-model.trim="v.hacker.gradyear.$model"
+        min="1900"
+        max="2027"
+        type="number"
+        controls-position="compact"
+      />
     </b-field>
 
     <b-field
@@ -210,7 +214,10 @@
       :type="v.hacker.city.$error ? 'is-danger' : ''"
       :message="v.hacker.city.$error ? (!v.hacker.city.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.city.$model" placeholder="Enter your city and province/state" />
+      <b-input
+        v-model.trim="v.hacker.city.$model"
+        placeholder="Enter your city and province/state"
+      />
     </b-field>
 
     <b-field
@@ -219,13 +226,28 @@
       :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
       <div class="is-block field-content radio-stack">
-        <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="no" class=" full-width">
+        <b-radio
+          v-model.trim="v.hacker.travel.$model"
+          name="travel"
+          native-value="no"
+          class="full-width"
+        >
           No
         </b-radio>
-        <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="travel reimbursement" class=" ull-width">
+        <b-radio
+          v-model.trim="v.hacker.travel.$model"
+          name="travel"
+          native-value="travel reimbursement"
+          class="ull-width"
+        >
           Yes I would like to apply for a travel reimbursement
         </b-radio>
-        <b-radio v-model.trim="v.hacker.travel.$model" name="travel" native-value="shuttle bus" class="full-width">
+        <b-radio
+          v-model.trim="v.hacker.travel.$model"
+          name="travel"
+          native-value="shuttle bus"
+          class="full-width"
+        >
           Yes I would like a seat on the bus from the Seattle/UW area
         </b-radio>
       </div>
@@ -273,15 +295,15 @@ export default {
 
 <style lang="scss" scoped>
 .display-block {
-    display: block !important;
+  display: block !important;
 }
 .inline-radio {
-    display: inline-flex !important;
+  display: inline-flex !important;
 }
 .full-width {
-    width: 100%;
+  width: 100%;
 }
 .radio-stack .radio {
-    margin: 5px 0 !important;
+  margin: 5px 0 !important;
 }
 </style>
