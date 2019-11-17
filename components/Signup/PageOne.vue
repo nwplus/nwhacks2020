@@ -181,7 +181,10 @@
       :type="v.hacker.schoolother.$error ? 'is-danger' : ''"
       :message="v.hacker.schoolother.$error ? (!v.hacker.schoolother.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.schoolother.$model" />
+      <b-input
+        v-model.trim="v.hacker.schoolother.$model"
+        placeholder="Enter your schools name"
+      />
     </b-field>
 
     <b-field

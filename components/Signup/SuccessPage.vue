@@ -39,7 +39,6 @@ export default {
   methods: {
     goHome() {
       this.$router.push('/')
-
       this.$store.commit('clearState')
     }
   }
