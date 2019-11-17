@@ -2,7 +2,7 @@
   <div id="signup-form">
     <div class="nav">
       <nuxt-link to="/">
-        <img style="margin-top: 0.3%; margin-left: 1%;" src="~/assets/signup-logo.svg" alt="nwPlus logo">
+        <img id="navImage" src="~/assets/signup-logo.svg" alt="nwPlus logo">
       </nuxt-link>
     </div>
     <div class="bread">
@@ -171,6 +171,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "~bulma/sass/utilities/_all";
+
 .nav-button {
   background: linear-gradient(180deg, #FFFFFF 33.85%, #F1F8FB 66.15%, #E9F5F9 99.97%, #DBEFF5 99.98%, #B6E0EC 99.99%, #CEECF4 100%);
   mix-blend-mode: normal;
@@ -180,20 +182,36 @@ export default {
   border-radius: 4px;
   color: #4483BD;
   width: 100px;
+    @include until($tablet) {
+      margin: auto;
+      width: 40%;
+      // is this enough vertical room for the nw logo bar at the top on mobile?
+    }
 }
 .submit-button{
   background: linear-gradient(180deg, #70B8CD 0%, #6572B0 76.56%, #6C62AF 99.99%, #693E94 100%);
   border-radius: 4px;
   color: white;
   width: 100px;
+    @include until($tablet) {
+      margin: auto;
+      width: 40%;
+      // is this enough vertical room for the nw logo bar at the top on mobile?
+    }
 }
 .buttons {
-  margin: 5% 0;
   max-width: 900px;
   margin: auto;
-  padding: 0 0 0 60px; //these 60s has to be the same as the other 60s
-  padding-bottom: 60px;
+  padding: 0 0 60px 60px; //these 60s has to be the same as the other 60s
+    @include until($tablet) {
+      margin: auto;
+      padding: 0 0 60px 0; //these 60s has to be the same as the other 60s
+      // is this enough vertical room for the nw logo bar at the top on mobile?
+    }
 
+}
+#navImage {
+  margin: 10px 30px;
 }
 .nav {
   position: fixed;
@@ -209,7 +227,9 @@ export default {
   max-width: 900px;
   margin: auto;
   padding: 90px 60px 0 60px; //these 60s has to be the same as the other 60s
-
+  @include until($tablet) {
+    padding: 110px 0 0 12px;
+  }
 }
 .circle {
   position: relative;
