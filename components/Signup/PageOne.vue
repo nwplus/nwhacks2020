@@ -6,21 +6,19 @@
       </h2>
       <p>nwHacks is Western Canada’s largest collegiate hackathon taking place on January 11th - 12th, 2020 at the University of British Columbia. We focus on creating a quality hackathon experience for all of our attendees but historically we've had more applicants than we would be able to accommodate at our event. So, for a fair assessment of your application, we encourage you to put your best foot forward on this journey! ⛰️</p>
     </div>
-    <div style="display: flex;">
+    <div class="name-section">
       <b-field
         label="What is your full legal name?"
         :type="v.hacker.firstname.$error ? 'is-danger' : ''"
-        :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '‎') : '.'"
-        style="width: 35%;"
+        :message="v.hacker.firstname.$error ? (!v.hacker.firstname.required ? 'Required' : '‎') : ''"
         class="name-field"
       >
         <b-input v-model.trim="v.hacker.firstname.$model" placeholder="First Name" />
       </b-field>
       <b-field
-        :label="'‏‏‎ ‎'"
+        :label="isMobile() ? '' : '‏‏‎ ‎'"
         :type="v.hacker.lastname.$error ? 'is-danger' : ''"
-        :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : '.'"
-        style="margin-left: 5%; width: 35%;"
+        :message="v.hacker.lastname.$error ? (!v.hacker.lastname.required ? 'Required' : '') : ''"
         class="name-field"
       >
         <b-input v-model.trim="v.hacker.lastname.$model" placeholder="Last Name" />
@@ -153,11 +151,17 @@
         <option value="graduate">
           Graduate
         </option>
+        <option value="recent grad">
+          Recent grad
+        </option>
+        <option value="other">
+          Other
+        </option>
       </b-select>
     </b-field>
 
     <b-field
-      label="What school do you currently attend?"
+      label="What school do you currently attend? (Non-abbreviated, ex. The University of British Columbia)"
       :type="v.hacker.school.$error ? 'is-danger' : ''"
       :message="v.hacker.school.$error ? (!v.hacker.school.required ? 'Required' : '') : ''"
     >
@@ -177,11 +181,14 @@
       :type="v.hacker.schoolother.$error ? 'is-danger' : ''"
       :message="v.hacker.schoolother.$error ? (!v.hacker.schoolother.required ? 'Required' : '') : ''"
     >
-      <b-input v-model.trim="v.hacker.schoolother.$model" />
+      <b-input
+        v-model.trim="v.hacker.schoolother.$model"
+        placeholder="Enter your schools name"
+      />
     </b-field>
 
     <b-field
-      label="What is your current/intended major?"
+      label="What is your current/intended major? (If not in list, choose the best answer)"
       name="high-school-major"
       :type="v.hacker.major.$error ? 'is-danger' : ''"
       :message="v.hacker.major.$error ? (!v.hacker.major.required ? 'Required' : '') : ''"
@@ -278,6 +285,9 @@ export default {
     }
   },
   methods: {
+    isMobile() {
+      return !(screen.width > 769)
+    },
     schoolClear() {
       this.v.hacker.school.$model = ''
     },
@@ -295,6 +305,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~bulma/sass/utilities/_all";
+
+.name-section {
+  display: flex;
+  @include until($tablet) {
+    display: inline;
+  }
+}
 .display-block {
   display: block !important;
 }

@@ -69,7 +69,7 @@ $slate-grey: #9195A5;
     }
     @include from($tablet) {
       margin: auto;
-      padding: 60px 60px 0 60px; //these 60s has to be the same as the other 60s
+      padding: 20px 60px 0 60px; //these 60s has to be the same as the other 60s
     }
   }
 
@@ -112,6 +112,11 @@ $slate-grey: #9195A5;
 
 #signup-form .name-field {
   margin-bottom: 0;
+  width: 35%;
+  @include until($tablet){
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 
 #signup-form .autocomplete-field {
@@ -168,12 +173,26 @@ $slate-grey: #9195A5;
 }
 
 #signup-form .page-header {
-  margin-bottom: 40px;
+  margin-bottom: 0;
   @include from($tablet) {
     margin-bottom: 70px;
   } 
 }
 
+#signup-form .error-message {
+  width: 800px; 
+  margin: auto;
+  @include until($tablet){
+    text-align: center;
+    width: 90%;  
+  }
+}
+
 #signup-form .page-header p {
   margin-top: 14px;
+}
+@include until($tablet) {
+  body {
+    overflow-x: hidden;
+  }
 }

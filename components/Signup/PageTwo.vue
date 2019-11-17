@@ -74,20 +74,20 @@
         </div>
       </b-field>
 
-      <b-field label="Github link (optional)">
+      <b-field label="GitHub link (ex. http://github.com/nwplus) (optional)">
         <b-input v-model="v.hacker.linkGithub.$model" placeholder="optional" type="url" />
       </b-field>
 
-      <b-field label="Personal website/portfolio link (optional)">
+      <b-field label="Personal website/portfolio link (ex. http://mywebsite.ca) (optional)">
         <b-input v-model="v.hacker.linkPortfolio.$model" placeholder="optional" type="url" />
       </b-field>
 
-      <b-field label="LinkedIn (optional)">
+      <b-field label="LinkedIn (ex. http://ca.linkedin.com/company/nwplus) (optional)">
         <b-input v-model="v.hacker.linkLinkedin.$model" placeholder="optional" type="url" />
       </b-field>
 
       <b-field
-        label="Resume link"
+        label="Resume link (Please ensure this link is publicly accessible by opening the link in an incognito browser)"
         :type="v.hacker.linkResume.$error ? 'is-danger' : ''"
         :message="v.hacker.linkResume.$error ? (!v.hacker.linkResume.required ? 'Required' : '') : ''"
       >
