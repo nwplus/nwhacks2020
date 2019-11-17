@@ -155,7 +155,6 @@ export default {
       if (this.$v.hacker.$pending || this.$v.hacker.$error) {
         this.error = true
         window.scroll(0, 0)
-
         return
       }
       // to form submit after this

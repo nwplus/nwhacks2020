@@ -127,7 +127,6 @@ export default {
       sameAs: sameAs(() => true)
     },
     isResumeSharingChecked: {
-      required,
       sameAs: sameAs(() => true)
     },
     firstHackathon: {
