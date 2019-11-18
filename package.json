@@ -1,7 +1,7 @@
 {
-  "name": "LHD2019",
+  "name": "nwHacks2020",
   "version": "1.0.0",
-  "description": "At UBC Local Hack Day, we welcome hundreds of tech newbies to learn new skills, build cool projects, and share new experiences! We are part of an international celebration of diversity, accessibility, and inclusivity for newcomers in the Greater Vancouver hackathon and tech community.",
+  "description": "nwHacks is the largest 24-hour hackathon in Western Canada, with more than 700 participants in 2019. Whether you're a seasoned hacker or a tech newbie, nwHacks welcomes you; just bring an open mind and an insatiable desire to learn, and we’ll take care of the rest.",
   "author": "nwPlus Dev Team",
   "private": true,
   "scripts": {
