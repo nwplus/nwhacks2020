@@ -45,18 +45,25 @@ export default {
   },
   data() {
     return {
-      visible: true
+      visible: true,
+      scrollFunc: () => {}
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll())
+    this.scrollFunc = this.handleScroll()
+    window.addEventListener('scroll', this.scrollFunc)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scrollFunc)
   },
   methods: {
     handleScroll() {
       let lastScroll = 0
       return (event) => {
         const scroll = window.pageYOffset || document.documentElement.scrollTop
-        if (scroll > lastScroll) {
+        if (scroll <= 0) {
+          this.visible = true
+        } else if (scroll > lastScroll) {
           this.visible = false
         } else {
           this.visible = true

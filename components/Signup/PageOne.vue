@@ -228,12 +228,12 @@
     </b-field>
 
     <b-field
-      label="Would you like to apply for a travel reimbursement? If you are coming from the University of Washington, or the surrounding area, we will be providing shuttle buses."
+      label="Would you like to apply for travel reimbursement?* If you are coming from the University of Washington, or the surrounding area, we will be providing a shuttle bus."
       :type="v.hacker.travel.$error ? 'is-danger' : ''"
       :message="v.hacker.travel.$error ? (!v.hacker.travel.required ? 'Required' : (!v.hacker.travel.matchesRadio ? 'Required' : '')) : ''"
     >
       <div class="is-block field-content radio-stack">
-        <p>Note: if selected to participate, we will be subsidizing a maximum of $200 CAD and you must submit this application by 11:59PM PST November 25, 2019.</p>
+        <p>*Note: If you would like to apply for a travel reimbursement, we will be subsidizing a maximum of $200 CAD and this application must be submitted by 11:59PM PST November 26, 2019.</p>
         <b-radio
           v-model.trim="v.hacker.travel.$model"
           name="travel"
