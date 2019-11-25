@@ -114,6 +114,7 @@ export default {
 @import "bulma/bulma.sass";
 .becomeSponsor {
   transition-duration: 0.5s;
+  width: auto;
 }
 .becomeSponsor:hover {
   transform: scale(1.1);
@@ -122,7 +123,7 @@ $heading-font: "Caveat Brush";
 //Desktop CSS:
 img {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
-  filter: grayscale(100%);
+  width: 100%;
 }
 
 img:hover {
