@@ -1,4 +1,5 @@
 import pkg from './package'
+import { meta } from './plugins/meta'
 
 // Handles production env variables when building (These can be public)
 const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION' ? {
@@ -25,6 +26,12 @@ export default {
   /*
    ** Headers of the page
    */
+  hooks: {
+    'generate:page': (page) => {
+      page.html = meta(page)
+    }
+  },
+
   head: {
     title: 'nwHacks',
     meta: [
