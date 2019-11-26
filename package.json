@@ -25,6 +25,7 @@
     "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/svg-sprite": "^0.2.1",
+    "cheerio": "^1.0.0-rc.3",
     "cross-env": "^5.2.0",
     "firebase": "^7.2.0",
     "jquery": "^3.4.0",

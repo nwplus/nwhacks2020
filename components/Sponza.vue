@@ -80,7 +80,12 @@
     </div>
     <!--  -->
     <a href="mailto:logistics@nwplus.io">
-      <img class="becomeSponsor" src="~/assets/ButtonSponsor.svg" style="margin-top: 15px;" title="Become a Sponsor">
+      <img
+        class="becomeSponsor"
+        src="~/assets/ButtonSponsor.svg"
+        style="margin-top: 15px;"
+        title="Become a Sponsor"
+      >
     </a>
   </div>
 </template>
@@ -107,14 +112,24 @@ export default {
 
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
-.becomeSponsor{
+.becomeSponsor {
   transition-duration: 0.5s;
+  width: auto;
 }
 .becomeSponsor:hover {
   transform: scale(1.1);
 }
 $heading-font: "Caveat Brush";
 //Desktop CSS:
+img {
+  transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
+  width: 100%;
+  filter: brightness(0) invert(1);
+}
+
+img:hover {
+  filter: none;
+}
 .columns {
   margin-bottom: 20px !important;
 }
@@ -139,23 +154,23 @@ h2 {
   line-height: 60px;
 }
 .sponsor-title {
-    font-family: Apercu Pro;
-    font-size: 36px;
-    line-height: 37px;
-    letter-spacing: 0.05em;
-    font-weight: bold;
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    background: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
-    margin-bottom: 20px;
+  font-family: Apercu Pro;
+  font-size: 36px;
+  line-height: 37px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(180deg, #91e9ee 0%, #06c1c0 100%);
+  margin-bottom: 20px;
 }
 .sponza {
   margin-top: 5%;
   text-align: center;
 }
 //Mobile CSS:
-@include until ($desktop) {
-  }
+@include until($desktop) {
+}
 </style>
