@@ -124,6 +124,7 @@ $heading-font: "Caveat Brush";
 img {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
   width: 100%;
+  filter: brightness(0) invert(1);
 }
 
 img:hover {
