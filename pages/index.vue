@@ -53,6 +53,9 @@ export default {
     // functions
     const getSponsorImage = async (sponsor) => {
       sponsor.imageURL = await fireDb.getImageUrl(sponsor.image)
+      if (sponsor.altImage) {
+        sponsor.altImageUrl = await fireDb.getImageUrl(sponsor.altImage)
+      }
       return sponsor
     }
     // data
