@@ -79,6 +79,11 @@ export default {
       FAQs: FaqQuestions,
       ...data.featureFlags
     }
+  },
+  mounted: function () {
+    if (this.$store.state.comingFromSuccessPage) {
+      this.$store.commit('resetToFirstPage')
+    }
   }
 }
 </script>
