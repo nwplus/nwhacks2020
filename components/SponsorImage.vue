@@ -1,8 +1,8 @@
 <template>
   <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
     <img
-      :class="{[item.rank]: true, default: !item.altImage}"
-      :src="item.altImage && hover ? item.altImage : item.imageURL"
+      :class="{[item.rank]: true, default: !item.altImageUrl}"
+      :src="item.altImageUrl && hover ? item.altImageUrl : item.imageURL"
       :alt="item.name"
       @mouseover="hover = true"
       @mouseleave="hover = false"
