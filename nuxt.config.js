@@ -30,7 +30,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      { property: 'og:site_name', content: 'nwHacks2020' },
+      { property: 'og:title', content: 'nwHacks2020' },
+      { property: 'og:image', content: '/thumbnail.png' },
+      { property: 'og:url', content: 'https://nwhacks.io' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
