@@ -1,4 +1,5 @@
 import pkg from './package'
+import { meta } from './plugins/meta'
 
 // Handles production env variables when building (These can be public)
 const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION' ? {
@@ -25,18 +26,25 @@ export default {
   /*
    ** Headers of the page
    */
+  hooks: {
+    'generate:page': (page) => {
+      page.html = meta(page)
+    }
+  },
+
   head: {
     title: 'nwHacks',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
-      { property: 'og:site_name', content: 'nwHacks2020' },
-      { property: 'og:title', content: 'nwHacks2020' },
-      { property: 'og:image', content: '/thumbnail.png' },
-      { property: 'og:url', content: 'https://nwhacks.io' },
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [{ src: 'https://unpkg.com/vue-meta/dist/vue-meta.min.js' }]
+  },
+
+  metaInfo() {
+
   },
 
   /*
