@@ -10,9 +10,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'tera'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
-                <img class="tera" :src="item.imageURL" :alt="item.name">
-              </a>
+              <SponsorImage :item="item" />
             </div>
           </div>
         </div>
@@ -25,9 +23,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'giga'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
-                <img class="giga" :src="item.imageURL" :alt="item.name">
-              </a>
+              <SponsorImage :item="item" />
             </div>
           </div>
         </div>
@@ -40,9 +36,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'mega'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
-                <img class="mega" :src="item.imageURL" :alt="item.name">
-              </a>
+              <SponsorImage :item="item" />
             </div>
           </div>
         </div>
@@ -55,9 +49,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'kilo'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
-                <img class="kilo" :src="item.imageURL" :alt="item.name">
-              </a>
+              <SponsorImage :item="item" />
             </div>
           </div>
         </div>
@@ -70,9 +62,7 @@
         <div v-for="item in items" :key="item.name">
           <div v-if="item.rank == 'in-kind'">
             <div class="column">
-              <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
-                <img class="in-kind" :src="item.imageURL" :alt="item.name">
-              </a>
+              <SponsorImage :item="item" />
             </div>
           </div>
         </div>
@@ -91,20 +81,13 @@
 </template>
 
 <script>
+import SponsorImage from '~/components/SponsorImage'
 export default {
+  components: { SponsorImage },
   props: {
     items: {
       type: Array,
       required: true
-    }
-  },
-  methods: {
-    formatURL(url) {
-      if (!url.includes('http')) {
-        return `http://${url}`
-      } else {
-        return url
-      }
     }
   }
 }
@@ -112,6 +95,8 @@ export default {
 
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
+$heading-font: "Caveat Brush";
+//Desktop CSS:
 .becomeSponsor {
   transition-duration: 0.5s;
   width: auto;
@@ -119,34 +104,8 @@ export default {
 .becomeSponsor:hover {
   transform: scale(1.1);
 }
-$heading-font: "Caveat Brush";
-//Desktop CSS:
-img {
-  transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
-  width: 100%;
-  filter: brightness(0) invert(1);
-}
-
-img:hover {
-  filter: none;
-}
 .columns {
   margin-bottom: 20px !important;
-}
-.tera {
-  width: 400px;
-}
-.giga {
-  max-width: 350px;
-}
-.mega {
-  max-width: 300px;
-}
-.kilo {
-  max-width: 225px;
-}
-.in-kind {
-  max-width: 150px;
 }
 h2 {
   font-family: $heading-font;
