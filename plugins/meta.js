@@ -19,8 +19,8 @@ function meta({ route, html }) {
   const metaTags = {
     name: 'nwHacks 2020',
     description: 'Western Canada\'s Largest Hackathon',
-    image: 'https://nwhacks.io/thumbnail.png',
-    url: 'https://nwhacks.io'
+    image: 'https://www.nwhacks.io/thumbnail.png',
+    url: 'https://www.nwhacks.io'
   }
 
   // Load Nuxt generared HTML
