@@ -1,11 +1,14 @@
 <template>
-  <a :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
+  <a class="link" style="position: relative;" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
     <img
-      :class="{[item.rank]: true, default: !item.altImageUrl}"
-      :src="item.altImageUrl && hover ? item.altImageUrl : item.imageURL"
+      :class="{hasAlt: item.altImageUrl, [item.rank]: true, default: !item.altImageUrl}"
+      :src="item.imageURL"
       :alt="item.name"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
+    >
+    <img
+      v-if="item.altImageUrl"
+      :class="{[item.rank]: true, altImage: true}"
+      :src="item.altImageUrl"
     >
   </a>
 </template>
@@ -16,11 +19,6 @@ export default {
     item: {
       type: Object,
       required: true
-    }
-  },
-  data() {
-    return {
-      hover: false
     }
   },
   methods: {
@@ -43,6 +41,24 @@ export default {
 }
 .default:hover {
   filter: none;
+}
+.link img{
+  transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
+}
+.link .hasAlt {
+  opacity: 0;
+}
+.link:hover .hasAlt {
+  opacity: 1;
+}
+.link .altImage {
+  top: -100;
+  left: 0;
+  position: absolute;
+  opacity: 1;
+}
+.link:hover .altImage {
+  opacity: 0;
 }
 .tera {
   width: 400px;
