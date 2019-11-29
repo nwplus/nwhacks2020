@@ -23,7 +23,7 @@ const initialState = {
     longProject: '',
     firstHackathon: false,
     attendedLHD: false,
-    isdocumentchecked: false,
+    isResumeSharingChecked: false,
     ishardware: false,
     isPrivacyPolicyChecked: false,
     lastname: '',
