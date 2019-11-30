@@ -99,9 +99,8 @@ h2 {
   align-items: center;
 }
 .sponsorWrapper {
-  flex-grow: 1;
   width: 200px;
-  padding: 30px;
+  margin: 25px;
 }
 .sponza {
   margin-top: 5%;
@@ -113,7 +112,7 @@ h2 {
     flex-direction: column;
   }
   .sponsorWrapper {
-    padding: 15px;
+    margin: 15px;
   }
 }
 </style>

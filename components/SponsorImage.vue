@@ -1,5 +1,5 @@
 <template>
-  <a class="link" style="position: relative;" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
+  <a class="link" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
     <img
       :class="{hasAlt: item.altImageUrl, [item.rank]: true, default: !item.altImageUrl}"
       :src="item.imageURL"
@@ -44,6 +44,10 @@ img {
 .default:hover {
   filter: none;
 }
+.link {
+  display: block;
+  position: relative;
+}
 .link img{
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
 }
@@ -54,7 +58,7 @@ img {
   opacity: 1;
 }
 .link .altImage {
-  top: -100;
+  top: 0;
   left: 0;
   position: absolute;
   opacity: 1;
