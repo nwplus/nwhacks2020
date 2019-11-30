@@ -30,8 +30,8 @@
         <SponsorImage :item="item" />
       </div>
     </div>
-
-    <a href="mailto:logistics@nwplus.io">
+    <!--  -->
+    <a href="mailto:sponsorship@nwplus.io">
       <img
         class="becomeSponsor"
         src="~/assets/ButtonSponsor.svg"
