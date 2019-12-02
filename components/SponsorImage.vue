@@ -1,5 +1,5 @@
 <template>
-  <a class="link" style="position: relative;" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
+  <a class="link" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
     <img
       :class="{hasAlt: item.altImageUrl, [item.rank]: true, default: !item.altImageUrl}"
       :src="item.imageURL"
@@ -36,11 +36,17 @@ export default {
 <style scoped>
 .default {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
-  width: 100%;
   filter: brightness(0) invert(1);
+}
+img {
+  width: 100%;
 }
 .default:hover {
   filter: none;
+}
+.link {
+  display: block;
+  position: relative;
 }
 .link img{
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
@@ -52,7 +58,7 @@ export default {
   opacity: 1;
 }
 .link .altImage {
-  top: -100;
+  top: 0;
   left: 0;
   position: absolute;
   opacity: 1;
@@ -61,18 +67,23 @@ export default {
   opacity: 0;
 }
 .tera {
-  width: 400px;
+  max-width: 230px;
+  max-height: 230px;
 }
 .giga {
-  max-width: 350px;
+  max-width: 200px;
+  max-height: 200px;
 }
 .mega {
-  max-width: 300px;
+  max-width: 170px;
+  max-height: 170px;
 }
 .kilo {
-  max-width: 225px;
+  max-width: 140px;
+  max-height: 140px;
 }
 .in-kind {
-  max-width: 150px;
+  max-width: 110px;
+  max-height: 110px;
 }
 </style>
