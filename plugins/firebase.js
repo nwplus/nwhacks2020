@@ -44,8 +44,15 @@ const fireDb = {
     }
   },
   submitApplication: async (app) => {
+    // Get a reference to the hacker collection
     const ref = db.collection('hacker_info_2020')
+    // get a reference to the security collection (only holds emails)
+    const secureRef = db.collection('hacker_email_2020')
+    const doc = await secureRef.doc(app.email).get()
+    if (doc.exists) return false
     await ref.doc(app.email).set(app)
+    await secureRef.doc(app.email).set({ email: app.email })
+    return true
   }
 }
 

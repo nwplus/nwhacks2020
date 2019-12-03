@@ -27,7 +27,7 @@
               </button>
             </nuxt-link>
             <a
-              href="https://docs.google.com/forms/d/1n9rqrEuAPMykgvLRV7CnEXqceXbjyECqLJtNpNugnbo/edit"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScvpElp3ugHdV0wMT-FBGSGZ4DYC4ecQ1fsXM4d-J238eK_Dg/viewform "
               target="blank"
               rel="noopener"
             >

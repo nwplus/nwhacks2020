@@ -1,14 +1,16 @@
 <template>
   <section>
     <div class="signup-content">
-      <h2 class="header">
-        Nice to meet you {{ v.hacker.firstname.$model }} 👋
-      </h2>
-      <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
+      <div class="page-header">
+        <h2 class="header">
+          Nice to meet you, {{ v.hacker.firstname.$model }} 👋
+        </h2>
+        <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
+      </div>
       <b-field
         label="Is this your first hackathon?"
         :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
-        :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+        :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Required' : '')) : ''"
       >
         <div class="field-content">
           <b-radio
@@ -30,7 +32,7 @@
       <b-field
         label="Have you attended either LHD: Learn Day or LHD: Build Day?"
         :type="v.hacker.attendedLHD.$error ? 'is-danger' : ''"
-        :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Does not match one of the choices' : '')) : ''"
+        :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Required' : '')) : ''"
       >
         <div class="field-content">
           <b-radio
@@ -72,20 +74,20 @@
         </div>
       </b-field>
 
-      <b-field label="Github Link (optional)">
+      <b-field label="GitHub link (ex. http://github.com/nwplus) (optional)">
         <b-input v-model="v.hacker.linkGithub.$model" placeholder="optional" type="url" />
       </b-field>
 
-      <b-field label="Personal Website/Portfolio Link">
+      <b-field label="Personal website/portfolio link (ex. http://mywebsite.ca) (optional)">
         <b-input v-model="v.hacker.linkPortfolio.$model" placeholder="optional" type="url" />
       </b-field>
 
-      <b-field label="LinkedIn">
+      <b-field label="LinkedIn (ex. http://ca.linkedin.com/company/nwplus) (optional)">
         <b-input v-model="v.hacker.linkLinkedin.$model" placeholder="optional" type="url" />
       </b-field>
 
       <b-field
-        label="Resume Link"
+        label="Resume link (Please ensure this link is publicly accessible by opening the link in an incognito browser)"
         :type="v.hacker.linkResume.$error ? 'is-danger' : ''"
         :message="v.hacker.linkResume.$error ? (!v.hacker.linkResume.required ? 'Required' : '') : ''"
       >
@@ -93,7 +95,7 @@
       </b-field>
 
       <b-field
-        label="How would you like to utilize technology to make the world a better place?"
+        label="🏗️ How would you like to utilize technology to make the world a better place?"
         :type="v.hacker.longTechnology.$error ? 'is-danger' : ''"
         :message="v.hacker.longTechnology.$error ? (!v.hacker.longTechnology.required ? 'Required' : '') : ''"
       >
@@ -102,12 +104,13 @@
           type="textarea"
           name="longTechnology"
           minlength="10"
-          maxlength="400"
+          maxlength="650"
+          placeholder="Max 650 characters"
         />
       </b-field>
 
       <b-field
-        label="Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
+        label="🏅 Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
         :type="v.hacker.longProject.$error ? 'is-danger' : ''"
         :message="v.hacker.longProject.$error ? (!v.hacker.longProject.required ? 'Required' : '') : ''"
       >
@@ -116,7 +119,8 @@
           type="textarea"
           name="longProject"
           minlength="10"
-          maxlength="400"
+          maxlength="650"
+          placeholder="Max 650 characters"
         />
       </b-field>
     </div>

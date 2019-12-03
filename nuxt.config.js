@@ -1,4 +1,5 @@
 import pkg from './package'
+import { meta } from './plugins/meta'
 
 // Handles production env variables when building (These can be public)
 const envVars = process.env.DEPLOY_ENV === 'GH_PAGES' || process.env.DEPLOY_ENV === 'PRODUCTION' ? {
@@ -25,6 +26,12 @@ export default {
   /*
    ** Headers of the page
    */
+  hooks: {
+    'generate:page': (page) => {
+      page.html = meta(page)
+    }
+  },
+
   head: {
     title: 'nwHacks',
     meta: [
@@ -50,7 +57,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase.js', '~/plugins/vuelidate.js', { src: '~/plugins/vuex-persist', srr: false }],
+  plugins: [
+    '~/plugins/firebase.js',
+    '~/plugins/vuelidate.js',
+    { src: '~/plugins/vuex-persist', srr: false }
+  ],
 
   /*
    ** Cache static resources for better performance.
@@ -64,6 +75,17 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    [
+      'nuxt-fontawesome',
+      {
+        imports: [
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ],
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/svg-sprite',

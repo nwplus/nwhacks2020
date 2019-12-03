@@ -68,25 +68,27 @@ export default {
       }
     }
   },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scrollFunc)
+  },
   mounted() {
     this.setupAnimation()
-    const teamSection = window.document.getElementById('teamSection')
-    const self = this
-    const top = screen.width < 768 ? teamSection.offsetTop : teamSection.offsetTop + teamSection.offsetHeight * 2.5
-    const resetTop = top - window.innerHeight
-    function scrollFunc(event) {
-      const scroll = window.pageYOffset || document.documentElement.scrollTop
-      if (scroll > top) {
-        self.resetFuncs.forEach(fn => fn())
-        self.resetFuncs = []
-      }
-      if (self.resetFuncs.length === 0 && scroll < resetTop) {
-        self.setupAnimation()
-      }
-    }
-    window.addEventListener('scroll', scrollFunc)
+    window.addEventListener('scroll', this.scrollFunc)
   },
   methods: {
+    scrollFunc(event) {
+      const teamSection = window.document.getElementById('teamSection')
+      const top = screen.width < 768 ? teamSection.offsetTop - teamSection.offsetHeight * 3 : teamSection.offsetTop - teamSection.offsetHeight
+      const resetTop = top - window.innerHeight
+      const scroll = window.pageYOffset || document.documentElement.scrollTop
+      if (scroll > top) {
+        this.resetFuncs.forEach(fn => fn())
+        this.resetFuncs = []
+      }
+      if (this.resetFuncs.length === 0 && scroll < resetTop) {
+        this.setupAnimation()
+      }
+    },
     setupAnimation() {
       Array.from(window.document.getElementsByClassName('teamPic')).forEach((element) => {
         const x = screen.width < 768 ? Math.random() * 400 - 200 : Math.random() * 800 - 400
