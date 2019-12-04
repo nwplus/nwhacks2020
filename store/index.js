@@ -23,7 +23,7 @@ const initialState = {
     longProject: '',
     firstHackathon: false,
     attendedLHD: false,
-    isdocumentchecked: false,
+    isResumeSharingChecked: false,
     ishardware: false,
     isPrivacyPolicyChecked: false,
     lastname: '',
@@ -33,7 +33,8 @@ const initialState = {
     source: '',
     travel: ''
   },
-  signUpPage: 0
+  signUpPage: 0,
+  comingFromSuccessPage: false
 }
 
 export const state = () => ({
@@ -58,6 +59,10 @@ export const mutations = {
   },
   clearState(state) {
     state.hackerApplication = { ...initialState.hackerApplication }
+    state.comingFromSuccessPage = true
+  },
+  resetToFirstPage(state) {
+    state.comingFromSuccessPage = false
     state.signUpPage = 0
   },
   goToPage(state, page) {
