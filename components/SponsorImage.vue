@@ -40,7 +40,6 @@ export default {
   filter: brightness(0) invert(1);
 }
 img {
-  width: 100%;
   display: block;
 }
 .default:hover {
@@ -69,24 +68,24 @@ img {
   opacity: 0;
 }
 .tera {
-  width: 450px;
-  max-height: 270px;
+  max-width: 400px;
+  max-height: 260px;
 }
 .giga {
-  width: 390px;
-  max-height: 250px;
+  max-width: 360px;
+  max-height: 240px;
 }
 .mega {
-  width: 330px;
-  max-height: 230px;
+  max-width: 320px;
+  max-height: 220px;
 }
 .kilo {
-  width: 270px;
-  max-height: 210px;
+  max-width: 280px;
+  max-height: 200px;
 }
 .in-kind {
-  width: 225px;
-  max-height: 190px;
+  max-width: 240px;
+  max-height: 180px;
 }
 //Mobile CSS:
 @include until($tablet) {

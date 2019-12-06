@@ -109,7 +109,6 @@ h2 {
   align-items: center;
 }
 .sponsorWrapper {
-  width: 200px;
   margin: 10px;
 }
 .sponza {
