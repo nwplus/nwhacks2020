@@ -6,7 +6,7 @@
         src="~@/assets/NwPluslogo.svg"
       >
       <h1 class="title is-2 has-text-white">
-        Application Form Coming Soon!
+        NwHacks signup is over
       </h1>
       <nuxt-link to="/">
         <button class="button is-large">

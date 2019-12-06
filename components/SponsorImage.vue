@@ -33,13 +33,15 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
+@import "bulma/bulma.sass";
 .default {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
   filter: brightness(0) invert(1);
 }
 img {
   width: 100%;
+  display: block;
 }
 .default:hover {
   filter: none;
@@ -85,5 +87,11 @@ img {
 .in-kind {
   max-width: 225px;
   max-height: 190px;
+}
+//Mobile CSS:
+@include until($tablet) {
+  img {
+    display: inline;
+  }
 }
 </style>
