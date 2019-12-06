@@ -53,11 +53,21 @@ export default {
     }
   },
   computed: {
-    listOfTera: function () { return this.items.filter(item => item.rank === 'tera') },
-    listOfGiga: function () { return this.items.filter(item => item.rank === 'giga') },
-    listOfMega: function () { return this.items.filter(item => item.rank === 'mega') },
-    listOfKilo: function () { return this.items.filter(item => item.rank === 'kilo') },
-    listOfInKind: function () { return this.items.filter(item => item.rank === 'in-kind') }
+    listOfTera: function () {
+      return this.items.filter(item => item.rank === 'tera')
+    },
+    listOfGiga: function () {
+      return this.items.filter(item => item.rank === 'giga')
+    },
+    listOfMega: function () {
+      return this.items.filter(item => item.rank === 'mega')
+    },
+    listOfKilo: function () {
+      return this.items.filter(item => item.rank === 'kilo')
+    },
+    listOfInKind: function () {
+      return this.items.filter(item => item.rank === 'in-kind')
+    }
   }
 }
 </script>
@@ -100,7 +110,7 @@ h2 {
 }
 .sponsorWrapper {
   width: 200px;
-  margin: 25px;
+  margin: 10px;
 }
 .sponza {
   margin-top: 5%;
@@ -112,7 +122,7 @@ h2 {
     flex-direction: column;
   }
   .sponsorWrapper {
-    margin: 15px;
+    margin: 10px;
   }
 }
 </style>

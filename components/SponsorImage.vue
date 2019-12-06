@@ -50,7 +50,7 @@ img {
   display: block;
   position: relative;
 }
-.link img{
+.link img {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
 }
 .link .hasAlt {
@@ -69,23 +69,23 @@ img {
   opacity: 0;
 }
 .tera {
-  max-width: 450px;
+  width: 450px;
   max-height: 270px;
 }
 .giga {
-  max-width: 390px;
+  width: 390px;
   max-height: 250px;
 }
 .mega {
-  max-width: 330px;
+  width: 330px;
   max-height: 230px;
 }
 .kilo {
-  max-width: 270px;
+  width: 270px;
   max-height: 210px;
 }
 .in-kind {
-  max-width: 225px;
+  width: 225px;
   max-height: 190px;
 }
 //Mobile CSS:
