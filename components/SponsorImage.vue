@@ -67,23 +67,23 @@ img {
   opacity: 0;
 }
 .tera {
-  max-width: 230px;
-  max-height: 230px;
+  max-width: 450px;
+  max-height: 270px;
 }
 .giga {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 390px;
+  max-height: 250px;
 }
 .mega {
-  max-width: 170px;
-  max-height: 170px;
+  max-width: 330px;
+  max-height: 230px;
 }
 .kilo {
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 270px;
+  max-height: 210px;
 }
 .in-kind {
-  max-width: 110px;
-  max-height: 110px;
+  max-width: 225px;
+  max-height: 190px;
 }
 </style>
