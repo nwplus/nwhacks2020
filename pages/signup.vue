@@ -1,6 +1,6 @@
 <template>
   <div id="signup-form">
-    <div class="nav">
+    <div v-if="page !== -1" class="nav">
       <nuxt-link to="/">
         <img id="navImage" src="~/assets/signup-logo.svg" alt="nwPlus logo">
       </nuxt-link>
