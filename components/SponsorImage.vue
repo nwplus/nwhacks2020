@@ -91,6 +91,7 @@ img {
 @include until($tablet) {
   img {
     display: inline;
+    max-width: 200px !important;
   }
 }
 </style>
