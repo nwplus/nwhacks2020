@@ -53,11 +53,21 @@ export default {
     }
   },
   computed: {
-    listOfTera: function () { return this.items.filter(item => item.rank === 'tera') },
-    listOfGiga: function () { return this.items.filter(item => item.rank === 'giga') },
-    listOfMega: function () { return this.items.filter(item => item.rank === 'mega') },
-    listOfKilo: function () { return this.items.filter(item => item.rank === 'kilo') },
-    listOfInKind: function () { return this.items.filter(item => item.rank === 'in-kind') }
+    listOfTera: function () {
+      return this.items.filter(item => item.rank === 'tera')
+    },
+    listOfGiga: function () {
+      return this.items.filter(item => item.rank === 'giga')
+    },
+    listOfMega: function () {
+      return this.items.filter(item => item.rank === 'mega')
+    },
+    listOfKilo: function () {
+      return this.items.filter(item => item.rank === 'kilo')
+    },
+    listOfInKind: function () {
+      return this.items.filter(item => item.rank === 'in-kind')
+    }
   }
 }
 </script>
@@ -92,15 +102,14 @@ h2 {
   margin-bottom: 20px;
 }
 .sponsorCategory {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 .sponsorWrapper {
-  width: 200px;
-  margin: 25px;
+  margin: 30px;
 }
 .sponza {
   margin-top: 5%;
@@ -112,6 +121,7 @@ h2 {
     flex-direction: column;
   }
   .sponsorWrapper {
+    max-width: 300px;
     margin: 15px;
   }
 }
