@@ -33,6 +33,13 @@
             >
               <button class="button">Become a Mentor</button>
             </a>
+            <a
+              href="https://forms.gle/qRECZF3fzJPGYfc1A"
+              target="blank"
+              rel="noopener"
+            >
+              <button class="button">Become a Volunteer</button>
+            </a>
           </div>
           <div class="titleParts" :class="{centered: isWestCoast(item.title)}">
             <h2
