@@ -1,13 +1,18 @@
 <template>
   <div>
-    <div id="notOpen" class="has-background-black">
+    <div id="notOpen">
       <img
         style="width: 10%;"
         src="~@/assets/NwPluslogo.svg"
       >
-      <h1 class="title is-2 has-text-white">
-        Application Form Coming Soon!
+      <h1 class="title is-2 nwcolor">
+        nwHacks applications are closed.
       </h1>
+      <h3 class="title is-5 nwcolor">
+        For questions or concerns, email us at <a id="mailLink" href="mailto:logistics@nwplus.io">
+          logistics@nwplus.io
+        </a>.
+      </h3>
       <nuxt-link to="/">
         <button class="button is-large">
           take me back!
@@ -28,7 +33,17 @@
   left: 0;
   right: 0;
   height: 100vh;
+  background-color: #262662;
+  color: #69dde1;
 }
+.nwcolor {
+  color: #69dde1 !important;
+  margin: auto 2%;
+}
+#mailLink{
+  color: white;
+}
+
 $body-color: #4fd7db;
 $button-text-color: #262662;
 button {

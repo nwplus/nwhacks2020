@@ -1,5 +1,5 @@
 <template>
-  <a class="link" style="position: relative;" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
+  <a class="link" :href="formatURL(item.url)" target="_blank" rel="noopener noreferrer">
     <img
       :class="{hasAlt: item.altImageUrl, [item.rank]: true, default: !item.altImageUrl}"
       :src="item.imageURL"
@@ -33,16 +33,23 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
+@import "bulma/bulma.sass";
 .default {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
-  width: 100%;
   filter: brightness(0) invert(1);
+}
+img {
+  display: block;
 }
 .default:hover {
   filter: none;
 }
-.link img{
+.link {
+  display: block;
+  position: relative;
+}
+.link img {
   transition: 0.5s, -moz-filter 0.5s, -o-filter 0.5s, filter 0.5s;
 }
 .link .hasAlt {
@@ -52,7 +59,7 @@ export default {
   opacity: 1;
 }
 .link .altImage {
-  top: -100;
+  top: 0;
   left: 0;
   position: absolute;
   opacity: 1;
@@ -61,18 +68,30 @@ export default {
   opacity: 0;
 }
 .tera {
-  width: 400px;
+  max-width: 400px;
+  max-height: 260px;
 }
 .giga {
-  max-width: 350px;
+  max-width: 360px;
+  max-height: 240px;
 }
 .mega {
-  max-width: 300px;
+  max-width: 320px;
+  max-height: 220px;
 }
 .kilo {
-  max-width: 225px;
+  max-width: 280px;
+  max-height: 200px;
 }
 .in-kind {
-  max-width: 150px;
+  max-width: 240px;
+  max-height: 180px;
+}
+//Mobile CSS:
+@include until($tablet) {
+  img {
+    display: inline;
+    max-width: 200px !important;
+  }
 }
 </style>
