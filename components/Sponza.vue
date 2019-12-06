@@ -102,14 +102,14 @@ h2 {
   margin-bottom: 20px;
 }
 .sponsorCategory {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 .sponsorWrapper {
-  margin: 10px;
+  margin: 30px;
 }
 .sponza {
   margin-top: 5%;
@@ -121,7 +121,7 @@ h2 {
     flex-direction: column;
   }
   .sponsorWrapper {
-    margin: 10px;
+    margin: 15px;
   }
 }
 </style>
