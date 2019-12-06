@@ -121,6 +121,7 @@ h2 {
     flex-direction: column;
   }
   .sponsorWrapper {
+    max-width: 300px;
     margin: 15px;
   }
 }
