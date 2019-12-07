@@ -21,11 +21,6 @@
           <div v-if="item.title === 'Connect, .Collaborate, and Create'" id="focus">
             <h1>nwHacks 2020</h1>
             <p>Western Canada's Largest Hackathon</p>
-            <nuxt-link to="/signup">
-              <button class="button">
-                Apply Now
-              </button>
-            </nuxt-link>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLScvpElp3ugHdV0wMT-FBGSGZ4DYC4ecQ1fsXM4d-J238eK_Dg/viewform "
               target="blank"
