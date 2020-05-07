@@ -15,6 +15,7 @@ if (!firebase.apps.length) {
   }
   firebase.initializeApp(config)
 }
+
 const db = firebase.firestore()
 const storage = firebase.storage()
 const webCollection = 'Website_content'
