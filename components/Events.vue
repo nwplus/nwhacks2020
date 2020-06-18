@@ -88,8 +88,8 @@ export default {
 $heading-color: #f9c2e3;
 $body-color: #69dde1;
 $red: #ff7676;
-$heading-font: "Apercu Pro", sans-serif;
-$body-font: "Apercu Pro", sans-serif;
+$heading-font: "AHK Grotesk Regular", sans-serif;
+$body-font: "HK Grotesk Regular", sans-serif;
 $button-text-color: #262662;
 .mainContainer {
   justify-content: right;

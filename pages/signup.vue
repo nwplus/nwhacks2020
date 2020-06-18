@@ -266,7 +266,7 @@ export default {
   right: 40%;
   top: 22.5%;
   bottom: 20%;
-  font-family: Apercu Pro;
+  font-family: "HK Grotesk Regular";
   font-size: 18px;
   line-height: 22px;
   /* identical to box height */
@@ -281,7 +281,7 @@ export default {
 <style lang="scss">
 //Desktop CSS:
 @font-face {
-  font-family: "Apercu Pro";
-  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+  font-family: "HK Grotesk Regular";
+  src: url("../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
 }
 </style>

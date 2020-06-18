@@ -99,7 +99,6 @@ export default {
 <style scoped lang="scss">
 @import "bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Apercu+Pro&display=swap");
 
 .container {
   width: 90%;
@@ -109,7 +108,7 @@ export default {
   margin-top: 5%;
 }
 .faq-title {
-  font-family: Apercu Pro;
+  font-family: "HK Grotesk Regular";
   font-size: 36px;
   line-height: 37px;
   font-weight: bold;
@@ -123,7 +122,7 @@ export default {
   text-align: center;
 }
 .label {
-  font-family: "Apercu Pro";
+    font-family: "HK Grotesk Regular";
   color: #f9c2e3;
   font-size: 20px;
 }
@@ -148,7 +147,7 @@ button.accordion {
   // border-image: -webkit-linear-gradient(180deg, #91E9EE 0%, #06C1C0 100%);
   border-radius: 5px;
   font-size: 18px;
-  font-family: "Apercu Pro";
+  font-family: "HK Grotesk Regular";
   font-weight: bold;
   @include until($desktop) {
     width: 100%;

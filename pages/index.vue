@@ -95,8 +95,8 @@ export default {
 @import "bulma/bulma.sass";
 //Desktop CSS:
 @font-face {
-  font-family: "Apercu Pro";
-  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+  font-family: "HK Grotesk Regular";
+  src: url("../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
 }
 #main-page {
   background-color: #262662;
