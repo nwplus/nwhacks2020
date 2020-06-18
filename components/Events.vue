@@ -2,23 +2,23 @@
   <div class="mainContainer">
     <div v-for="item in sortedEvents" :key="item.order">
       <div
-        class="columns is-desktop is-vcentered white singleEvent"
         :class="{ flipped: isFlipped(item) }"
+        class="columns is-desktop is-vcentered white singleEvent"
       >
         <img
-          v-if="item.title === 'Connect, .Collaborate, and Create'"
           id="about-graphic"
+          v-if="item.title === 'Connect, .Collaborate, and Create'"
           class="column imgResize graphic"
           src="../assets/about_illustration.svg"
         >
         <img
-          v-else-if="isWestCoast(item.title)"
           id="smiley-graphic"
+          v-else-if="isWestCoast(item.title)"
           class="column imgResize graphic"
           src="../assets/smiley_illustration.svg"
         >
-        <div class="column allEvents" :class="{ flipped: isFlipped(item) }">
-          <div v-if="item.title === 'Connect, .Collaborate, and Create'" id="focus">
+        <div :class="{ flipped: isFlipped(item) }" class="column allEvents">
+          <div id="focus" v-if="item.title === 'Connect, .Collaborate, and Create'">
             <h1>nwHacks 2020</h1>
             <p>Western Canada's Largest Hackathon</p>
             <nuxt-link to="/signup">
@@ -34,12 +34,12 @@
               <button class="button">Become a Mentor</button>
             </a>
           </div>
-          <div class="titleParts" :class="{centered: isWestCoast(item.title)}">
+          <div :class="{centered: isWestCoast(item.title)}" class="titleParts">
             <h2
               v-for="titlePart in item.title.split('.')"
               :key="titlePart"
-              class="title"
               :class="{equalsSymbols: isEqualsSymbols(titlePart)}"
+              class="title"
             >
               {{ titlePart }}
             </h2>
@@ -86,8 +86,8 @@ export default {
 $heading-color: #f9c2e3;
 $body-color: #69dde1;
 $red: #ff7676;
-$heading-font: "Apercu Pro", sans-serif;
-$body-font: "Apercu Pro", sans-serif;
+$heading-font: "HK Grotesk Regular", sans-serif;
+$body-font: "HK Grotesk Regular", sans-serif;
 $button-text-color: #262662;
 .mainContainer {
   justify-content: right;

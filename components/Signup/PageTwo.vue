@@ -8,9 +8,9 @@
         <p>Help us get to know you better by providing as many links as you feel will support your application.</p>
       </div>
       <b-field
-        label="Is this your first hackathon?"
         :type="v.hacker.firstHackathon.$error ? 'is-danger' : ''"
         :message="v.hacker.firstHackathon.$error ? (!v.hacker.firstHackathon.required ? 'Required' : (!v.hacker.firstHackathon.matchesRadio ? 'Required' : '')) : ''"
+        label="Is this your first hackathon?"
       >
         <div class="field-content">
           <b-radio
@@ -30,9 +30,9 @@
         </div>
       </b-field>
       <b-field
-        label="Have you attended either LHD: Learn Day or LHD: Build Day?"
         :type="v.hacker.attendedLHD.$error ? 'is-danger' : ''"
         :message="v.hacker.attendedLHD.$error ? (!v.hacker.attendedLHD.required ? 'Required' : (!v.hacker.attendedLHD.matchesRadio ? 'Required' : '')) : ''"
+        label="Have you attended either LHD: Learn Day or LHD: Build Day?"
       >
         <div class="field-content">
           <b-radio
@@ -52,11 +52,11 @@
         </div>
       </b-field>
       <b-field
-        label="How do you wish to contribute at nwHacks? Your choice will not affect your application and you can always change your mind after you submit."
         :type="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
           && true ? 'is-danger' : ''"
         :message="(!v.hacker.hackerRoleDeveloper.$model && !v.hacker.hackerRoleDesigner.$model && !v.hacker.hackerRoleHardware.$model && !v.hacker.hackerRoleOther.$model)
           && (v.hacker.hackerRoleDeveloper.$dirty || v.hacker.hackerRoleDesigner.$dirty || v.hacker.hackerRoleHardware.$dirty || v.hacker.hackerRoleOther.$dirty) ? 'Required' : ''"
+        label="How do you wish to contribute at nwHacks? Your choice will not affect your application and you can always change your mind after you submit."
       >
         <div class="field-content">
           <b-checkbox v-model="v.hacker.hackerRoleDeveloper.$model">
@@ -87,17 +87,17 @@
       </b-field>
 
       <b-field
-        label="Resume link (Please ensure this link is publicly accessible by opening the link in an incognito browser)"
         :type="v.hacker.linkResume.$error ? 'is-danger' : ''"
         :message="v.hacker.linkResume.$error ? (!v.hacker.linkResume.required ? 'Required' : '') : ''"
+        label="Resume link (Please ensure this link is publicly accessible by opening the link in an incognito browser)"
       >
         <b-input v-model="v.hacker.linkResume.$model" placeholder="required" type="url" />
       </b-field>
 
       <b-field
-        label="🏗️ How would you like to utilize technology to make the world a better place?"
         :type="v.hacker.longTechnology.$error ? 'is-danger' : ''"
         :message="v.hacker.longTechnology.$error ? (!v.hacker.longTechnology.required ? 'Required' : '') : ''"
+        label="🏗️ How would you like to utilize technology to make the world a better place?"
       >
         <b-input
           v-model.trim="v.hacker.longTechnology.$model"
@@ -110,9 +110,9 @@
       </b-field>
 
       <b-field
-        label="🏅 Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
         :type="v.hacker.longProject.$error ? 'is-danger' : ''"
         :message="v.hacker.longProject.$error ? (!v.hacker.longProject.required ? 'Required' : '') : ''"
+        label="🏅 Tell us about a project you've worked on outside of school. This does not have to be technical or design related, just something you've worked on that you're proud of."
       >
         <b-input
           v-model.trim="v.hacker.longProject.$model"

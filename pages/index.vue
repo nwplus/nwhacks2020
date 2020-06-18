@@ -1,14 +1,14 @@
 <template>
   <div id="main-page" style="position: relative; width: 100%;">
-    <NavBar v-if="screenWidth > 768" id="navbar" :faq="faqFlag" />
+    <NavBar id="navbar" v-if="screenWidth > 768" :faq="faqFlag" />
     <section class="mainSection">
       <div class="mainContent">
         <Intro id="intro" :intro="intro" />
         <Events id="events" :items="events" />
         <Video />
         <WhyJoin id="about" />
-        <FAQ v-if="faqFlag" id="faq" :items="FAQs" />
-        <Sponza v-if="sponsorFlag" id="sponza" :items="sponsors" />
+        <FAQ id="faq" v-if="faqFlag" :items="FAQs" />
+        <Sponza id="sponza" v-if="sponsorFlag" :items="sponsors" />
       </div>
     </section>
     <Footer :text="footer" />
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import TeamSection from '../components/TeamSection'
 import NavBar from '~/components/NavBar.vue'
 import Intro from '~/components/Intro.vue'
 import Sponza from '~/components/Sponza.vue'
@@ -27,7 +28,6 @@ import fireDb from '~/plugins/firebase.js'
 import Events from '~/components/Events.vue'
 import FAQ from '~/components/Faq.vue'
 import Video from '~/components/Video.vue'
-import TeamSection from '../components/TeamSection'
 import RealFooter from '~/components/realFooter'
 export default {
   components: {
@@ -95,8 +95,8 @@ export default {
 @import "bulma/bulma.sass";
 //Desktop CSS:
 @font-face {
-  font-family: "Apercu Pro";
-  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+  font-family: "HK Grotesk Regular";
+  src: url("../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
 }
 #main-page {
   background-color: #262662;
