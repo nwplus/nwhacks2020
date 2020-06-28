@@ -4,7 +4,7 @@
       <div class="level is-mobile">
         <div class="level-item isMobile">
           <b-input v-model="email" class="emailInput" placeholder="hacker@nwplus.io" type="email" />
-          <b-button style="color: white; background-color: #3c5587; border:none;" class="subBtn" @click="submit">
+          <b-button @click="submit" style="color: white; background-color: #3c5587; border:none;" class="subBtn">
             Subscribe
           </b-button>
         </div>
@@ -29,7 +29,7 @@ export default {
         this.email = ''
         this.$toast.open({
           duration: 5000,
-          message: `Successfully added you to our mailing list!`,
+          message: 'Successfully added you to our mailing list!',
           type: 'is-success',
           position: 'is-bottom'
         })
@@ -38,7 +38,7 @@ export default {
         if (reply.status === 500) {
           this.$toast.open({
             duration: 5000,
-            message: `Something went wrong with our sever.. please try again later`,
+            message: 'Something went wrong with our sever.. please try again later',
             position: 'is-bottom',
             type: 'is-danger'
           })
@@ -54,7 +54,7 @@ export default {
         if (reply.status === 400) {
           this.$toast.open({
             duration: 5000,
-            message: `Please fill out all fields!`,
+            message: 'Please fill out all fields!',
             position: 'is-bottom',
             type: 'is-danger'
           })
@@ -69,7 +69,7 @@ export default {
 <style lang="scss">
 @import "bulma/bulma.sass";
 $title_font: Merriweather;
-$sub_font: Apercu Pro, sans-serif;
+$sub_font: HK Grotesk Regular, sans-serif;
 
 .emailContainer {
   text-align: left;

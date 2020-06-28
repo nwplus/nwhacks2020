@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{visible: isTimeout}">
+  <div :class="{visible: isTimeout}" class="header">
     <div class="header-content">
       <svg
         width="162"
@@ -10,7 +10,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <nuxt-link :to="'/signup'">
-          <g class="billboard" @mouseover="shadowValues = '0 0 0 0 1 0 0 0 0 0.819608 0 0 0 0 0.352941 0 0 0 1 0'" @mouseleave="shadowValues = '0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0'">
+          <g @mouseover="shadowValues = '0 0 0 0 1 0 0 0 0 0.819608 0 0 0 0 0.352941 0 0 0 1 0'" @mouseleave="shadowValues = '0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0'" class="billboard">
             <path d="M88.3145 136.016L101.16 143.607V151.782L88.3145 159.664L75.1768 151.782V143.607L88.3145 136.016Z" fill="#606060" />
             <path fill-rule="evenodd" clip-rule="evenodd" d="M101.16 143.607L88.3145 136.016L75.1768 143.607L88.3145 150.906V159.664L101.16 151.782V143.607Z" fill="#3B3B3B" />
             <path d="M96.7243 142.354L85.9507 148.691L78.9795 144.889V108.765L85.9507 111.934L96.7243 105.597V142.354Z" fill="#3B3B3B" />
@@ -42,8 +42,8 @@
                 <feOffset />
                 <feGaussianBlur stdDeviation="4" />
                 <feColorMatrix
-                  type="matrix"
                   :values="shadowValues"
+                  type="matrix"
                 />
                 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />

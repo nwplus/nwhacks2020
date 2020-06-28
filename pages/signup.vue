@@ -27,16 +27,16 @@
       <pageThree v-if="page == 2" :v="$v" />
       <successPage v-if="page == 3" />
       <section v-if="page !== 3" class="buttons">
-        <button v-if="page !== 0" class="button nav-button" @click="page--">
+        <button v-if="page !== 0" @click="page--" class="button nav-button">
           Back
         </button>
-        <button v-if="page === 0" class="button nav-button" @click="cancel">
+        <button v-if="page === 0" @click="cancel" class="button nav-button">
           Cancel
         </button>
-        <button v-if="page !== 2" class="button submit-button" @click="nextPage">
+        <button v-if="page !== 2" @click="nextPage" class="button submit-button">
           Next
         </button>
-        <button v-if="page === 2" class="button submit-button" @click="submit">
+        <button v-if="page === 2" @click="submit" class="button submit-button">
           Submit
         </button>
       </section>
@@ -46,12 +46,12 @@
 </template>
 
 <script>
+import vueDataProxy from 'vue-data-proxy'
 import pageOne from '~/components/Signup/PageOne'
 import pageTwo from '~/components/Signup/PageTwo'
 import pageThree from '~/components/Signup/PageThree'
 import successPage from '~/components/Signup/SuccessPage'
 import validations from '~/validators/validators.js'
-import vueDataProxy from 'vue-data-proxy'
 import fireDb from '~/plugins/firebase.js'
 import signUpClosed from '~/components/Signup/signupClosed'
 
@@ -266,7 +266,7 @@ export default {
   right: 40%;
   top: 22.5%;
   bottom: 20%;
-  font-family: Apercu Pro;
+  font-family: HK Grotesk Regular;
   font-size: 18px;
   line-height: 22px;
   /* identical to box height */
@@ -281,7 +281,7 @@ export default {
 <style lang="scss">
 //Desktop CSS:
 @font-face {
-  font-family: "Apercu Pro";
-  src: url("../assets/fonts/apercu_regular_pro.otf") format("opentype");
+  font-family: "HK Grotesk Regular";
+  src: url("../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
 }
 </style>
