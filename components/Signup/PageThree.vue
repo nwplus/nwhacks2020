@@ -7,10 +7,10 @@
         </h2>
       </div>
       <b-field
-        label="How did you hear about nwHacks?"
-        class="required"
         :type="v.hacker.source.$error ? 'is-danger' : ''"
         :message="v.hacker.source.$error ? (!v.hacker.source.required ? 'Required' : '') : ''"
+        label="How did you hear about nwHacks?"
+        class="required"
       >
         <div class="field-content">
           <b-select v-model.trim="v.hacker.source.$model" placeholder="Select" required>
@@ -43,10 +43,10 @@
       </b-field>
       <b-field
         v-if="v.hacker.source.$model === 'Other'"
-        label="If you selected “Other,” please specify where you heard about nwHacks."
-        class="required"
         :type="v.hacker.sourceother.$error ? 'is-danger' : ''"
         :message="v.hacker.sourceother.$error ? (!v.hacker.sourceother.required ? 'Required' : '') : ''"
+        label="If you selected “Other,” please specify where you heard about nwHacks."
+        class="required"
       >
         <div class="field-content">
           <b-input
@@ -66,9 +66,9 @@
           >MLH Code of Conduct</a>.
         </p>
         <b-field
-          class="required is-marginless"
           :type="v.hacker.isPrivacyPolicyChecked.$error ? 'is-danger' : ''"
           :message="v.hacker.isPrivacyPolicyChecked.$error ? (!v.hacker.isPrivacyPolicyChecked.sameAs ? 'Required' : '') : ''"
+          class="required is-marginless"
         >
           <b-checkbox v-model.trim="v.hacker.isPrivacyPolicyChecked.$model" required>
             I authorize nwPlus to share certain application/registration information for event administration, ranking, MLH administration, and occasional messages about hackathons in line with the
@@ -83,9 +83,9 @@
           Required
         </p>
         <b-field
-          class="required is-marginless"
           :type="v.hacker.isCodeOfConductChecked.$error ? 'is-danger' : ''"
           :message="v.hacker.isCodeOfConductChecked.$error ? (!v.hacker.isCodeOfConductChecked.sameAs ? 'Required' : '') : ''"
+          class="required is-marginless"
         >
           <b-checkbox v-model.trim="v.hacker.isCodeOfConductChecked.$model" required>
             I have read and agree to the
@@ -102,9 +102,9 @@
         <div class="field-content">
           <p>💾 We use your (anonymized!) data to help you get the best sponsors and continuously improve nwHacks with each iteration.</p>
           <b-field
-            class="required is-marginless"
             :type="v.hacker.isDataReportingChecked.$error ? 'is-danger' : ''"
             :message="v.hacker.isDataReportingChecked.$error ? (!v.hacker.isDataReportingChecked.sameAs ? 'Required' : '') : ''"
+            class="required is-marginless"
           >
             <b-checkbox
               v-model.trim="v.hacker.isDataReportingChecked.$model"
@@ -118,9 +118,9 @@
       <div class="field-content">
         <p>💼 Our hackathon aims to connect you with industry professionals, recruiters, and career opportunities. In doing so, information about our hackers is needed in order for attending companies to contact you.</p>
         <b-field
-          class="required is-marginless"
           :type="v.hacker.isResumeSharingChecked.$error ? 'is-danger' : ''"
           :message="v.hacker.isResumeSharingChecked.$error ? (!v.hacker.isResumeSharingChecked.sameAs ? 'Required' : '') : ''"
+          class="required is-marginless"
         >
           <b-checkbox
             v-model.trim="v.hacker.isResumeSharingChecked.$model"

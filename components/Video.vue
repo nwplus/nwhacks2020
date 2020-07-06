@@ -116,7 +116,7 @@ export default {
     margin-bottom: 8%;
 }
 .video-title {
-    font-family: Apercu Pro;
+    font-family: HK Grotesk Regular;
     font-size: 36px;
     line-height: 37px;
     font-weight: bold;

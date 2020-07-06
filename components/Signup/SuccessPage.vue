@@ -64,7 +64,7 @@ export default {
     text-align: center;
 }
 #title {
-    font-family: Apercu Pro;
+    font-family: HK Grotesk Regular;
     font-size: 50px;
     line-height: 62px;
     text-align: center;
@@ -77,7 +77,7 @@ export default {
 }
 #subtitle {
     /* Body text */
-    font-family: Apercu Pro;
+    font-family: HK Grotesk Regular;
     font-size: 18px;
     line-height: 25px;
     text-align: center;
@@ -106,7 +106,7 @@ export default {
     cursor: pointer;
 }
 #buttonText {
-    font-family: Apercu Pro;
+    font-family: HK Grotesk Regular;
     font-size: 18px;
     line-height: 22px;
 
@@ -129,7 +129,7 @@ export default {
 
 }
 #footer-text {
-    font-family: Apercu Pro;
+    font-family: HK Grotesk Regular;
     font-size: 16px;
     line-height: 136.73%;
 
