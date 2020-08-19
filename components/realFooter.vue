@@ -46,7 +46,7 @@
 
     <p class="links">
       <a
-        href="mailto:hello@nwplus.io"
+        href="mailto:info@nwplus.io"
       >Email Us</a>
       <a
         href="http://mlh.io/code-of-conduct"
@@ -55,7 +55,7 @@
       >
         Code of Conduct</a>
       <a
-        href="mailto:hello@nwplus.io?subject=Sponsorship"
+        href="mailto:info@nwplus.io?subject=Sponsorship"
       >Become a Sponsor</a>
     </p>
     <p
