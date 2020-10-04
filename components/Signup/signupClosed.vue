@@ -6,7 +6,9 @@
         src="~@/assets/NwPluslogo.svg"
       >
       <h1 class="title is-2 nwcolor">
-        nwHacks applications are closed.
+        nwHacks 2020 applications are now closed.
+        <br>
+        nwHacks 2021 is coming Jan 2021. Join our newsletter for updates!
       </h1>
       <h3 class="title is-5 nwcolor">
         For questions or concerns, email us at <a id="mailLink" href="mailto:logistics@nwplus.io">
